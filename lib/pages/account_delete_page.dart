@@ -6,8 +6,7 @@ import '../themes/app_colors.dart';
 class AccountDeletePage extends StatelessWidget {
   const AccountDeletePage({super.key});
 
-  // Hello
-  // anurag
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
