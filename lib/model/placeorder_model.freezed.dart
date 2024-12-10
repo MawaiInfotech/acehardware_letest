@@ -12,7 +12,7 @@ part of 'placeorder_model.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 PlaceOrderModel _$PlaceOrderModelFromJson(Map<String, dynamic> json) {
   return _PlaceOrderModel.fromJson(json);
@@ -25,8 +25,12 @@ mixin _$PlaceOrderModel {
   @JsonKey(name: "entryCount")
   String get entryCount => throw _privateConstructorUsedError;
 
+  /// Serializes this PlaceOrderModel to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of PlaceOrderModel
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $PlaceOrderModelCopyWith<PlaceOrderModel> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -52,6 +56,8 @@ class _$PlaceOrderModelCopyWithImpl<$Res, $Val extends PlaceOrderModel>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of PlaceOrderModel
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -72,11 +78,11 @@ class _$PlaceOrderModelCopyWithImpl<$Res, $Val extends PlaceOrderModel>
 }
 
 /// @nodoc
-abstract class _$$_PlaceOrderModelCopyWith<$Res>
+abstract class _$$PlaceOrderModelImplCopyWith<$Res>
     implements $PlaceOrderModelCopyWith<$Res> {
-  factory _$$_PlaceOrderModelCopyWith(
-          _$_PlaceOrderModel value, $Res Function(_$_PlaceOrderModel) then) =
-      __$$_PlaceOrderModelCopyWithImpl<$Res>;
+  factory _$$PlaceOrderModelImplCopyWith(_$PlaceOrderModelImpl value,
+          $Res Function(_$PlaceOrderModelImpl) then) =
+      __$$PlaceOrderModelImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
@@ -85,20 +91,22 @@ abstract class _$$_PlaceOrderModelCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$_PlaceOrderModelCopyWithImpl<$Res>
-    extends _$PlaceOrderModelCopyWithImpl<$Res, _$_PlaceOrderModel>
-    implements _$$_PlaceOrderModelCopyWith<$Res> {
-  __$$_PlaceOrderModelCopyWithImpl(
-      _$_PlaceOrderModel _value, $Res Function(_$_PlaceOrderModel) _then)
+class __$$PlaceOrderModelImplCopyWithImpl<$Res>
+    extends _$PlaceOrderModelCopyWithImpl<$Res, _$PlaceOrderModelImpl>
+    implements _$$PlaceOrderModelImplCopyWith<$Res> {
+  __$$PlaceOrderModelImplCopyWithImpl(
+      _$PlaceOrderModelImpl _value, $Res Function(_$PlaceOrderModelImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of PlaceOrderModel
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? status = null,
     Object? entryCount = null,
   }) {
-    return _then(_$_PlaceOrderModel(
+    return _then(_$PlaceOrderModelImpl(
       status: null == status
           ? _value.status
           : status // ignore: cast_nullable_to_non_nullable
@@ -113,13 +121,13 @@ class __$$_PlaceOrderModelCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_PlaceOrderModel implements _PlaceOrderModel {
-  const _$_PlaceOrderModel(
+class _$PlaceOrderModelImpl implements _PlaceOrderModel {
+  const _$PlaceOrderModelImpl(
       {@JsonKey(name: "status") this.status = "",
       @JsonKey(name: "entryCount") this.entryCount = ""});
 
-  factory _$_PlaceOrderModel.fromJson(Map<String, dynamic> json) =>
-      _$$_PlaceOrderModelFromJson(json);
+  factory _$PlaceOrderModelImpl.fromJson(Map<String, dynamic> json) =>
+      _$$PlaceOrderModelImplFromJson(json);
 
   @override
   @JsonKey(name: "status")
@@ -134,28 +142,31 @@ class _$_PlaceOrderModel implements _PlaceOrderModel {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_PlaceOrderModel &&
+            other is _$PlaceOrderModelImpl &&
             (identical(other.status, status) || other.status == status) &&
             (identical(other.entryCount, entryCount) ||
                 other.entryCount == entryCount));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(runtimeType, status, entryCount);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of PlaceOrderModel
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
-  _$$_PlaceOrderModelCopyWith<_$_PlaceOrderModel> get copyWith =>
-      __$$_PlaceOrderModelCopyWithImpl<_$_PlaceOrderModel>(this, _$identity);
+  _$$PlaceOrderModelImplCopyWith<_$PlaceOrderModelImpl> get copyWith =>
+      __$$PlaceOrderModelImplCopyWithImpl<_$PlaceOrderModelImpl>(
+          this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_PlaceOrderModelToJson(
+    return _$$PlaceOrderModelImplToJson(
       this,
     );
   }
@@ -165,10 +176,10 @@ abstract class _PlaceOrderModel implements PlaceOrderModel {
   const factory _PlaceOrderModel(
           {@JsonKey(name: "status") final String status,
           @JsonKey(name: "entryCount") final String entryCount}) =
-      _$_PlaceOrderModel;
+      _$PlaceOrderModelImpl;
 
   factory _PlaceOrderModel.fromJson(Map<String, dynamic> json) =
-      _$_PlaceOrderModel.fromJson;
+      _$PlaceOrderModelImpl.fromJson;
 
   @override
   @JsonKey(name: "status")
@@ -176,8 +187,11 @@ abstract class _PlaceOrderModel implements PlaceOrderModel {
   @override
   @JsonKey(name: "entryCount")
   String get entryCount;
+
+  /// Create a copy of PlaceOrderModel
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
-  _$$_PlaceOrderModelCopyWith<_$_PlaceOrderModel> get copyWith =>
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$PlaceOrderModelImplCopyWith<_$PlaceOrderModelImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

@@ -12,7 +12,7 @@ part of 'send_notification_model.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 SendNotificationModel _$SendNotificationModelFromJson(
     Map<String, dynamic> json) {
@@ -26,8 +26,12 @@ mixin _$SendNotificationModel {
   @JsonKey(name: "msg")
   String get message => throw _privateConstructorUsedError;
 
+  /// Serializes this SendNotificationModel to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of SendNotificationModel
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $SendNotificationModelCopyWith<SendNotificationModel> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -54,6 +58,8 @@ class _$SendNotificationModelCopyWithImpl<$Res,
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of SendNotificationModel
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -74,11 +80,12 @@ class _$SendNotificationModelCopyWithImpl<$Res,
 }
 
 /// @nodoc
-abstract class _$$_SendNotificationModelCopyWith<$Res>
+abstract class _$$SendNotificationModelImplCopyWith<$Res>
     implements $SendNotificationModelCopyWith<$Res> {
-  factory _$$_SendNotificationModelCopyWith(_$_SendNotificationModel value,
-          $Res Function(_$_SendNotificationModel) then) =
-      __$$_SendNotificationModelCopyWithImpl<$Res>;
+  factory _$$SendNotificationModelImplCopyWith(
+          _$SendNotificationModelImpl value,
+          $Res Function(_$SendNotificationModelImpl) then) =
+      __$$SendNotificationModelImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
@@ -87,20 +94,23 @@ abstract class _$$_SendNotificationModelCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$_SendNotificationModelCopyWithImpl<$Res>
-    extends _$SendNotificationModelCopyWithImpl<$Res, _$_SendNotificationModel>
-    implements _$$_SendNotificationModelCopyWith<$Res> {
-  __$$_SendNotificationModelCopyWithImpl(_$_SendNotificationModel _value,
-      $Res Function(_$_SendNotificationModel) _then)
+class __$$SendNotificationModelImplCopyWithImpl<$Res>
+    extends _$SendNotificationModelCopyWithImpl<$Res,
+        _$SendNotificationModelImpl>
+    implements _$$SendNotificationModelImplCopyWith<$Res> {
+  __$$SendNotificationModelImplCopyWithImpl(_$SendNotificationModelImpl _value,
+      $Res Function(_$SendNotificationModelImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of SendNotificationModel
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? status = null,
     Object? message = null,
   }) {
-    return _then(_$_SendNotificationModel(
+    return _then(_$SendNotificationModelImpl(
       status: null == status
           ? _value.status
           : status // ignore: cast_nullable_to_non_nullable
@@ -115,13 +125,13 @@ class __$$_SendNotificationModelCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_SendNotificationModel implements _SendNotificationModel {
-  const _$_SendNotificationModel(
+class _$SendNotificationModelImpl implements _SendNotificationModel {
+  const _$SendNotificationModelImpl(
       {@JsonKey(name: "status") this.status = "",
       @JsonKey(name: "msg") this.message = ""});
 
-  factory _$_SendNotificationModel.fromJson(Map<String, dynamic> json) =>
-      _$$_SendNotificationModelFromJson(json);
+  factory _$SendNotificationModelImpl.fromJson(Map<String, dynamic> json) =>
+      _$$SendNotificationModelImplFromJson(json);
 
   @override
   @JsonKey(name: "status")
@@ -136,28 +146,30 @@ class _$_SendNotificationModel implements _SendNotificationModel {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_SendNotificationModel &&
+            other is _$SendNotificationModelImpl &&
             (identical(other.status, status) || other.status == status) &&
             (identical(other.message, message) || other.message == message));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(runtimeType, status, message);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of SendNotificationModel
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
-  _$$_SendNotificationModelCopyWith<_$_SendNotificationModel> get copyWith =>
-      __$$_SendNotificationModelCopyWithImpl<_$_SendNotificationModel>(
-          this, _$identity);
+  _$$SendNotificationModelImplCopyWith<_$SendNotificationModelImpl>
+      get copyWith => __$$SendNotificationModelImplCopyWithImpl<
+          _$SendNotificationModelImpl>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_SendNotificationModelToJson(
+    return _$$SendNotificationModelImplToJson(
       this,
     );
   }
@@ -165,11 +177,12 @@ class _$_SendNotificationModel implements _SendNotificationModel {
 
 abstract class _SendNotificationModel implements SendNotificationModel {
   const factory _SendNotificationModel(
-      {@JsonKey(name: "status") final String status,
-      @JsonKey(name: "msg") final String message}) = _$_SendNotificationModel;
+          {@JsonKey(name: "status") final String status,
+          @JsonKey(name: "msg") final String message}) =
+      _$SendNotificationModelImpl;
 
   factory _SendNotificationModel.fromJson(Map<String, dynamic> json) =
-      _$_SendNotificationModel.fromJson;
+      _$SendNotificationModelImpl.fromJson;
 
   @override
   @JsonKey(name: "status")
@@ -177,8 +190,11 @@ abstract class _SendNotificationModel implements SendNotificationModel {
   @override
   @JsonKey(name: "msg")
   String get message;
+
+  /// Create a copy of SendNotificationModel
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
-  _$$_SendNotificationModelCopyWith<_$_SendNotificationModel> get copyWith =>
-      throw _privateConstructorUsedError;
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$SendNotificationModelImplCopyWith<_$SendNotificationModelImpl>
+      get copyWith => throw _privateConstructorUsedError;
 }

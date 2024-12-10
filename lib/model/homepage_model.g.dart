@@ -6,8 +6,8 @@ part of 'homepage_model.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$_HomepageModel _$$_HomepageModelFromJson(Map<String, dynamic> json) =>
-    _$_HomepageModel(
+_$HomepageModelImpl _$$HomepageModelImplFromJson(Map<String, dynamic> json) =>
+    _$HomepageModelImpl(
       productCategory: json['prod_cate'] as String? ?? "",
       productCategoryName: json['prod_cate_name'] as String? ?? "",
       productGroup: json['prod_group'] as String? ?? "",
@@ -17,15 +17,15 @@ _$_HomepageModel _$$_HomepageModelFromJson(Map<String, dynamic> json) =>
       productDiscription: json['prod_desc'] as String? ?? "",
       uom: json['uom'] as String? ?? "",
       image: json['image'] as String? ?? "",
-      discount: json['discount'] as int? ?? 0,
+      discount: (json['discount'] as num?)?.toInt() ?? 0,
       netMRP: (json['netMRP'] as num?)?.toDouble() ?? 0.0,
       customerCode: json['cust_code'] as String? ?? "",
       productValidityDate: json['product_validity_date'] as String? ?? "",
       pmg: json['pmg'] as String? ?? "",
-      moq: json['moq'] as int? ?? 0,
+      moq: (json['moq'] as num?)?.toInt() ?? 0,
     );
 
-Map<String, dynamic> _$$_HomepageModelToJson(_$_HomepageModel instance) =>
+Map<String, dynamic> _$$HomepageModelImplToJson(_$HomepageModelImpl instance) =>
     <String, dynamic>{
       'prod_cate': instance.productCategory,
       'prod_cate_name': instance.productCategoryName,

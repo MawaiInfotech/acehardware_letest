@@ -12,7 +12,7 @@ part of 'vendors_model.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 VendorsModel _$VendorsModelFromJson(Map<String, dynamic> json) {
   return _VendorsModel.fromJson(json);
@@ -29,8 +29,12 @@ mixin _$VendorsModel {
   @JsonKey(name: "vendor_name")
   String get vendorName => throw _privateConstructorUsedError;
 
+  /// Serializes this VendorsModel to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of VendorsModel
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $VendorsModelCopyWith<VendorsModel> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -58,6 +62,8 @@ class _$VendorsModelCopyWithImpl<$Res, $Val extends VendorsModel>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of VendorsModel
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -88,11 +94,11 @@ class _$VendorsModelCopyWithImpl<$Res, $Val extends VendorsModel>
 }
 
 /// @nodoc
-abstract class _$$_VendorsModelCopyWith<$Res>
+abstract class _$$VendorsModelImplCopyWith<$Res>
     implements $VendorsModelCopyWith<$Res> {
-  factory _$$_VendorsModelCopyWith(
-          _$_VendorsModel value, $Res Function(_$_VendorsModel) then) =
-      __$$_VendorsModelCopyWithImpl<$Res>;
+  factory _$$VendorsModelImplCopyWith(
+          _$VendorsModelImpl value, $Res Function(_$VendorsModelImpl) then) =
+      __$$VendorsModelImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
@@ -103,13 +109,15 @@ abstract class _$$_VendorsModelCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$_VendorsModelCopyWithImpl<$Res>
-    extends _$VendorsModelCopyWithImpl<$Res, _$_VendorsModel>
-    implements _$$_VendorsModelCopyWith<$Res> {
-  __$$_VendorsModelCopyWithImpl(
-      _$_VendorsModel _value, $Res Function(_$_VendorsModel) _then)
+class __$$VendorsModelImplCopyWithImpl<$Res>
+    extends _$VendorsModelCopyWithImpl<$Res, _$VendorsModelImpl>
+    implements _$$VendorsModelImplCopyWith<$Res> {
+  __$$VendorsModelImplCopyWithImpl(
+      _$VendorsModelImpl _value, $Res Function(_$VendorsModelImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of VendorsModel
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -118,7 +126,7 @@ class __$$_VendorsModelCopyWithImpl<$Res>
     Object? employeePassword = null,
     Object? vendorName = null,
   }) {
-    return _then(_$_VendorsModel(
+    return _then(_$VendorsModelImpl(
       vendorCode: null == vendorCode
           ? _value.vendorCode
           : vendorCode // ignore: cast_nullable_to_non_nullable
@@ -141,16 +149,16 @@ class __$$_VendorsModelCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_VendorsModel extends _VendorsModel {
-  const _$_VendorsModel(
+class _$VendorsModelImpl extends _VendorsModel {
+  const _$VendorsModelImpl(
       {@JsonKey(name: "vENDOR_CODE") this.vendorCode = "",
       @JsonKey(name: "eMP_CODE") this.employeeCode = "",
       @JsonKey(name: "eMP_PWD") this.employeePassword = "",
       @JsonKey(name: "vendor_name") this.vendorName = ""})
       : super._();
 
-  factory _$_VendorsModel.fromJson(Map<String, dynamic> json) =>
-      _$$_VendorsModelFromJson(json);
+  factory _$VendorsModelImpl.fromJson(Map<String, dynamic> json) =>
+      _$$VendorsModelImplFromJson(json);
 
   @override
   @JsonKey(name: "vENDOR_CODE")
@@ -171,10 +179,10 @@ class _$_VendorsModel extends _VendorsModel {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_VendorsModel &&
+            other is _$VendorsModelImpl &&
             (identical(other.vendorCode, vendorCode) ||
                 other.vendorCode == vendorCode) &&
             (identical(other.employeeCode, employeeCode) ||
@@ -185,20 +193,22 @@ class _$_VendorsModel extends _VendorsModel {
                 other.vendorName == vendorName));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(
       runtimeType, vendorCode, employeeCode, employeePassword, vendorName);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of VendorsModel
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
-  _$$_VendorsModelCopyWith<_$_VendorsModel> get copyWith =>
-      __$$_VendorsModelCopyWithImpl<_$_VendorsModel>(this, _$identity);
+  _$$VendorsModelImplCopyWith<_$VendorsModelImpl> get copyWith =>
+      __$$VendorsModelImplCopyWithImpl<_$VendorsModelImpl>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_VendorsModelToJson(
+    return _$$VendorsModelImplToJson(
       this,
     );
   }
@@ -206,14 +216,15 @@ class _$_VendorsModel extends _VendorsModel {
 
 abstract class _VendorsModel extends VendorsModel {
   const factory _VendorsModel(
-      {@JsonKey(name: "vENDOR_CODE") final String vendorCode,
-      @JsonKey(name: "eMP_CODE") final String employeeCode,
-      @JsonKey(name: "eMP_PWD") final String employeePassword,
-      @JsonKey(name: "vendor_name") final String vendorName}) = _$_VendorsModel;
+          {@JsonKey(name: "vENDOR_CODE") final String vendorCode,
+          @JsonKey(name: "eMP_CODE") final String employeeCode,
+          @JsonKey(name: "eMP_PWD") final String employeePassword,
+          @JsonKey(name: "vendor_name") final String vendorName}) =
+      _$VendorsModelImpl;
   const _VendorsModel._() : super._();
 
   factory _VendorsModel.fromJson(Map<String, dynamic> json) =
-      _$_VendorsModel.fromJson;
+      _$VendorsModelImpl.fromJson;
 
   @override
   @JsonKey(name: "vENDOR_CODE")
@@ -227,8 +238,11 @@ abstract class _VendorsModel extends VendorsModel {
   @override
   @JsonKey(name: "vendor_name")
   String get vendorName;
+
+  /// Create a copy of VendorsModel
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
-  _$$_VendorsModelCopyWith<_$_VendorsModel> get copyWith =>
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$VendorsModelImplCopyWith<_$VendorsModelImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

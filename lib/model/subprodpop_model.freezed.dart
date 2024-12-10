@@ -12,7 +12,7 @@ part of 'subprodpop_model.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 SubProdPopModel _$SubProdPopModelFromJson(Map<String, dynamic> json) {
   return _SubProdPopModel.fromJson(json);
@@ -36,8 +36,12 @@ mixin _$SubProdPopModel {
   String get pmg => throw _privateConstructorUsedError;
   Map<String, String?> get errors => throw _privateConstructorUsedError;
 
+  /// Serializes this SubProdPopModel to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of SubProdPopModel
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $SubProdPopModelCopyWith<SubProdPopModel> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -69,6 +73,8 @@ class _$SubProdPopModelCopyWithImpl<$Res, $Val extends SubProdPopModel>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of SubProdPopModel
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -119,11 +125,11 @@ class _$SubProdPopModelCopyWithImpl<$Res, $Val extends SubProdPopModel>
 }
 
 /// @nodoc
-abstract class _$$_SubProdPopModelCopyWith<$Res>
+abstract class _$$SubProdPopModelImplCopyWith<$Res>
     implements $SubProdPopModelCopyWith<$Res> {
-  factory _$$_SubProdPopModelCopyWith(
-          _$_SubProdPopModel value, $Res Function(_$_SubProdPopModel) then) =
-      __$$_SubProdPopModelCopyWithImpl<$Res>;
+  factory _$$SubProdPopModelImplCopyWith(_$SubProdPopModelImpl value,
+          $Res Function(_$SubProdPopModelImpl) then) =
+      __$$SubProdPopModelImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
@@ -138,13 +144,15 @@ abstract class _$$_SubProdPopModelCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$_SubProdPopModelCopyWithImpl<$Res>
-    extends _$SubProdPopModelCopyWithImpl<$Res, _$_SubProdPopModel>
-    implements _$$_SubProdPopModelCopyWith<$Res> {
-  __$$_SubProdPopModelCopyWithImpl(
-      _$_SubProdPopModel _value, $Res Function(_$_SubProdPopModel) _then)
+class __$$SubProdPopModelImplCopyWithImpl<$Res>
+    extends _$SubProdPopModelCopyWithImpl<$Res, _$SubProdPopModelImpl>
+    implements _$$SubProdPopModelImplCopyWith<$Res> {
+  __$$SubProdPopModelImplCopyWithImpl(
+      _$SubProdPopModelImpl _value, $Res Function(_$SubProdPopModelImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of SubProdPopModel
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -157,7 +165,7 @@ class __$$_SubProdPopModelCopyWithImpl<$Res>
     Object? pmg = null,
     Object? errors = null,
   }) {
-    return _then(_$_SubProdPopModel(
+    return _then(_$SubProdPopModelImpl(
       productCatergory: null == productCatergory
           ? _value.productCatergory
           : productCatergory // ignore: cast_nullable_to_non_nullable
@@ -196,8 +204,8 @@ class __$$_SubProdPopModelCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_SubProdPopModel implements _SubProdPopModel {
-  const _$_SubProdPopModel(
+class _$SubProdPopModelImpl implements _SubProdPopModel {
+  const _$SubProdPopModelImpl(
       {@JsonKey(name: "prod_cate") this.productCatergory = "",
       @JsonKey(name: "prod_group") this.productGroup = "",
       @JsonKey(name: "description") this.description = "",
@@ -208,8 +216,8 @@ class _$_SubProdPopModel implements _SubProdPopModel {
       final Map<String, String?> errors = const {}})
       : _errors = errors;
 
-  factory _$_SubProdPopModel.fromJson(Map<String, dynamic> json) =>
-      _$$_SubProdPopModelFromJson(json);
+  factory _$SubProdPopModelImpl.fromJson(Map<String, dynamic> json) =>
+      _$$SubProdPopModelImplFromJson(json);
 
   @override
   @JsonKey(name: "prod_cate")
@@ -247,10 +255,10 @@ class _$_SubProdPopModel implements _SubProdPopModel {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_SubProdPopModel &&
+            other is _$SubProdPopModelImpl &&
             (identical(other.productCatergory, productCatergory) ||
                 other.productCatergory == productCatergory) &&
             (identical(other.productGroup, productGroup) ||
@@ -267,7 +275,7 @@ class _$_SubProdPopModel implements _SubProdPopModel {
             const DeepCollectionEquality().equals(other._errors, _errors));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(
       runtimeType,
@@ -280,15 +288,18 @@ class _$_SubProdPopModel implements _SubProdPopModel {
       pmg,
       const DeepCollectionEquality().hash(_errors));
 
-  @JsonKey(ignore: true)
+  /// Create a copy of SubProdPopModel
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
-  _$$_SubProdPopModelCopyWith<_$_SubProdPopModel> get copyWith =>
-      __$$_SubProdPopModelCopyWithImpl<_$_SubProdPopModel>(this, _$identity);
+  _$$SubProdPopModelImplCopyWith<_$SubProdPopModelImpl> get copyWith =>
+      __$$SubProdPopModelImplCopyWithImpl<_$SubProdPopModelImpl>(
+          this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_SubProdPopModelToJson(
+    return _$$SubProdPopModelImplToJson(
       this,
     );
   }
@@ -303,10 +314,10 @@ abstract class _SubProdPopModel implements SubProdPopModel {
       @JsonKey(name: "discount") final int discount,
       @JsonKey(name: "cust_code") final String cust_code,
       @JsonKey(name: "pmg") final String pmg,
-      final Map<String, String?> errors}) = _$_SubProdPopModel;
+      final Map<String, String?> errors}) = _$SubProdPopModelImpl;
 
   factory _SubProdPopModel.fromJson(Map<String, dynamic> json) =
-      _$_SubProdPopModel.fromJson;
+      _$SubProdPopModelImpl.fromJson;
 
   @override
   @JsonKey(name: "prod_cate")
@@ -331,8 +342,11 @@ abstract class _SubProdPopModel implements SubProdPopModel {
   String get pmg;
   @override
   Map<String, String?> get errors;
+
+  /// Create a copy of SubProdPopModel
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
-  _$$_SubProdPopModelCopyWith<_$_SubProdPopModel> get copyWith =>
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$SubProdPopModelImplCopyWith<_$SubProdPopModelImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

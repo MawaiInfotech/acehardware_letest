@@ -12,7 +12,7 @@ part of 'orderdelete_model.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 OrderDeleteModel _$OrderDeleteModelFromJson(Map<String, dynamic> json) {
   return _OrderDeleteModel.fromJson(json);
@@ -25,8 +25,12 @@ mixin _$OrderDeleteModel {
   @JsonKey(name: "entryCount")
   String get entryCount => throw _privateConstructorUsedError;
 
+  /// Serializes this OrderDeleteModel to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of OrderDeleteModel
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $OrderDeleteModelCopyWith<OrderDeleteModel> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -52,6 +56,8 @@ class _$OrderDeleteModelCopyWithImpl<$Res, $Val extends OrderDeleteModel>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of OrderDeleteModel
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -72,11 +78,11 @@ class _$OrderDeleteModelCopyWithImpl<$Res, $Val extends OrderDeleteModel>
 }
 
 /// @nodoc
-abstract class _$$_OrderDeleteModelCopyWith<$Res>
+abstract class _$$OrderDeleteModelImplCopyWith<$Res>
     implements $OrderDeleteModelCopyWith<$Res> {
-  factory _$$_OrderDeleteModelCopyWith(
-          _$_OrderDeleteModel value, $Res Function(_$_OrderDeleteModel) then) =
-      __$$_OrderDeleteModelCopyWithImpl<$Res>;
+  factory _$$OrderDeleteModelImplCopyWith(_$OrderDeleteModelImpl value,
+          $Res Function(_$OrderDeleteModelImpl) then) =
+      __$$OrderDeleteModelImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
@@ -85,20 +91,22 @@ abstract class _$$_OrderDeleteModelCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$_OrderDeleteModelCopyWithImpl<$Res>
-    extends _$OrderDeleteModelCopyWithImpl<$Res, _$_OrderDeleteModel>
-    implements _$$_OrderDeleteModelCopyWith<$Res> {
-  __$$_OrderDeleteModelCopyWithImpl(
-      _$_OrderDeleteModel _value, $Res Function(_$_OrderDeleteModel) _then)
+class __$$OrderDeleteModelImplCopyWithImpl<$Res>
+    extends _$OrderDeleteModelCopyWithImpl<$Res, _$OrderDeleteModelImpl>
+    implements _$$OrderDeleteModelImplCopyWith<$Res> {
+  __$$OrderDeleteModelImplCopyWithImpl(_$OrderDeleteModelImpl _value,
+      $Res Function(_$OrderDeleteModelImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of OrderDeleteModel
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? status = null,
     Object? entryCount = null,
   }) {
-    return _then(_$_OrderDeleteModel(
+    return _then(_$OrderDeleteModelImpl(
       status: null == status
           ? _value.status
           : status // ignore: cast_nullable_to_non_nullable
@@ -113,13 +121,13 @@ class __$$_OrderDeleteModelCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_OrderDeleteModel implements _OrderDeleteModel {
-  const _$_OrderDeleteModel(
+class _$OrderDeleteModelImpl implements _OrderDeleteModel {
+  const _$OrderDeleteModelImpl(
       {@JsonKey(name: "status") this.status = "",
       @JsonKey(name: "entryCount") this.entryCount = ""});
 
-  factory _$_OrderDeleteModel.fromJson(Map<String, dynamic> json) =>
-      _$$_OrderDeleteModelFromJson(json);
+  factory _$OrderDeleteModelImpl.fromJson(Map<String, dynamic> json) =>
+      _$$OrderDeleteModelImplFromJson(json);
 
   @override
   @JsonKey(name: "status")
@@ -134,28 +142,31 @@ class _$_OrderDeleteModel implements _OrderDeleteModel {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_OrderDeleteModel &&
+            other is _$OrderDeleteModelImpl &&
             (identical(other.status, status) || other.status == status) &&
             (identical(other.entryCount, entryCount) ||
                 other.entryCount == entryCount));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(runtimeType, status, entryCount);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of OrderDeleteModel
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
-  _$$_OrderDeleteModelCopyWith<_$_OrderDeleteModel> get copyWith =>
-      __$$_OrderDeleteModelCopyWithImpl<_$_OrderDeleteModel>(this, _$identity);
+  _$$OrderDeleteModelImplCopyWith<_$OrderDeleteModelImpl> get copyWith =>
+      __$$OrderDeleteModelImplCopyWithImpl<_$OrderDeleteModelImpl>(
+          this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_OrderDeleteModelToJson(
+    return _$$OrderDeleteModelImplToJson(
       this,
     );
   }
@@ -165,10 +176,10 @@ abstract class _OrderDeleteModel implements OrderDeleteModel {
   const factory _OrderDeleteModel(
           {@JsonKey(name: "status") final String status,
           @JsonKey(name: "entryCount") final String entryCount}) =
-      _$_OrderDeleteModel;
+      _$OrderDeleteModelImpl;
 
   factory _OrderDeleteModel.fromJson(Map<String, dynamic> json) =
-      _$_OrderDeleteModel.fromJson;
+      _$OrderDeleteModelImpl.fromJson;
 
   @override
   @JsonKey(name: "status")
@@ -176,8 +187,11 @@ abstract class _OrderDeleteModel implements OrderDeleteModel {
   @override
   @JsonKey(name: "entryCount")
   String get entryCount;
+
+  /// Create a copy of OrderDeleteModel
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
-  _$$_OrderDeleteModelCopyWith<_$_OrderDeleteModel> get copyWith =>
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$OrderDeleteModelImplCopyWith<_$OrderDeleteModelImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

@@ -12,7 +12,7 @@ part of 'usertype_model.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 UserTypeModel _$UserTypeModelFromJson(Map<String, dynamic> json) {
   return _UserTypeModel.fromJson(json);
@@ -25,8 +25,12 @@ mixin _$UserTypeModel {
   String get user_type => throw _privateConstructorUsedError;
   String get status => throw _privateConstructorUsedError;
 
+  /// Serializes this UserTypeModel to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of UserTypeModel
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $UserTypeModelCopyWith<UserTypeModel> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -51,6 +55,8 @@ class _$UserTypeModelCopyWithImpl<$Res, $Val extends UserTypeModel>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of UserTypeModel
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -81,11 +87,11 @@ class _$UserTypeModelCopyWithImpl<$Res, $Val extends UserTypeModel>
 }
 
 /// @nodoc
-abstract class _$$_UserTypeModelCopyWith<$Res>
+abstract class _$$UserTypeModelImplCopyWith<$Res>
     implements $UserTypeModelCopyWith<$Res> {
-  factory _$$_UserTypeModelCopyWith(
-          _$_UserTypeModel value, $Res Function(_$_UserTypeModel) then) =
-      __$$_UserTypeModelCopyWithImpl<$Res>;
+  factory _$$UserTypeModelImplCopyWith(
+          _$UserTypeModelImpl value, $Res Function(_$UserTypeModelImpl) then) =
+      __$$UserTypeModelImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
@@ -93,13 +99,15 @@ abstract class _$$_UserTypeModelCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$_UserTypeModelCopyWithImpl<$Res>
-    extends _$UserTypeModelCopyWithImpl<$Res, _$_UserTypeModel>
-    implements _$$_UserTypeModelCopyWith<$Res> {
-  __$$_UserTypeModelCopyWithImpl(
-      _$_UserTypeModel _value, $Res Function(_$_UserTypeModel) _then)
+class __$$UserTypeModelImplCopyWithImpl<$Res>
+    extends _$UserTypeModelCopyWithImpl<$Res, _$UserTypeModelImpl>
+    implements _$$UserTypeModelImplCopyWith<$Res> {
+  __$$UserTypeModelImplCopyWithImpl(
+      _$UserTypeModelImpl _value, $Res Function(_$UserTypeModelImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of UserTypeModel
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -108,7 +116,7 @@ class __$$_UserTypeModelCopyWithImpl<$Res>
     Object? user_type = null,
     Object? status = null,
   }) {
-    return _then(_$_UserTypeModel(
+    return _then(_$UserTypeModelImpl(
       user_name: null == user_name
           ? _value.user_name
           : user_name // ignore: cast_nullable_to_non_nullable
@@ -131,15 +139,15 @@ class __$$_UserTypeModelCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_UserTypeModel implements _UserTypeModel {
-  const _$_UserTypeModel(
+class _$UserTypeModelImpl implements _UserTypeModel {
+  const _$UserTypeModelImpl(
       {this.user_name = "",
       this.password = "",
       this.user_type = "",
       this.status = ""});
 
-  factory _$_UserTypeModel.fromJson(Map<String, dynamic> json) =>
-      _$$_UserTypeModelFromJson(json);
+  factory _$UserTypeModelImpl.fromJson(Map<String, dynamic> json) =>
+      _$$UserTypeModelImplFromJson(json);
 
   @override
   @JsonKey()
@@ -160,10 +168,10 @@ class _$_UserTypeModel implements _UserTypeModel {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_UserTypeModel &&
+            other is _$UserTypeModelImpl &&
             (identical(other.user_name, user_name) ||
                 other.user_name == user_name) &&
             (identical(other.password, password) ||
@@ -173,20 +181,22 @@ class _$_UserTypeModel implements _UserTypeModel {
             (identical(other.status, status) || other.status == status));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode =>
       Object.hash(runtimeType, user_name, password, user_type, status);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of UserTypeModel
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
-  _$$_UserTypeModelCopyWith<_$_UserTypeModel> get copyWith =>
-      __$$_UserTypeModelCopyWithImpl<_$_UserTypeModel>(this, _$identity);
+  _$$UserTypeModelImplCopyWith<_$UserTypeModelImpl> get copyWith =>
+      __$$UserTypeModelImplCopyWithImpl<_$UserTypeModelImpl>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_UserTypeModelToJson(
+    return _$$UserTypeModelImplToJson(
       this,
     );
   }
@@ -197,10 +207,10 @@ abstract class _UserTypeModel implements UserTypeModel {
       {final String user_name,
       final String password,
       final String user_type,
-      final String status}) = _$_UserTypeModel;
+      final String status}) = _$UserTypeModelImpl;
 
   factory _UserTypeModel.fromJson(Map<String, dynamic> json) =
-      _$_UserTypeModel.fromJson;
+      _$UserTypeModelImpl.fromJson;
 
   @override
   String get user_name;
@@ -210,8 +220,11 @@ abstract class _UserTypeModel implements UserTypeModel {
   String get user_type;
   @override
   String get status;
+
+  /// Create a copy of UserTypeModel
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
-  _$$_UserTypeModelCopyWith<_$_UserTypeModel> get copyWith =>
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$UserTypeModelImplCopyWith<_$UserTypeModelImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

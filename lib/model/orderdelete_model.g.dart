@@ -6,13 +6,15 @@ part of 'orderdelete_model.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$_OrderDeleteModel _$$_OrderDeleteModelFromJson(Map<String, dynamic> json) =>
-    _$_OrderDeleteModel(
+_$OrderDeleteModelImpl _$$OrderDeleteModelImplFromJson(
+        Map<String, dynamic> json) =>
+    _$OrderDeleteModelImpl(
       status: json['status'] as String? ?? "",
       entryCount: json['entryCount'] as String? ?? "",
     );
 
-Map<String, dynamic> _$$_OrderDeleteModelToJson(_$_OrderDeleteModel instance) =>
+Map<String, dynamic> _$$OrderDeleteModelImplToJson(
+        _$OrderDeleteModelImpl instance) =>
     <String, dynamic>{
       'status': instance.status,
       'entryCount': instance.entryCount,

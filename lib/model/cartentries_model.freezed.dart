@@ -12,7 +12,7 @@ part of 'cartentries_model.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 CartEntriesModel _$CartEntriesModelFromJson(Map<String, dynamic> json) {
   return _CartEntriesModel.fromJson(json);
@@ -43,8 +43,12 @@ mixin _$CartEntriesModel {
   @JsonKey(name: "uom")
   String get uom => throw _privateConstructorUsedError;
 
+  /// Serializes this CartEntriesModel to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of CartEntriesModel
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $CartEntriesModelCopyWith<CartEntriesModel> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -79,6 +83,8 @@ class _$CartEntriesModelCopyWithImpl<$Res, $Val extends CartEntriesModel>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of CartEntriesModel
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -144,11 +150,11 @@ class _$CartEntriesModelCopyWithImpl<$Res, $Val extends CartEntriesModel>
 }
 
 /// @nodoc
-abstract class _$$_CartEntriesModelCopyWith<$Res>
+abstract class _$$CartEntriesModelImplCopyWith<$Res>
     implements $CartEntriesModelCopyWith<$Res> {
-  factory _$$_CartEntriesModelCopyWith(
-          _$_CartEntriesModel value, $Res Function(_$_CartEntriesModel) then) =
-      __$$_CartEntriesModelCopyWithImpl<$Res>;
+  factory _$$CartEntriesModelImplCopyWith(_$CartEntriesModelImpl value,
+          $Res Function(_$CartEntriesModelImpl) then) =
+      __$$CartEntriesModelImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
@@ -166,13 +172,15 @@ abstract class _$$_CartEntriesModelCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$_CartEntriesModelCopyWithImpl<$Res>
-    extends _$CartEntriesModelCopyWithImpl<$Res, _$_CartEntriesModel>
-    implements _$$_CartEntriesModelCopyWith<$Res> {
-  __$$_CartEntriesModelCopyWithImpl(
-      _$_CartEntriesModel _value, $Res Function(_$_CartEntriesModel) _then)
+class __$$CartEntriesModelImplCopyWithImpl<$Res>
+    extends _$CartEntriesModelCopyWithImpl<$Res, _$CartEntriesModelImpl>
+    implements _$$CartEntriesModelImplCopyWith<$Res> {
+  __$$CartEntriesModelImplCopyWithImpl(_$CartEntriesModelImpl _value,
+      $Res Function(_$CartEntriesModelImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of CartEntriesModel
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -188,7 +196,7 @@ class __$$_CartEntriesModelCopyWithImpl<$Res>
     Object? netPrice = null,
     Object? uom = null,
   }) {
-    return _then(_$_CartEntriesModel(
+    return _then(_$CartEntriesModelImpl(
       id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
@@ -239,8 +247,8 @@ class __$$_CartEntriesModelCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_CartEntriesModel implements _CartEntriesModel {
-  const _$_CartEntriesModel(
+class _$CartEntriesModelImpl implements _CartEntriesModel {
+  const _$CartEntriesModelImpl(
       {@JsonKey(name: "id") this.id = 0,
       @JsonKey(name: "rowId") this.rowId = 0,
       @JsonKey(name: "productCode") this.productCode = "",
@@ -253,8 +261,8 @@ class _$_CartEntriesModel implements _CartEntriesModel {
       @JsonKey(name: "netPrice") this.netPrice = 0.0,
       @JsonKey(name: "uom") this.uom = ""});
 
-  factory _$_CartEntriesModel.fromJson(Map<String, dynamic> json) =>
-      _$$_CartEntriesModelFromJson(json);
+  factory _$CartEntriesModelImpl.fromJson(Map<String, dynamic> json) =>
+      _$$CartEntriesModelImplFromJson(json);
 
   @override
   @JsonKey(name: "id")
@@ -296,10 +304,10 @@ class _$_CartEntriesModel implements _CartEntriesModel {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_CartEntriesModel &&
+            other is _$CartEntriesModelImpl &&
             (identical(other.id, id) || other.id == id) &&
             (identical(other.rowId, rowId) || other.rowId == rowId) &&
             (identical(other.productCode, productCode) ||
@@ -320,7 +328,7 @@ class _$_CartEntriesModel implements _CartEntriesModel {
             (identical(other.uom, uom) || other.uom == uom));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(
       runtimeType,
@@ -336,15 +344,18 @@ class _$_CartEntriesModel implements _CartEntriesModel {
       netPrice,
       uom);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of CartEntriesModel
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
-  _$$_CartEntriesModelCopyWith<_$_CartEntriesModel> get copyWith =>
-      __$$_CartEntriesModelCopyWithImpl<_$_CartEntriesModel>(this, _$identity);
+  _$$CartEntriesModelImplCopyWith<_$CartEntriesModelImpl> get copyWith =>
+      __$$CartEntriesModelImplCopyWithImpl<_$CartEntriesModelImpl>(
+          this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_CartEntriesModelToJson(
+    return _$$CartEntriesModelImplToJson(
       this,
     );
   }
@@ -362,10 +373,10 @@ abstract class _CartEntriesModel implements CartEntriesModel {
       @JsonKey(name: "productPrice") final String productPrice,
       @JsonKey(name: "groupCode") final String groupCode,
       @JsonKey(name: "netPrice") final double netPrice,
-      @JsonKey(name: "uom") final String uom}) = _$_CartEntriesModel;
+      @JsonKey(name: "uom") final String uom}) = _$CartEntriesModelImpl;
 
   factory _CartEntriesModel.fromJson(Map<String, dynamic> json) =
-      _$_CartEntriesModel.fromJson;
+      _$CartEntriesModelImpl.fromJson;
 
   @override
   @JsonKey(name: "id")
@@ -400,8 +411,11 @@ abstract class _CartEntriesModel implements CartEntriesModel {
   @override
   @JsonKey(name: "uom")
   String get uom;
+
+  /// Create a copy of CartEntriesModel
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
-  _$$_CartEntriesModelCopyWith<_$_CartEntriesModel> get copyWith =>
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$CartEntriesModelImplCopyWith<_$CartEntriesModelImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

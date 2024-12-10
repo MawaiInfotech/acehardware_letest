@@ -60,23 +60,16 @@ LoginModel _$LoginModelFromJson(Map<String, dynamic> json) => LoginModel(
       expires_in: json['expires_in'] as String? ?? '',
       token_type: json['token_type'] as String? ?? '',
       access_token: json['access_token'] as String?,
-      refresh_token: json['refresh_token'] as int?,
+      refresh_token: (json['refresh_token'] as num?)?.toInt(),
       error_description: json['error_description'] as String?,
     );
 
-Map<String, dynamic> _$LoginModelToJson(LoginModel instance) {
-  final val = <String, dynamic>{};
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('access_token', instance.access_token);
-  writeNotNull('token_type', instance.token_type);
-  writeNotNull('refresh_token', instance.refresh_token);
-  writeNotNull('expires_in', instance.expires_in);
-  writeNotNull('error_description', instance.error_description);
-  return val;
-}
+Map<String, dynamic> _$LoginModelToJson(LoginModel instance) =>
+    <String, dynamic>{
+      if (instance.access_token case final value?) 'access_token': value,
+      if (instance.token_type case final value?) 'token_type': value,
+      if (instance.refresh_token case final value?) 'refresh_token': value,
+      if (instance.expires_in case final value?) 'expires_in': value,
+      if (instance.error_description case final value?)
+        'error_description': value,
+    };

@@ -12,7 +12,7 @@ part of 'invoicedetail_model.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 InvoiceDetailModel _$InvoiceDetailModelFromJson(Map<String, dynamic> json) {
   return _InvoiceDetailModel.fromJson(json);
@@ -37,8 +37,12 @@ mixin _$InvoiceDetailModel {
   @JsonKey(name: "uom")
   String get uom => throw _privateConstructorUsedError;
 
+  /// Serializes this InvoiceDetailModel to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of InvoiceDetailModel
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $InvoiceDetailModelCopyWith<InvoiceDetailModel> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -70,6 +74,8 @@ class _$InvoiceDetailModelCopyWithImpl<$Res, $Val extends InvoiceDetailModel>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of InvoiceDetailModel
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -120,11 +126,11 @@ class _$InvoiceDetailModelCopyWithImpl<$Res, $Val extends InvoiceDetailModel>
 }
 
 /// @nodoc
-abstract class _$$_InvoiceDetailModelCopyWith<$Res>
+abstract class _$$InvoiceDetailModelImplCopyWith<$Res>
     implements $InvoiceDetailModelCopyWith<$Res> {
-  factory _$$_InvoiceDetailModelCopyWith(_$_InvoiceDetailModel value,
-          $Res Function(_$_InvoiceDetailModel) then) =
-      __$$_InvoiceDetailModelCopyWithImpl<$Res>;
+  factory _$$InvoiceDetailModelImplCopyWith(_$InvoiceDetailModelImpl value,
+          $Res Function(_$InvoiceDetailModelImpl) then) =
+      __$$InvoiceDetailModelImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
@@ -139,13 +145,15 @@ abstract class _$$_InvoiceDetailModelCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$_InvoiceDetailModelCopyWithImpl<$Res>
-    extends _$InvoiceDetailModelCopyWithImpl<$Res, _$_InvoiceDetailModel>
-    implements _$$_InvoiceDetailModelCopyWith<$Res> {
-  __$$_InvoiceDetailModelCopyWithImpl(
-      _$_InvoiceDetailModel _value, $Res Function(_$_InvoiceDetailModel) _then)
+class __$$InvoiceDetailModelImplCopyWithImpl<$Res>
+    extends _$InvoiceDetailModelCopyWithImpl<$Res, _$InvoiceDetailModelImpl>
+    implements _$$InvoiceDetailModelImplCopyWith<$Res> {
+  __$$InvoiceDetailModelImplCopyWithImpl(_$InvoiceDetailModelImpl _value,
+      $Res Function(_$InvoiceDetailModelImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of InvoiceDetailModel
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -158,7 +166,7 @@ class __$$_InvoiceDetailModelCopyWithImpl<$Res>
     Object? description = null,
     Object? uom = null,
   }) {
-    return _then(_$_InvoiceDetailModel(
+    return _then(_$InvoiceDetailModelImpl(
       invoiceNumber: null == invoiceNumber
           ? _value.invoiceNumber
           : invoiceNumber // ignore: cast_nullable_to_non_nullable
@@ -197,8 +205,8 @@ class __$$_InvoiceDetailModelCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_InvoiceDetailModel implements _InvoiceDetailModel {
-  const _$_InvoiceDetailModel(
+class _$InvoiceDetailModelImpl implements _InvoiceDetailModel {
+  const _$InvoiceDetailModelImpl(
       {@JsonKey(name: "invoice_number") this.invoiceNumber = "",
       @JsonKey(name: "date") this.date = "",
       @JsonKey(name: "ref_no") this.refere = "",
@@ -208,8 +216,8 @@ class _$_InvoiceDetailModel implements _InvoiceDetailModel {
       @JsonKey(name: "description") this.description = "",
       @JsonKey(name: "uom") this.uom = ""});
 
-  factory _$_InvoiceDetailModel.fromJson(Map<String, dynamic> json) =>
-      _$$_InvoiceDetailModelFromJson(json);
+  factory _$InvoiceDetailModelImpl.fromJson(Map<String, dynamic> json) =>
+      _$$InvoiceDetailModelImplFromJson(json);
 
   @override
   @JsonKey(name: "invoice_number")
@@ -242,10 +250,10 @@ class _$_InvoiceDetailModel implements _InvoiceDetailModel {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_InvoiceDetailModel &&
+            other is _$InvoiceDetailModelImpl &&
             (identical(other.invoiceNumber, invoiceNumber) ||
                 other.invoiceNumber == invoiceNumber) &&
             (identical(other.date, date) || other.date == date) &&
@@ -260,21 +268,23 @@ class _$_InvoiceDetailModel implements _InvoiceDetailModel {
             (identical(other.uom, uom) || other.uom == uom));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(runtimeType, invoiceNumber, date, refere,
       productCode, dispatchQuantity, price, description, uom);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of InvoiceDetailModel
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
-  _$$_InvoiceDetailModelCopyWith<_$_InvoiceDetailModel> get copyWith =>
-      __$$_InvoiceDetailModelCopyWithImpl<_$_InvoiceDetailModel>(
+  _$$InvoiceDetailModelImplCopyWith<_$InvoiceDetailModelImpl> get copyWith =>
+      __$$InvoiceDetailModelImplCopyWithImpl<_$InvoiceDetailModelImpl>(
           this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_InvoiceDetailModelToJson(
+    return _$$InvoiceDetailModelImplToJson(
       this,
     );
   }
@@ -289,10 +299,10 @@ abstract class _InvoiceDetailModel implements InvoiceDetailModel {
       @JsonKey(name: "desp_qty") final String dispatchQuantity,
       @JsonKey(name: "price") final String price,
       @JsonKey(name: "description") final String description,
-      @JsonKey(name: "uom") final String uom}) = _$_InvoiceDetailModel;
+      @JsonKey(name: "uom") final String uom}) = _$InvoiceDetailModelImpl;
 
   factory _InvoiceDetailModel.fromJson(Map<String, dynamic> json) =
-      _$_InvoiceDetailModel.fromJson;
+      _$InvoiceDetailModelImpl.fromJson;
 
   @override
   @JsonKey(name: "invoice_number")
@@ -318,8 +328,11 @@ abstract class _InvoiceDetailModel implements InvoiceDetailModel {
   @override
   @JsonKey(name: "uom")
   String get uom;
+
+  /// Create a copy of InvoiceDetailModel
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
-  _$$_InvoiceDetailModelCopyWith<_$_InvoiceDetailModel> get copyWith =>
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$InvoiceDetailModelImplCopyWith<_$InvoiceDetailModelImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

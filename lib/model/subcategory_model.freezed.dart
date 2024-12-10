@@ -12,7 +12,7 @@ part of 'subcategory_model.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 SubcategoryModel _$SubcategoryModelFromJson(Map<String, dynamic> json) {
   return _SubcategoryModel.fromJson(json);
@@ -32,8 +32,12 @@ mixin _$SubcategoryModel {
   String get image => throw _privateConstructorUsedError;
   Map<String, String?> get errors => throw _privateConstructorUsedError;
 
+  /// Serializes this SubcategoryModel to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of SubcategoryModel
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $SubcategoryModelCopyWith<SubcategoryModel> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -63,6 +67,8 @@ class _$SubcategoryModelCopyWithImpl<$Res, $Val extends SubcategoryModel>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of SubcategoryModel
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -103,11 +109,11 @@ class _$SubcategoryModelCopyWithImpl<$Res, $Val extends SubcategoryModel>
 }
 
 /// @nodoc
-abstract class _$$_SubcategoryModelCopyWith<$Res>
+abstract class _$$SubcategoryModelImplCopyWith<$Res>
     implements $SubcategoryModelCopyWith<$Res> {
-  factory _$$_SubcategoryModelCopyWith(
-          _$_SubcategoryModel value, $Res Function(_$_SubcategoryModel) then) =
-      __$$_SubcategoryModelCopyWithImpl<$Res>;
+  factory _$$SubcategoryModelImplCopyWith(_$SubcategoryModelImpl value,
+          $Res Function(_$SubcategoryModelImpl) then) =
+      __$$SubcategoryModelImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
@@ -120,13 +126,15 @@ abstract class _$$_SubcategoryModelCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$_SubcategoryModelCopyWithImpl<$Res>
-    extends _$SubcategoryModelCopyWithImpl<$Res, _$_SubcategoryModel>
-    implements _$$_SubcategoryModelCopyWith<$Res> {
-  __$$_SubcategoryModelCopyWithImpl(
-      _$_SubcategoryModel _value, $Res Function(_$_SubcategoryModel) _then)
+class __$$SubcategoryModelImplCopyWithImpl<$Res>
+    extends _$SubcategoryModelCopyWithImpl<$Res, _$SubcategoryModelImpl>
+    implements _$$SubcategoryModelImplCopyWith<$Res> {
+  __$$SubcategoryModelImplCopyWithImpl(_$SubcategoryModelImpl _value,
+      $Res Function(_$SubcategoryModelImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of SubcategoryModel
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -137,7 +145,7 @@ class __$$_SubcategoryModelCopyWithImpl<$Res>
     Object? image = null,
     Object? errors = null,
   }) {
-    return _then(_$_SubcategoryModel(
+    return _then(_$SubcategoryModelImpl(
       productCode: null == productCode
           ? _value.productCode
           : productCode // ignore: cast_nullable_to_non_nullable
@@ -168,8 +176,8 @@ class __$$_SubcategoryModelCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_SubcategoryModel implements _SubcategoryModel {
-  const _$_SubcategoryModel(
+class _$SubcategoryModelImpl implements _SubcategoryModel {
+  const _$SubcategoryModelImpl(
       {@JsonKey(name: "prod_cate") this.productCode = "",
       @JsonKey(name: "prod_desc") this.productDescription = "",
       @JsonKey(name: "cust_code") this.cust_code = "",
@@ -178,8 +186,8 @@ class _$_SubcategoryModel implements _SubcategoryModel {
       final Map<String, String?> errors = const {}})
       : _errors = errors;
 
-  factory _$_SubcategoryModel.fromJson(Map<String, dynamic> json) =>
-      _$$_SubcategoryModelFromJson(json);
+  factory _$SubcategoryModelImpl.fromJson(Map<String, dynamic> json) =>
+      _$$SubcategoryModelImplFromJson(json);
 
   @override
   @JsonKey(name: "prod_cate")
@@ -211,10 +219,10 @@ class _$_SubcategoryModel implements _SubcategoryModel {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_SubcategoryModel &&
+            other is _$SubcategoryModelImpl &&
             (identical(other.productCode, productCode) ||
                 other.productCode == productCode) &&
             (identical(other.productDescription, productDescription) ||
@@ -226,20 +234,23 @@ class _$_SubcategoryModel implements _SubcategoryModel {
             const DeepCollectionEquality().equals(other._errors, _errors));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(runtimeType, productCode, productDescription,
       cust_code, pmg, image, const DeepCollectionEquality().hash(_errors));
 
-  @JsonKey(ignore: true)
+  /// Create a copy of SubcategoryModel
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
-  _$$_SubcategoryModelCopyWith<_$_SubcategoryModel> get copyWith =>
-      __$$_SubcategoryModelCopyWithImpl<_$_SubcategoryModel>(this, _$identity);
+  _$$SubcategoryModelImplCopyWith<_$SubcategoryModelImpl> get copyWith =>
+      __$$SubcategoryModelImplCopyWithImpl<_$SubcategoryModelImpl>(
+          this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_SubcategoryModelToJson(
+    return _$$SubcategoryModelImplToJson(
       this,
     );
   }
@@ -252,10 +263,10 @@ abstract class _SubcategoryModel implements SubcategoryModel {
       @JsonKey(name: "cust_code") final String cust_code,
       @JsonKey(name: "pmg") final String pmg,
       @JsonKey(name: "image") final String image,
-      final Map<String, String?> errors}) = _$_SubcategoryModel;
+      final Map<String, String?> errors}) = _$SubcategoryModelImpl;
 
   factory _SubcategoryModel.fromJson(Map<String, dynamic> json) =
-      _$_SubcategoryModel.fromJson;
+      _$SubcategoryModelImpl.fromJson;
 
   @override
   @JsonKey(name: "prod_cate")
@@ -274,8 +285,11 @@ abstract class _SubcategoryModel implements SubcategoryModel {
   String get image;
   @override
   Map<String, String?> get errors;
+
+  /// Create a copy of SubcategoryModel
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
-  _$$_SubcategoryModelCopyWith<_$_SubcategoryModel> get copyWith =>
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$SubcategoryModelImplCopyWith<_$SubcategoryModelImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

@@ -12,7 +12,7 @@ part of 'creditlimitgraph_model.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 CreditlimitGraphModel _$CreditlimitGraphModelFromJson(
     Map<String, dynamic> json) {
@@ -29,8 +29,12 @@ mixin _$CreditlimitGraphModel {
   String get maxValue => throw _privateConstructorUsedError;
   Map<String, String?> get errors => throw _privateConstructorUsedError;
 
+  /// Serializes this CreditlimitGraphModel to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of CreditlimitGraphModel
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $CreditlimitGraphModelCopyWith<CreditlimitGraphModel> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -59,6 +63,8 @@ class _$CreditlimitGraphModelCopyWithImpl<$Res,
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of CreditlimitGraphModel
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -89,11 +95,12 @@ class _$CreditlimitGraphModelCopyWithImpl<$Res,
 }
 
 /// @nodoc
-abstract class _$$_CreditlimitGraphModelCopyWith<$Res>
+abstract class _$$CreditlimitGraphModelImplCopyWith<$Res>
     implements $CreditlimitGraphModelCopyWith<$Res> {
-  factory _$$_CreditlimitGraphModelCopyWith(_$_CreditlimitGraphModel value,
-          $Res Function(_$_CreditlimitGraphModel) then) =
-      __$$_CreditlimitGraphModelCopyWithImpl<$Res>;
+  factory _$$CreditlimitGraphModelImplCopyWith(
+          _$CreditlimitGraphModelImpl value,
+          $Res Function(_$CreditlimitGraphModelImpl) then) =
+      __$$CreditlimitGraphModelImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
@@ -104,13 +111,16 @@ abstract class _$$_CreditlimitGraphModelCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$_CreditlimitGraphModelCopyWithImpl<$Res>
-    extends _$CreditlimitGraphModelCopyWithImpl<$Res, _$_CreditlimitGraphModel>
-    implements _$$_CreditlimitGraphModelCopyWith<$Res> {
-  __$$_CreditlimitGraphModelCopyWithImpl(_$_CreditlimitGraphModel _value,
-      $Res Function(_$_CreditlimitGraphModel) _then)
+class __$$CreditlimitGraphModelImplCopyWithImpl<$Res>
+    extends _$CreditlimitGraphModelCopyWithImpl<$Res,
+        _$CreditlimitGraphModelImpl>
+    implements _$$CreditlimitGraphModelImplCopyWith<$Res> {
+  __$$CreditlimitGraphModelImplCopyWithImpl(_$CreditlimitGraphModelImpl _value,
+      $Res Function(_$CreditlimitGraphModelImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of CreditlimitGraphModel
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -119,7 +129,7 @@ class __$$_CreditlimitGraphModelCopyWithImpl<$Res>
     Object? maxValue = null,
     Object? errors = null,
   }) {
-    return _then(_$_CreditlimitGraphModel(
+    return _then(_$CreditlimitGraphModelImpl(
       customerCode: null == customerCode
           ? _value.customerCode
           : customerCode // ignore: cast_nullable_to_non_nullable
@@ -142,16 +152,16 @@ class __$$_CreditlimitGraphModelCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_CreditlimitGraphModel implements _CreditlimitGraphModel {
-  const _$_CreditlimitGraphModel(
+class _$CreditlimitGraphModelImpl implements _CreditlimitGraphModel {
+  const _$CreditlimitGraphModelImpl(
       {@JsonKey(name: "cust_code") this.customerCode = "",
       @JsonKey(name: "value") this.value = "",
       @JsonKey(name: "max_value") this.maxValue = "",
       final Map<String, String?> errors = const {}})
       : _errors = errors;
 
-  factory _$_CreditlimitGraphModel.fromJson(Map<String, dynamic> json) =>
-      _$$_CreditlimitGraphModelFromJson(json);
+  factory _$CreditlimitGraphModelImpl.fromJson(Map<String, dynamic> json) =>
+      _$$CreditlimitGraphModelImplFromJson(json);
 
   @override
   @JsonKey(name: "cust_code")
@@ -177,10 +187,10 @@ class _$_CreditlimitGraphModel implements _CreditlimitGraphModel {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_CreditlimitGraphModel &&
+            other is _$CreditlimitGraphModelImpl &&
             (identical(other.customerCode, customerCode) ||
                 other.customerCode == customerCode) &&
             (identical(other.value, value) || other.value == value) &&
@@ -189,21 +199,23 @@ class _$_CreditlimitGraphModel implements _CreditlimitGraphModel {
             const DeepCollectionEquality().equals(other._errors, _errors));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(runtimeType, customerCode, value, maxValue,
       const DeepCollectionEquality().hash(_errors));
 
-  @JsonKey(ignore: true)
+  /// Create a copy of CreditlimitGraphModel
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
-  _$$_CreditlimitGraphModelCopyWith<_$_CreditlimitGraphModel> get copyWith =>
-      __$$_CreditlimitGraphModelCopyWithImpl<_$_CreditlimitGraphModel>(
-          this, _$identity);
+  _$$CreditlimitGraphModelImplCopyWith<_$CreditlimitGraphModelImpl>
+      get copyWith => __$$CreditlimitGraphModelImplCopyWithImpl<
+          _$CreditlimitGraphModelImpl>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_CreditlimitGraphModelToJson(
+    return _$$CreditlimitGraphModelImplToJson(
       this,
     );
   }
@@ -214,10 +226,10 @@ abstract class _CreditlimitGraphModel implements CreditlimitGraphModel {
       {@JsonKey(name: "cust_code") final String customerCode,
       @JsonKey(name: "value") final String value,
       @JsonKey(name: "max_value") final String maxValue,
-      final Map<String, String?> errors}) = _$_CreditlimitGraphModel;
+      final Map<String, String?> errors}) = _$CreditlimitGraphModelImpl;
 
   factory _CreditlimitGraphModel.fromJson(Map<String, dynamic> json) =
-      _$_CreditlimitGraphModel.fromJson;
+      _$CreditlimitGraphModelImpl.fromJson;
 
   @override
   @JsonKey(name: "cust_code")
@@ -230,8 +242,11 @@ abstract class _CreditlimitGraphModel implements CreditlimitGraphModel {
   String get maxValue;
   @override
   Map<String, String?> get errors;
+
+  /// Create a copy of CreditlimitGraphModel
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
-  _$$_CreditlimitGraphModelCopyWith<_$_CreditlimitGraphModel> get copyWith =>
-      throw _privateConstructorUsedError;
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$CreditlimitGraphModelImplCopyWith<_$CreditlimitGraphModelImpl>
+      get copyWith => throw _privateConstructorUsedError;
 }

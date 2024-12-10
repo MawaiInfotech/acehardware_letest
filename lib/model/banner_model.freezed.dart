@@ -12,7 +12,7 @@ part of 'banner_model.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 BannerModel _$BannerModelFromJson(Map<String, dynamic> json) {
   return _BannerModel.fromJson(json);
@@ -22,8 +22,12 @@ BannerModel _$BannerModelFromJson(Map<String, dynamic> json) {
 mixin _$BannerModel {
   String get banner_URL => throw _privateConstructorUsedError;
 
+  /// Serializes this BannerModel to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of BannerModel
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $BannerModelCopyWith<BannerModel> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -47,6 +51,8 @@ class _$BannerModelCopyWithImpl<$Res, $Val extends BannerModel>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of BannerModel
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -62,30 +68,32 @@ class _$BannerModelCopyWithImpl<$Res, $Val extends BannerModel>
 }
 
 /// @nodoc
-abstract class _$$_BannerModelCopyWith<$Res>
+abstract class _$$BannerModelImplCopyWith<$Res>
     implements $BannerModelCopyWith<$Res> {
-  factory _$$_BannerModelCopyWith(
-          _$_BannerModel value, $Res Function(_$_BannerModel) then) =
-      __$$_BannerModelCopyWithImpl<$Res>;
+  factory _$$BannerModelImplCopyWith(
+          _$BannerModelImpl value, $Res Function(_$BannerModelImpl) then) =
+      __$$BannerModelImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({String banner_URL});
 }
 
 /// @nodoc
-class __$$_BannerModelCopyWithImpl<$Res>
-    extends _$BannerModelCopyWithImpl<$Res, _$_BannerModel>
-    implements _$$_BannerModelCopyWith<$Res> {
-  __$$_BannerModelCopyWithImpl(
-      _$_BannerModel _value, $Res Function(_$_BannerModel) _then)
+class __$$BannerModelImplCopyWithImpl<$Res>
+    extends _$BannerModelCopyWithImpl<$Res, _$BannerModelImpl>
+    implements _$$BannerModelImplCopyWith<$Res> {
+  __$$BannerModelImplCopyWithImpl(
+      _$BannerModelImpl _value, $Res Function(_$BannerModelImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of BannerModel
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? banner_URL = null,
   }) {
-    return _then(_$_BannerModel(
+    return _then(_$BannerModelImpl(
       banner_URL: null == banner_URL
           ? _value.banner_URL
           : banner_URL // ignore: cast_nullable_to_non_nullable
@@ -96,11 +104,11 @@ class __$$_BannerModelCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_BannerModel extends _BannerModel {
-  const _$_BannerModel({this.banner_URL = ""}) : super._();
+class _$BannerModelImpl extends _BannerModel {
+  const _$BannerModelImpl({this.banner_URL = ""}) : super._();
 
-  factory _$_BannerModel.fromJson(Map<String, dynamic> json) =>
-      _$$_BannerModelFromJson(json);
+  factory _$BannerModelImpl.fromJson(Map<String, dynamic> json) =>
+      _$$BannerModelImplFromJson(json);
 
   @override
   @JsonKey()
@@ -112,43 +120,48 @@ class _$_BannerModel extends _BannerModel {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_BannerModel &&
+            other is _$BannerModelImpl &&
             (identical(other.banner_URL, banner_URL) ||
                 other.banner_URL == banner_URL));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(runtimeType, banner_URL);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of BannerModel
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
-  _$$_BannerModelCopyWith<_$_BannerModel> get copyWith =>
-      __$$_BannerModelCopyWithImpl<_$_BannerModel>(this, _$identity);
+  _$$BannerModelImplCopyWith<_$BannerModelImpl> get copyWith =>
+      __$$BannerModelImplCopyWithImpl<_$BannerModelImpl>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_BannerModelToJson(
+    return _$$BannerModelImplToJson(
       this,
     );
   }
 }
 
 abstract class _BannerModel extends BannerModel {
-  const factory _BannerModel({final String banner_URL}) = _$_BannerModel;
+  const factory _BannerModel({final String banner_URL}) = _$BannerModelImpl;
   const _BannerModel._() : super._();
 
   factory _BannerModel.fromJson(Map<String, dynamic> json) =
-      _$_BannerModel.fromJson;
+      _$BannerModelImpl.fromJson;
 
   @override
   String get banner_URL;
+
+  /// Create a copy of BannerModel
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
-  _$$_BannerModelCopyWith<_$_BannerModel> get copyWith =>
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$BannerModelImplCopyWith<_$BannerModelImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

@@ -6,9 +6,9 @@ part 'paymentgraph_model.freezed.dart';
 @freezed
 class PaymentGraphModel with _$PaymentGraphModel{
   const factory PaymentGraphModel({
-    @JsonKey(name: "cust_code") @Default("") String customerCode,
+    @JsonKey(name: "code") @Default("") String customerCode,
     @JsonKey(name: "label") @Default("") String label,
-    @JsonKey(name: "tot_sale_value") @Default("") String totalSaleValue,
+    @JsonKey(name: "total_sale_value_with_tax") @Default("") String totalSaleValue,
     @JsonKey(name: "pending_balance") @Default("") String pendingBalance,
     @Default({}) Map<String, String?> errors,
 

@@ -6,8 +6,9 @@ part of 'order_detail_model.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$_OrderHistoryModel _$$_OrderHistoryModelFromJson(Map<String, dynamic> json) =>
-    _$_OrderHistoryModel(
+_$OrderHistoryModelImpl _$$OrderHistoryModelImplFromJson(
+        Map<String, dynamic> json) =>
+    _$OrderHistoryModelImpl(
       customerCode: json['cust_code'] as String? ?? "",
       orderNumber: json['order_no'] as String? ?? "",
       productCode: json['prod_cd'] as String? ?? "",
@@ -23,8 +24,8 @@ _$_OrderHistoryModel _$$_OrderHistoryModelFromJson(Map<String, dynamic> json) =>
       erpOrderNumber: json['erp_order_number'] as String? ?? "",
     );
 
-Map<String, dynamic> _$$_OrderHistoryModelToJson(
-        _$_OrderHistoryModel instance) =>
+Map<String, dynamic> _$$OrderHistoryModelImplToJson(
+        _$OrderHistoryModelImpl instance) =>
     <String, dynamic>{
       'cust_code': instance.customerCode,
       'order_no': instance.orderNumber,

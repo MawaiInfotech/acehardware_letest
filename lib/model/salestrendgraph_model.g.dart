@@ -6,9 +6,9 @@ part of 'salestrendgraph_model.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$_SalesTrendGraphModel _$$_SalesTrendGraphModelFromJson(
+_$SalesTrendGraphModelImpl _$$SalesTrendGraphModelImplFromJson(
         Map<String, dynamic> json) =>
-    _$_SalesTrendGraphModel(
+    _$SalesTrendGraphModelImpl(
       customerCode: json['cust_code'] as String? ?? "",
       label: json['label'] as String? ?? "",
       value: json['value'] as String? ?? "",
@@ -18,8 +18,8 @@ _$_SalesTrendGraphModel _$$_SalesTrendGraphModelFromJson(
           const {},
     );
 
-Map<String, dynamic> _$$_SalesTrendGraphModelToJson(
-        _$_SalesTrendGraphModel instance) =>
+Map<String, dynamic> _$$SalesTrendGraphModelImplToJson(
+        _$SalesTrendGraphModelImpl instance) =>
     <String, dynamic>{
       'cust_code': instance.customerCode,
       'label': instance.label,

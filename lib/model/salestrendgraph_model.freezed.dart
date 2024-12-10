@@ -12,7 +12,7 @@ part of 'salestrendgraph_model.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 SalesTrendGraphModel _$SalesTrendGraphModelFromJson(Map<String, dynamic> json) {
   return _SalesTrendGraphModel.fromJson(json);
@@ -28,8 +28,12 @@ mixin _$SalesTrendGraphModel {
   String get value => throw _privateConstructorUsedError;
   Map<String, String?> get errors => throw _privateConstructorUsedError;
 
+  /// Serializes this SalesTrendGraphModel to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of SalesTrendGraphModel
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $SalesTrendGraphModelCopyWith<SalesTrendGraphModel> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -58,6 +62,8 @@ class _$SalesTrendGraphModelCopyWithImpl<$Res,
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of SalesTrendGraphModel
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -88,11 +94,11 @@ class _$SalesTrendGraphModelCopyWithImpl<$Res,
 }
 
 /// @nodoc
-abstract class _$$_SalesTrendGraphModelCopyWith<$Res>
+abstract class _$$SalesTrendGraphModelImplCopyWith<$Res>
     implements $SalesTrendGraphModelCopyWith<$Res> {
-  factory _$$_SalesTrendGraphModelCopyWith(_$_SalesTrendGraphModel value,
-          $Res Function(_$_SalesTrendGraphModel) then) =
-      __$$_SalesTrendGraphModelCopyWithImpl<$Res>;
+  factory _$$SalesTrendGraphModelImplCopyWith(_$SalesTrendGraphModelImpl value,
+          $Res Function(_$SalesTrendGraphModelImpl) then) =
+      __$$SalesTrendGraphModelImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
@@ -103,13 +109,15 @@ abstract class _$$_SalesTrendGraphModelCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$_SalesTrendGraphModelCopyWithImpl<$Res>
-    extends _$SalesTrendGraphModelCopyWithImpl<$Res, _$_SalesTrendGraphModel>
-    implements _$$_SalesTrendGraphModelCopyWith<$Res> {
-  __$$_SalesTrendGraphModelCopyWithImpl(_$_SalesTrendGraphModel _value,
-      $Res Function(_$_SalesTrendGraphModel) _then)
+class __$$SalesTrendGraphModelImplCopyWithImpl<$Res>
+    extends _$SalesTrendGraphModelCopyWithImpl<$Res, _$SalesTrendGraphModelImpl>
+    implements _$$SalesTrendGraphModelImplCopyWith<$Res> {
+  __$$SalesTrendGraphModelImplCopyWithImpl(_$SalesTrendGraphModelImpl _value,
+      $Res Function(_$SalesTrendGraphModelImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of SalesTrendGraphModel
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -118,7 +126,7 @@ class __$$_SalesTrendGraphModelCopyWithImpl<$Res>
     Object? value = null,
     Object? errors = null,
   }) {
-    return _then(_$_SalesTrendGraphModel(
+    return _then(_$SalesTrendGraphModelImpl(
       customerCode: null == customerCode
           ? _value.customerCode
           : customerCode // ignore: cast_nullable_to_non_nullable
@@ -141,16 +149,16 @@ class __$$_SalesTrendGraphModelCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_SalesTrendGraphModel implements _SalesTrendGraphModel {
-  const _$_SalesTrendGraphModel(
+class _$SalesTrendGraphModelImpl implements _SalesTrendGraphModel {
+  const _$SalesTrendGraphModelImpl(
       {@JsonKey(name: "cust_code") this.customerCode = "",
       @JsonKey(name: "label") this.label = "",
       @JsonKey(name: "value") this.value = "",
       final Map<String, String?> errors = const {}})
       : _errors = errors;
 
-  factory _$_SalesTrendGraphModel.fromJson(Map<String, dynamic> json) =>
-      _$$_SalesTrendGraphModelFromJson(json);
+  factory _$SalesTrendGraphModelImpl.fromJson(Map<String, dynamic> json) =>
+      _$$SalesTrendGraphModelImplFromJson(json);
 
   @override
   @JsonKey(name: "cust_code")
@@ -176,10 +184,10 @@ class _$_SalesTrendGraphModel implements _SalesTrendGraphModel {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_SalesTrendGraphModel &&
+            other is _$SalesTrendGraphModelImpl &&
             (identical(other.customerCode, customerCode) ||
                 other.customerCode == customerCode) &&
             (identical(other.label, label) || other.label == label) &&
@@ -187,21 +195,24 @@ class _$_SalesTrendGraphModel implements _SalesTrendGraphModel {
             const DeepCollectionEquality().equals(other._errors, _errors));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(runtimeType, customerCode, label, value,
       const DeepCollectionEquality().hash(_errors));
 
-  @JsonKey(ignore: true)
+  /// Create a copy of SalesTrendGraphModel
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
-  _$$_SalesTrendGraphModelCopyWith<_$_SalesTrendGraphModel> get copyWith =>
-      __$$_SalesTrendGraphModelCopyWithImpl<_$_SalesTrendGraphModel>(
-          this, _$identity);
+  _$$SalesTrendGraphModelImplCopyWith<_$SalesTrendGraphModelImpl>
+      get copyWith =>
+          __$$SalesTrendGraphModelImplCopyWithImpl<_$SalesTrendGraphModelImpl>(
+              this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_SalesTrendGraphModelToJson(
+    return _$$SalesTrendGraphModelImplToJson(
       this,
     );
   }
@@ -212,10 +223,10 @@ abstract class _SalesTrendGraphModel implements SalesTrendGraphModel {
       {@JsonKey(name: "cust_code") final String customerCode,
       @JsonKey(name: "label") final String label,
       @JsonKey(name: "value") final String value,
-      final Map<String, String?> errors}) = _$_SalesTrendGraphModel;
+      final Map<String, String?> errors}) = _$SalesTrendGraphModelImpl;
 
   factory _SalesTrendGraphModel.fromJson(Map<String, dynamic> json) =
-      _$_SalesTrendGraphModel.fromJson;
+      _$SalesTrendGraphModelImpl.fromJson;
 
   @override
   @JsonKey(name: "cust_code")
@@ -228,8 +239,11 @@ abstract class _SalesTrendGraphModel implements SalesTrendGraphModel {
   String get value;
   @override
   Map<String, String?> get errors;
+
+  /// Create a copy of SalesTrendGraphModel
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
-  _$$_SalesTrendGraphModelCopyWith<_$_SalesTrendGraphModel> get copyWith =>
-      throw _privateConstructorUsedError;
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$SalesTrendGraphModelImplCopyWith<_$SalesTrendGraphModelImpl>
+      get copyWith => throw _privateConstructorUsedError;
 }

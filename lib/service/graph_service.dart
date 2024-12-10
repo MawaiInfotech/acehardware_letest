@@ -1,6 +1,8 @@
 import 'dart:async';
 import 'dart:convert';
 import 'dart:io';
+import 'package:acehardware_mawai_letest/prefbox.dart';
+
 import '../error/api_error.dart';
 import '../model/creditlimitgraph_model.dart';
 import '../model/paymentgraph_model.dart';
@@ -11,16 +13,19 @@ import 'package:http/http.dart' as http;
 class GraphService{
 
   Future<List<SalesTrendGraphModel>> getGraphSalesTrendList(String customerCode) async {
-    final body = {'cust_code': customerCode};
+    final body = {
+      "token": token,
+      'cust_code': customerCode
+    };
 
-    const url = root + 'graphSaleTrend';
+    const url = '${root}graphSaleTrend';
 
     final response = await http.post(Uri.parse(url),
         body: json.encode(body), headers: getHeaders());
     try {
       final responseBody = json.decode(response.body);
       // print(responseBody);
-      final itemList = responseBody['sale_trend_graph_list'] as List;
+      final itemList = responseBody['data'] as List;
       return itemList.map((e) => SalesTrendGraphModel.fromJson(e)).toList();
 
     } catch (e) {
@@ -32,14 +37,17 @@ class GraphService{
   //Credit limit Graph
 
   Future<List<CreditlimitGraphModel>> getCreditlimitGraphList(String customerCode) async {
-    final body = {'cust_code': customerCode};
+    final body = {
+      'token' : token,
+      'cust_code': customerCode
+    };
 
     const url = '${root}graphCreditLimit';
 
     final response = await http.post(Uri.parse(url),body: json.encode(body), headers: getHeaders());
     try {
       final responseBody = json.decode(response.body);
-      final itemList = responseBody['credit_limit_graph_list'] as List;
+      final itemList = responseBody['data'] as List;
       return itemList.map((e) => CreditlimitGraphModel.fromJson(e)).toList();
 
     } catch (e) {
@@ -51,14 +59,17 @@ class GraphService{
   // //payment graoh
 
   Future<List<PaymentGraphModel>> getPaymentGraphList(String customerCode) async {
-    final body = {'cust_code': customerCode};
+    final body = {
+      'token' : token,
+      'cust_code': customerCode
+    };
 
-    const url = root + 'graphTotalSalevsPendingPayment';
+    const url = '${root}graphTotalSalevsPendingPayment';
 
     final response = await http.post(Uri.parse(url),body: json.encode(body), headers: getHeaders());
     try {
       final responseBody = json.decode(response.body);
-      final itemList = responseBody['totalSale_VS_PendAmt_List'] as List;
+      final itemList = responseBody['data'] as List;
       return itemList.map((e) => PaymentGraphModel.fromJson(e)).toList();
 
     } catch (e) {

@@ -6,11 +6,12 @@ part of 'paymentgraph_model.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$_PaymentGraphModel _$$_PaymentGraphModelFromJson(Map<String, dynamic> json) =>
-    _$_PaymentGraphModel(
-      customerCode: json['cust_code'] as String? ?? "",
+_$PaymentGraphModelImpl _$$PaymentGraphModelImplFromJson(
+        Map<String, dynamic> json) =>
+    _$PaymentGraphModelImpl(
+      customerCode: json['code'] as String? ?? "",
       label: json['label'] as String? ?? "",
-      totalSaleValue: json['tot_sale_value'] as String? ?? "",
+      totalSaleValue: json['total_sale_value_with_tax'] as String? ?? "",
       pendingBalance: json['pending_balance'] as String? ?? "",
       errors: (json['errors'] as Map<String, dynamic>?)?.map(
             (k, e) => MapEntry(k, e as String?),
@@ -18,12 +19,12 @@ _$_PaymentGraphModel _$$_PaymentGraphModelFromJson(Map<String, dynamic> json) =>
           const {},
     );
 
-Map<String, dynamic> _$$_PaymentGraphModelToJson(
-        _$_PaymentGraphModel instance) =>
+Map<String, dynamic> _$$PaymentGraphModelImplToJson(
+        _$PaymentGraphModelImpl instance) =>
     <String, dynamic>{
-      'cust_code': instance.customerCode,
+      'code': instance.customerCode,
       'label': instance.label,
-      'tot_sale_value': instance.totalSaleValue,
+      'total_sale_value_with_tax': instance.totalSaleValue,
       'pending_balance': instance.pendingBalance,
       'errors': instance.errors,
     };

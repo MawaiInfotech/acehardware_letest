@@ -12,7 +12,7 @@ part of 'dispatchdetails_model.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 DispatchdetailsModel _$DispatchdetailsModelFromJson(Map<String, dynamic> json) {
   return _DispatchdetailsModel.fromJson(json);
@@ -33,8 +33,12 @@ mixin _$DispatchdetailsModel {
   String get docket_no => throw _privateConstructorUsedError;
   String get cour_name => throw _privateConstructorUsedError;
 
+  /// Serializes this DispatchdetailsModel to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of DispatchdetailsModel
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $DispatchdetailsModelCopyWith<DispatchdetailsModel> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -71,6 +75,8 @@ class _$DispatchdetailsModelCopyWithImpl<$Res,
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of DispatchdetailsModel
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -141,11 +147,11 @@ class _$DispatchdetailsModelCopyWithImpl<$Res,
 }
 
 /// @nodoc
-abstract class _$$_DispatchdetailsModelCopyWith<$Res>
+abstract class _$$DispatchdetailsModelImplCopyWith<$Res>
     implements $DispatchdetailsModelCopyWith<$Res> {
-  factory _$$_DispatchdetailsModelCopyWith(_$_DispatchdetailsModel value,
-          $Res Function(_$_DispatchdetailsModel) then) =
-      __$$_DispatchdetailsModelCopyWithImpl<$Res>;
+  factory _$$DispatchdetailsModelImplCopyWith(_$DispatchdetailsModelImpl value,
+          $Res Function(_$DispatchdetailsModelImpl) then) =
+      __$$DispatchdetailsModelImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
@@ -164,13 +170,15 @@ abstract class _$$_DispatchdetailsModelCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$_DispatchdetailsModelCopyWithImpl<$Res>
-    extends _$DispatchdetailsModelCopyWithImpl<$Res, _$_DispatchdetailsModel>
-    implements _$$_DispatchdetailsModelCopyWith<$Res> {
-  __$$_DispatchdetailsModelCopyWithImpl(_$_DispatchdetailsModel _value,
-      $Res Function(_$_DispatchdetailsModel) _then)
+class __$$DispatchdetailsModelImplCopyWithImpl<$Res>
+    extends _$DispatchdetailsModelCopyWithImpl<$Res, _$DispatchdetailsModelImpl>
+    implements _$$DispatchdetailsModelImplCopyWith<$Res> {
+  __$$DispatchdetailsModelImplCopyWithImpl(_$DispatchdetailsModelImpl _value,
+      $Res Function(_$DispatchdetailsModelImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of DispatchdetailsModel
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -187,7 +195,7 @@ class __$$_DispatchdetailsModelCopyWithImpl<$Res>
     Object? docket_no = null,
     Object? cour_name = null,
   }) {
-    return _then(_$_DispatchdetailsModel(
+    return _then(_$DispatchdetailsModelImpl(
       cust_code: null == cust_code
           ? _value.cust_code
           : cust_code // ignore: cast_nullable_to_non_nullable
@@ -242,8 +250,8 @@ class __$$_DispatchdetailsModelCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_DispatchdetailsModel implements _DispatchdetailsModel {
-  const _$_DispatchdetailsModel(
+class _$DispatchdetailsModelImpl implements _DispatchdetailsModel {
+  const _$DispatchdetailsModelImpl(
       {this.cust_code = "",
       this.ref_no = "",
       this.order_no = "",
@@ -257,8 +265,8 @@ class _$_DispatchdetailsModel implements _DispatchdetailsModel {
       this.docket_no = "",
       this.cour_name = ""});
 
-  factory _$_DispatchdetailsModel.fromJson(Map<String, dynamic> json) =>
-      _$$_DispatchdetailsModelFromJson(json);
+  factory _$DispatchdetailsModelImpl.fromJson(Map<String, dynamic> json) =>
+      _$$DispatchdetailsModelImplFromJson(json);
 
   @override
   @JsonKey()
@@ -303,10 +311,10 @@ class _$_DispatchdetailsModel implements _DispatchdetailsModel {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_DispatchdetailsModel &&
+            other is _$DispatchdetailsModelImpl &&
             (identical(other.cust_code, cust_code) ||
                 other.cust_code == cust_code) &&
             (identical(other.ref_no, ref_no) || other.ref_no == ref_no) &&
@@ -330,7 +338,7 @@ class _$_DispatchdetailsModel implements _DispatchdetailsModel {
                 other.cour_name == cour_name));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(
       runtimeType,
@@ -347,16 +355,19 @@ class _$_DispatchdetailsModel implements _DispatchdetailsModel {
       docket_no,
       cour_name);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of DispatchdetailsModel
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
-  _$$_DispatchdetailsModelCopyWith<_$_DispatchdetailsModel> get copyWith =>
-      __$$_DispatchdetailsModelCopyWithImpl<_$_DispatchdetailsModel>(
-          this, _$identity);
+  _$$DispatchdetailsModelImplCopyWith<_$DispatchdetailsModelImpl>
+      get copyWith =>
+          __$$DispatchdetailsModelImplCopyWithImpl<_$DispatchdetailsModelImpl>(
+              this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_DispatchdetailsModelToJson(
+    return _$$DispatchdetailsModelImplToJson(
       this,
     );
   }
@@ -375,10 +386,10 @@ abstract class _DispatchdetailsModel implements DispatchdetailsModel {
       final int balance,
       final String uom,
       final String docket_no,
-      final String cour_name}) = _$_DispatchdetailsModel;
+      final String cour_name}) = _$DispatchdetailsModelImpl;
 
   factory _DispatchdetailsModel.fromJson(Map<String, dynamic> json) =
-      _$_DispatchdetailsModel.fromJson;
+      _$DispatchdetailsModelImpl.fromJson;
 
   @override
   String get cust_code;
@@ -404,8 +415,11 @@ abstract class _DispatchdetailsModel implements DispatchdetailsModel {
   String get docket_no;
   @override
   String get cour_name;
+
+  /// Create a copy of DispatchdetailsModel
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
-  _$$_DispatchdetailsModelCopyWith<_$_DispatchdetailsModel> get copyWith =>
-      throw _privateConstructorUsedError;
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$DispatchdetailsModelImplCopyWith<_$DispatchdetailsModelImpl>
+      get copyWith => throw _privateConstructorUsedError;
 }

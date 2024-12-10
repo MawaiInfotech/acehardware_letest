@@ -6,15 +6,15 @@ part of 'vendors_model.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$_VendorsModel _$$_VendorsModelFromJson(Map<String, dynamic> json) =>
-    _$_VendorsModel(
+_$VendorsModelImpl _$$VendorsModelImplFromJson(Map<String, dynamic> json) =>
+    _$VendorsModelImpl(
       vendorCode: json['vENDOR_CODE'] as String? ?? "",
       employeeCode: json['eMP_CODE'] as String? ?? "",
       employeePassword: json['eMP_PWD'] as String? ?? "",
       vendorName: json['vendor_name'] as String? ?? "",
     );
 
-Map<String, dynamic> _$$_VendorsModelToJson(_$_VendorsModel instance) =>
+Map<String, dynamic> _$$VendorsModelImplToJson(_$VendorsModelImpl instance) =>
     <String, dynamic>{
       'vENDOR_CODE': instance.vendorCode,
       'eMP_CODE': instance.employeeCode,

@@ -6,9 +6,9 @@ part of 'invoicedetail_model.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$_InvoiceDetailModel _$$_InvoiceDetailModelFromJson(
+_$InvoiceDetailModelImpl _$$InvoiceDetailModelImplFromJson(
         Map<String, dynamic> json) =>
-    _$_InvoiceDetailModel(
+    _$InvoiceDetailModelImpl(
       invoiceNumber: json['invoice_number'] as String? ?? "",
       date: json['date'] as String? ?? "",
       refere: json['ref_no'] as String? ?? "",
@@ -19,8 +19,8 @@ _$_InvoiceDetailModel _$$_InvoiceDetailModelFromJson(
       uom: json['uom'] as String? ?? "",
     );
 
-Map<String, dynamic> _$$_InvoiceDetailModelToJson(
-        _$_InvoiceDetailModel instance) =>
+Map<String, dynamic> _$$InvoiceDetailModelImplToJson(
+        _$InvoiceDetailModelImpl instance) =>
     <String, dynamic>{
       'invoice_number': instance.invoiceNumber,
       'date': instance.date,

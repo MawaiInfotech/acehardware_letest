@@ -6,8 +6,9 @@ part of 'subcategory_model.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$_SubcategoryModel _$$_SubcategoryModelFromJson(Map<String, dynamic> json) =>
-    _$_SubcategoryModel(
+_$SubcategoryModelImpl _$$SubcategoryModelImplFromJson(
+        Map<String, dynamic> json) =>
+    _$SubcategoryModelImpl(
       productCode: json['prod_cate'] as String? ?? "",
       productDescription: json['prod_desc'] as String? ?? "",
       cust_code: json['cust_code'] as String? ?? "",
@@ -19,7 +20,8 @@ _$_SubcategoryModel _$$_SubcategoryModelFromJson(Map<String, dynamic> json) =>
           const {},
     );
 
-Map<String, dynamic> _$$_SubcategoryModelToJson(_$_SubcategoryModel instance) =>
+Map<String, dynamic> _$$SubcategoryModelImplToJson(
+        _$SubcategoryModelImpl instance) =>
     <String, dynamic>{
       'prod_cate': instance.productCode,
       'prod_desc': instance.productDescription,

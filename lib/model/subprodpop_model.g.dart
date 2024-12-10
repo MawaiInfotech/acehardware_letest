@@ -6,13 +6,14 @@ part of 'subprodpop_model.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$_SubProdPopModel _$$_SubProdPopModelFromJson(Map<String, dynamic> json) =>
-    _$_SubProdPopModel(
+_$SubProdPopModelImpl _$$SubProdPopModelImplFromJson(
+        Map<String, dynamic> json) =>
+    _$SubProdPopModelImpl(
       productCatergory: json['prod_cate'] as String? ?? "",
       productGroup: json['prod_group'] as String? ?? "",
       description: json['description'] as String? ?? "",
       productDescription: json['prod_desc'] as String? ?? "",
-      discount: json['discount'] as int? ?? 0,
+      discount: (json['discount'] as num?)?.toInt() ?? 0,
       cust_code: json['cust_code'] as String? ?? "",
       pmg: json['pmg'] as String? ?? "",
       errors: (json['errors'] as Map<String, dynamic>?)?.map(
@@ -21,7 +22,8 @@ _$_SubProdPopModel _$$_SubProdPopModelFromJson(Map<String, dynamic> json) =>
           const {},
     );
 
-Map<String, dynamic> _$$_SubProdPopModelToJson(_$_SubProdPopModel instance) =>
+Map<String, dynamic> _$$SubProdPopModelImplToJson(
+        _$SubProdPopModelImpl instance) =>
     <String, dynamic>{
       'prod_cate': instance.productCatergory,
       'prod_group': instance.productGroup,

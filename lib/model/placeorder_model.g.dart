@@ -6,13 +6,15 @@ part of 'placeorder_model.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$_PlaceOrderModel _$$_PlaceOrderModelFromJson(Map<String, dynamic> json) =>
-    _$_PlaceOrderModel(
+_$PlaceOrderModelImpl _$$PlaceOrderModelImplFromJson(
+        Map<String, dynamic> json) =>
+    _$PlaceOrderModelImpl(
       status: json['status'] as String? ?? "",
       entryCount: json['entryCount'] as String? ?? "",
     );
 
-Map<String, dynamic> _$$_PlaceOrderModelToJson(_$_PlaceOrderModel instance) =>
+Map<String, dynamic> _$$PlaceOrderModelImplToJson(
+        _$PlaceOrderModelImpl instance) =>
     <String, dynamic>{
       'status': instance.status,
       'entryCount': instance.entryCount,

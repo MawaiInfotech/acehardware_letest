@@ -6,15 +6,15 @@ part of 'send_notification_model.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$_SendNotificationModel _$$_SendNotificationModelFromJson(
+_$SendNotificationModelImpl _$$SendNotificationModelImplFromJson(
         Map<String, dynamic> json) =>
-    _$_SendNotificationModel(
+    _$SendNotificationModelImpl(
       status: json['status'] as String? ?? "",
       message: json['msg'] as String? ?? "",
     );
 
-Map<String, dynamic> _$$_SendNotificationModelToJson(
-        _$_SendNotificationModel instance) =>
+Map<String, dynamic> _$$SendNotificationModelImplToJson(
+        _$SendNotificationModelImpl instance) =>
     <String, dynamic>{
       'status': instance.status,
       'msg': instance.message,

@@ -12,7 +12,7 @@ part of 'homepage_model.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 HomepageModel _$HomepageModelFromJson(Map<String, dynamic> json) {
   return _HomepageModel.fromJson(json);
@@ -51,8 +51,12 @@ mixin _$HomepageModel {
   @JsonKey(name: "moq")
   int get moq => throw _privateConstructorUsedError;
 
+  /// Serializes this HomepageModel to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of HomepageModel
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $HomepageModelCopyWith<HomepageModel> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -91,6 +95,8 @@ class _$HomepageModelCopyWithImpl<$Res, $Val extends HomepageModel>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of HomepageModel
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -176,11 +182,11 @@ class _$HomepageModelCopyWithImpl<$Res, $Val extends HomepageModel>
 }
 
 /// @nodoc
-abstract class _$$_HomepageModelCopyWith<$Res>
+abstract class _$$HomepageModelImplCopyWith<$Res>
     implements $HomepageModelCopyWith<$Res> {
-  factory _$$_HomepageModelCopyWith(
-          _$_HomepageModel value, $Res Function(_$_HomepageModel) then) =
-      __$$_HomepageModelCopyWithImpl<$Res>;
+  factory _$$HomepageModelImplCopyWith(
+          _$HomepageModelImpl value, $Res Function(_$HomepageModelImpl) then) =
+      __$$HomepageModelImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
@@ -202,13 +208,15 @@ abstract class _$$_HomepageModelCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$_HomepageModelCopyWithImpl<$Res>
-    extends _$HomepageModelCopyWithImpl<$Res, _$_HomepageModel>
-    implements _$$_HomepageModelCopyWith<$Res> {
-  __$$_HomepageModelCopyWithImpl(
-      _$_HomepageModel _value, $Res Function(_$_HomepageModel) _then)
+class __$$HomepageModelImplCopyWithImpl<$Res>
+    extends _$HomepageModelCopyWithImpl<$Res, _$HomepageModelImpl>
+    implements _$$HomepageModelImplCopyWith<$Res> {
+  __$$HomepageModelImplCopyWithImpl(
+      _$HomepageModelImpl _value, $Res Function(_$HomepageModelImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of HomepageModel
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -228,7 +236,7 @@ class __$$_HomepageModelCopyWithImpl<$Res>
     Object? pmg = null,
     Object? moq = null,
   }) {
-    return _then(_$_HomepageModel(
+    return _then(_$HomepageModelImpl(
       productCategory: null == productCategory
           ? _value.productCategory
           : productCategory // ignore: cast_nullable_to_non_nullable
@@ -295,8 +303,8 @@ class __$$_HomepageModelCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_HomepageModel extends _HomepageModel {
-  const _$_HomepageModel(
+class _$HomepageModelImpl extends _HomepageModel {
+  const _$HomepageModelImpl(
       {@JsonKey(name: "prod_cate") this.productCategory = "",
       @JsonKey(name: "prod_cate_name") this.productCategoryName = "",
       @JsonKey(name: "prod_group") this.productGroup = "",
@@ -314,8 +322,8 @@ class _$_HomepageModel extends _HomepageModel {
       @JsonKey(name: "moq") this.moq = 0})
       : super._();
 
-  factory _$_HomepageModel.fromJson(Map<String, dynamic> json) =>
-      _$$_HomepageModelFromJson(json);
+  factory _$HomepageModelImpl.fromJson(Map<String, dynamic> json) =>
+      _$$HomepageModelImplFromJson(json);
 
   @override
   @JsonKey(name: "prod_cate")
@@ -369,10 +377,10 @@ class _$_HomepageModel extends _HomepageModel {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_HomepageModel &&
+            other is _$HomepageModelImpl &&
             (identical(other.productCategory, productCategory) ||
                 other.productCategory == productCategory) &&
             (identical(other.productCategoryName, productCategoryName) ||
@@ -399,7 +407,7 @@ class _$_HomepageModel extends _HomepageModel {
             (identical(other.moq, moq) || other.moq == moq));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(
       runtimeType,
@@ -419,15 +427,17 @@ class _$_HomepageModel extends _HomepageModel {
       pmg,
       moq);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of HomepageModel
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
-  _$$_HomepageModelCopyWith<_$_HomepageModel> get copyWith =>
-      __$$_HomepageModelCopyWithImpl<_$_HomepageModel>(this, _$identity);
+  _$$HomepageModelImplCopyWith<_$HomepageModelImpl> get copyWith =>
+      __$$HomepageModelImplCopyWithImpl<_$HomepageModelImpl>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_HomepageModelToJson(
+    return _$$HomepageModelImplToJson(
       this,
     );
   }
@@ -449,11 +459,11 @@ abstract class _HomepageModel extends HomepageModel {
       @JsonKey(name: "cust_code") final String customerCode,
       @JsonKey(name: "product_validity_date") final String productValidityDate,
       @JsonKey(name: "pmg") final String pmg,
-      @JsonKey(name: "moq") final int moq}) = _$_HomepageModel;
+      @JsonKey(name: "moq") final int moq}) = _$HomepageModelImpl;
   const _HomepageModel._() : super._();
 
   factory _HomepageModel.fromJson(Map<String, dynamic> json) =
-      _$_HomepageModel.fromJson;
+      _$HomepageModelImpl.fromJson;
 
   @override
   @JsonKey(name: "prod_cate")
@@ -500,8 +510,11 @@ abstract class _HomepageModel extends HomepageModel {
   @override
   @JsonKey(name: "moq")
   int get moq;
+
+  /// Create a copy of HomepageModel
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
-  _$$_HomepageModelCopyWith<_$_HomepageModel> get copyWith =>
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$HomepageModelImplCopyWith<_$HomepageModelImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

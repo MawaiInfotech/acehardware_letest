@@ -12,7 +12,7 @@ part of 'cartdetails_model.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 CartDetailsModel _$CartDetailsModelFromJson(Map<String, dynamic> json) {
   return _CartDetailsModel.fromJson(json);
@@ -32,8 +32,12 @@ mixin _$CartDetailsModel {
   int get entryCount => throw _privateConstructorUsedError;
   List<CartEntriesModel> get entries => throw _privateConstructorUsedError;
 
+  /// Serializes this CartDetailsModel to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of CartDetailsModel
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $CartDetailsModelCopyWith<CartDetailsModel> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -63,6 +67,8 @@ class _$CartDetailsModelCopyWithImpl<$Res, $Val extends CartDetailsModel>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of CartDetailsModel
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -103,11 +109,11 @@ class _$CartDetailsModelCopyWithImpl<$Res, $Val extends CartDetailsModel>
 }
 
 /// @nodoc
-abstract class _$$_CartDetailsModelCopyWith<$Res>
+abstract class _$$CartDetailsModelImplCopyWith<$Res>
     implements $CartDetailsModelCopyWith<$Res> {
-  factory _$$_CartDetailsModelCopyWith(
-          _$_CartDetailsModel value, $Res Function(_$_CartDetailsModel) then) =
-      __$$_CartDetailsModelCopyWithImpl<$Res>;
+  factory _$$CartDetailsModelImplCopyWith(_$CartDetailsModelImpl value,
+          $Res Function(_$CartDetailsModelImpl) then) =
+      __$$CartDetailsModelImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
@@ -120,13 +126,15 @@ abstract class _$$_CartDetailsModelCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$_CartDetailsModelCopyWithImpl<$Res>
-    extends _$CartDetailsModelCopyWithImpl<$Res, _$_CartDetailsModel>
-    implements _$$_CartDetailsModelCopyWith<$Res> {
-  __$$_CartDetailsModelCopyWithImpl(
-      _$_CartDetailsModel _value, $Res Function(_$_CartDetailsModel) _then)
+class __$$CartDetailsModelImplCopyWithImpl<$Res>
+    extends _$CartDetailsModelCopyWithImpl<$Res, _$CartDetailsModelImpl>
+    implements _$$CartDetailsModelImplCopyWith<$Res> {
+  __$$CartDetailsModelImplCopyWithImpl(_$CartDetailsModelImpl _value,
+      $Res Function(_$CartDetailsModelImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of CartDetailsModel
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -137,7 +145,7 @@ class __$$_CartDetailsModelCopyWithImpl<$Res>
     Object? entryCount = null,
     Object? entries = null,
   }) {
-    return _then(_$_CartDetailsModel(
+    return _then(_$CartDetailsModelImpl(
       code: null == code
           ? _value.code
           : code // ignore: cast_nullable_to_non_nullable
@@ -168,8 +176,8 @@ class __$$_CartDetailsModelCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_CartDetailsModel extends _CartDetailsModel {
-  const _$_CartDetailsModel(
+class _$CartDetailsModelImpl extends _CartDetailsModel {
+  const _$CartDetailsModelImpl(
       {@JsonKey(name: "code") this.code = 0,
       @JsonKey(name: "total") this.total = 0.0,
       @JsonKey(name: "status") this.status = "",
@@ -179,8 +187,8 @@ class _$_CartDetailsModel extends _CartDetailsModel {
       : _entries = entries,
         super._();
 
-  factory _$_CartDetailsModel.fromJson(Map<String, dynamic> json) =>
-      _$$_CartDetailsModelFromJson(json);
+  factory _$CartDetailsModelImpl.fromJson(Map<String, dynamic> json) =>
+      _$$CartDetailsModelImplFromJson(json);
 
   @override
   @JsonKey(name: "code")
@@ -212,10 +220,10 @@ class _$_CartDetailsModel extends _CartDetailsModel {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_CartDetailsModel &&
+            other is _$CartDetailsModelImpl &&
             (identical(other.code, code) || other.code == code) &&
             (identical(other.total, total) || other.total == total) &&
             (identical(other.status, status) || other.status == status) &&
@@ -225,20 +233,23 @@ class _$_CartDetailsModel extends _CartDetailsModel {
             const DeepCollectionEquality().equals(other._entries, _entries));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(runtimeType, code, total, status, userId,
       entryCount, const DeepCollectionEquality().hash(_entries));
 
-  @JsonKey(ignore: true)
+  /// Create a copy of CartDetailsModel
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
-  _$$_CartDetailsModelCopyWith<_$_CartDetailsModel> get copyWith =>
-      __$$_CartDetailsModelCopyWithImpl<_$_CartDetailsModel>(this, _$identity);
+  _$$CartDetailsModelImplCopyWith<_$CartDetailsModelImpl> get copyWith =>
+      __$$CartDetailsModelImplCopyWithImpl<_$CartDetailsModelImpl>(
+          this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_CartDetailsModelToJson(
+    return _$$CartDetailsModelImplToJson(
       this,
     );
   }
@@ -251,11 +262,11 @@ abstract class _CartDetailsModel extends CartDetailsModel {
       @JsonKey(name: "status") final String status,
       @JsonKey(name: "userId") final String userId,
       @JsonKey(name: "entryCount") final int entryCount,
-      final List<CartEntriesModel> entries}) = _$_CartDetailsModel;
+      final List<CartEntriesModel> entries}) = _$CartDetailsModelImpl;
   const _CartDetailsModel._() : super._();
 
   factory _CartDetailsModel.fromJson(Map<String, dynamic> json) =
-      _$_CartDetailsModel.fromJson;
+      _$CartDetailsModelImpl.fromJson;
 
   @override
   @JsonKey(name: "code")
@@ -274,8 +285,11 @@ abstract class _CartDetailsModel extends CartDetailsModel {
   int get entryCount;
   @override
   List<CartEntriesModel> get entries;
+
+  /// Create a copy of CartDetailsModel
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
-  _$$_CartDetailsModelCopyWith<_$_CartDetailsModel> get copyWith =>
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$CartDetailsModelImplCopyWith<_$CartDetailsModelImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

@@ -12,7 +12,7 @@ part of 'order_detail_model.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 OrderHistoryModel _$OrderHistoryModelFromJson(Map<String, dynamic> json) {
   return _OrderHistoryModel.fromJson(json);
@@ -45,8 +45,12 @@ mixin _$OrderHistoryModel {
   @JsonKey(name: "erp_order_number")
   String get erpOrderNumber => throw _privateConstructorUsedError;
 
+  /// Serializes this OrderHistoryModel to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of OrderHistoryModel
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $OrderHistoryModelCopyWith<OrderHistoryModel> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -82,6 +86,8 @@ class _$OrderHistoryModelCopyWithImpl<$Res, $Val extends OrderHistoryModel>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of OrderHistoryModel
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -152,11 +158,11 @@ class _$OrderHistoryModelCopyWithImpl<$Res, $Val extends OrderHistoryModel>
 }
 
 /// @nodoc
-abstract class _$$_OrderHistoryModelCopyWith<$Res>
+abstract class _$$OrderHistoryModelImplCopyWith<$Res>
     implements $OrderHistoryModelCopyWith<$Res> {
-  factory _$$_OrderHistoryModelCopyWith(_$_OrderHistoryModel value,
-          $Res Function(_$_OrderHistoryModel) then) =
-      __$$_OrderHistoryModelCopyWithImpl<$Res>;
+  factory _$$OrderHistoryModelImplCopyWith(_$OrderHistoryModelImpl value,
+          $Res Function(_$OrderHistoryModelImpl) then) =
+      __$$OrderHistoryModelImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
@@ -175,13 +181,15 @@ abstract class _$$_OrderHistoryModelCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$_OrderHistoryModelCopyWithImpl<$Res>
-    extends _$OrderHistoryModelCopyWithImpl<$Res, _$_OrderHistoryModel>
-    implements _$$_OrderHistoryModelCopyWith<$Res> {
-  __$$_OrderHistoryModelCopyWithImpl(
-      _$_OrderHistoryModel _value, $Res Function(_$_OrderHistoryModel) _then)
+class __$$OrderHistoryModelImplCopyWithImpl<$Res>
+    extends _$OrderHistoryModelCopyWithImpl<$Res, _$OrderHistoryModelImpl>
+    implements _$$OrderHistoryModelImplCopyWith<$Res> {
+  __$$OrderHistoryModelImplCopyWithImpl(_$OrderHistoryModelImpl _value,
+      $Res Function(_$OrderHistoryModelImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of OrderHistoryModel
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -198,7 +206,7 @@ class __$$_OrderHistoryModelCopyWithImpl<$Res>
     Object? orderStatus = null,
     Object? erpOrderNumber = null,
   }) {
-    return _then(_$_OrderHistoryModel(
+    return _then(_$OrderHistoryModelImpl(
       customerCode: null == customerCode
           ? _value.customerCode
           : customerCode // ignore: cast_nullable_to_non_nullable
@@ -253,8 +261,8 @@ class __$$_OrderHistoryModelCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_OrderHistoryModel implements _OrderHistoryModel {
-  const _$_OrderHistoryModel(
+class _$OrderHistoryModelImpl implements _OrderHistoryModel {
+  const _$OrderHistoryModelImpl(
       {@JsonKey(name: "cust_code") this.customerCode = "",
       @JsonKey(name: "order_no") this.orderNumber = "",
       @JsonKey(name: "prod_cd") this.productCode = "",
@@ -268,8 +276,8 @@ class _$_OrderHistoryModel implements _OrderHistoryModel {
       @JsonKey(name: "order_status") this.orderStatus = "",
       @JsonKey(name: "erp_order_number") this.erpOrderNumber = ""});
 
-  factory _$_OrderHistoryModel.fromJson(Map<String, dynamic> json) =>
-      _$$_OrderHistoryModelFromJson(json);
+  factory _$OrderHistoryModelImpl.fromJson(Map<String, dynamic> json) =>
+      _$$OrderHistoryModelImplFromJson(json);
 
   @override
   @JsonKey(name: "cust_code")
@@ -314,10 +322,10 @@ class _$_OrderHistoryModel implements _OrderHistoryModel {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_OrderHistoryModel &&
+            other is _$OrderHistoryModelImpl &&
             (identical(other.customerCode, customerCode) ||
                 other.customerCode == customerCode) &&
             (identical(other.orderNumber, orderNumber) ||
@@ -341,7 +349,7 @@ class _$_OrderHistoryModel implements _OrderHistoryModel {
                 other.erpOrderNumber == erpOrderNumber));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(
       runtimeType,
@@ -358,16 +366,18 @@ class _$_OrderHistoryModel implements _OrderHistoryModel {
       orderStatus,
       erpOrderNumber);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of OrderHistoryModel
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
-  _$$_OrderHistoryModelCopyWith<_$_OrderHistoryModel> get copyWith =>
-      __$$_OrderHistoryModelCopyWithImpl<_$_OrderHistoryModel>(
+  _$$OrderHistoryModelImplCopyWith<_$OrderHistoryModelImpl> get copyWith =>
+      __$$OrderHistoryModelImplCopyWithImpl<_$OrderHistoryModelImpl>(
           this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_OrderHistoryModelToJson(
+    return _$$OrderHistoryModelImplToJson(
       this,
     );
   }
@@ -387,10 +397,10 @@ abstract class _OrderHistoryModel implements OrderHistoryModel {
       @JsonKey(name: "total_order_netprice") final double totalorderNetPrice,
       @JsonKey(name: "order_status") final String orderStatus,
       @JsonKey(name: "erp_order_number")
-      final String erpOrderNumber}) = _$_OrderHistoryModel;
+      final String erpOrderNumber}) = _$OrderHistoryModelImpl;
 
   factory _OrderHistoryModel.fromJson(Map<String, dynamic> json) =
-      _$_OrderHistoryModel.fromJson;
+      _$OrderHistoryModelImpl.fromJson;
 
   @override
   @JsonKey(name: "cust_code")
@@ -428,8 +438,11 @@ abstract class _OrderHistoryModel implements OrderHistoryModel {
   @override
   @JsonKey(name: "erp_order_number")
   String get erpOrderNumber;
+
+  /// Create a copy of OrderHistoryModel
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
-  _$$_OrderHistoryModelCopyWith<_$_OrderHistoryModel> get copyWith =>
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$OrderHistoryModelImplCopyWith<_$OrderHistoryModelImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

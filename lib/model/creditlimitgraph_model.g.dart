@@ -6,9 +6,9 @@ part of 'creditlimitgraph_model.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$_CreditlimitGraphModel _$$_CreditlimitGraphModelFromJson(
+_$CreditlimitGraphModelImpl _$$CreditlimitGraphModelImplFromJson(
         Map<String, dynamic> json) =>
-    _$_CreditlimitGraphModel(
+    _$CreditlimitGraphModelImpl(
       customerCode: json['cust_code'] as String? ?? "",
       value: json['value'] as String? ?? "",
       maxValue: json['max_value'] as String? ?? "",
@@ -18,8 +18,8 @@ _$_CreditlimitGraphModel _$$_CreditlimitGraphModelFromJson(
           const {},
     );
 
-Map<String, dynamic> _$$_CreditlimitGraphModelToJson(
-        _$_CreditlimitGraphModel instance) =>
+Map<String, dynamic> _$$CreditlimitGraphModelImplToJson(
+        _$CreditlimitGraphModelImpl instance) =>
     <String, dynamic>{
       'cust_code': instance.customerCode,
       'value': instance.value,
