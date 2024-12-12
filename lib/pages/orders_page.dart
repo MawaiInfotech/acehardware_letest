@@ -241,7 +241,7 @@ class _OrderHistoryPageState extends State<OrderHistoryPage> {
               symbol: '₹ ',
               locale: "HI",
               decimalDigits: 2,
-            ).format(double.parse(model.price)),
+            ).format(double.parse(model.totalorderNetPrice.toString())),
             style: TextStyle(
                 fontSize: 18.dw, fontWeight: FontWeight.w600, color: AppColors.black),
           ),

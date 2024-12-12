@@ -1,4 +1,4 @@
-
+import 'package:acehardware_mawai_letest/utils/screen_size_config.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:intl/intl.dart';
@@ -14,7 +14,6 @@ import '../service/login_service.dart';
 import '../service/product_service.dart';
 import '../state/productdetail_state.dart';
 import '../themes/app_colors.dart';
-import '../utils/screen_size_config.dart';
 import 'cart_page.dart';
 
 class ProductDetailsPage extends StatefulWidget {
@@ -105,7 +104,7 @@ class _ProductDetailsPageState extends State<ProductDetailsPage> {
                 return ListView(
                     shrinkWrap: true,
                     children: List.generate(list.length,
-                        (index) => _buildCard(list[index], index)));
+                            (index) => _buildCard(list[index], index)));
               }),
         )
       ],
@@ -414,10 +413,10 @@ class _ProductDetailsPageState extends State<ProductDetailsPage> {
         success: (model, msg) {
           ScaffoldMessenger.of(scaffoldKey.currentContext!)
               .showSnackBar(SnackBar(
-                  content: Text(
-            msg!,
-            style: const TextStyle(color: Colors.white),
-          )));
+              content: Text(
+                msg!,
+                style: const TextStyle(color: Colors.white),
+              )));
           productDetailsBloc.init(widget.productGroup);
           cartBloc.refresh();
         },
@@ -428,7 +427,8 @@ class _ProductDetailsPageState extends State<ProductDetailsPage> {
         orElse: () {});
   }
 
-  _buildSearchField(List<HomepageModel> model, SearchableListNotifier listNotifier) {
+  _buildSearchField(
+      List<HomepageModel> model, SearchableListNotifier listNotifier) {
     return Padding(
       padding: EdgeInsets.all(8.0.dw),
       child: TextField(
@@ -467,34 +467,60 @@ class SearchableListNotifier extends ValueNotifier<List<HomepageModel>> {
 
   void filterBasedOn(String query) {
     if (query.isEmpty) {
-      value = initialValue;
+      value = List.from(initialValue); // Reset to the original list
     } else {
+      final lowerCaseQuery = query.toLowerCase();
       value = initialValue
           .where((e) =>
-              e.code.toLowerCase().startsWith(query) ||
-              e.description.toLowerCase().startsWith(query) ||
-              e.productDiscription.toLowerCase().startsWith(query))
+      e.code.toLowerCase().contains(lowerCaseQuery) ||
+          e.description.toLowerCase().contains(lowerCaseQuery) ||
+          e.productDiscription.toLowerCase().contains(lowerCaseQuery))
           .toList();
     }
     notifyListeners();
   }
+
 }
 
 class Something extends StatefulWidget {
   final int count;
   final VoidCallback onAdd, onSubtract;
+  final Function(int) updateCount;
   const Something(
-    this.count, {
-    required this.onAdd,
-    required this.onSubtract,
-    super.key,
-  });
+      this.count, {
+        required this.onAdd,
+        required this.onSubtract,
+        required this.updateCount,
+        super.key,
+      });
 
   @override
   State<Something> createState() => _SomethingState();
 }
 
 class _SomethingState extends State<Something> {
+  late TextEditingController _controller;  // Controller for text input
+
+  @override
+  void initState() {
+    super.initState();
+    _controller = TextEditingController(text: widget.count.toString()); // Initialize the controller with the count
+  }
+
+  @override
+  void didUpdateWidget(covariant Something oldWidget) {
+    super.didUpdateWidget(oldWidget);
+    if (widget.count != oldWidget.count) {
+      _controller.text = widget.count.toString();  // Update text when the widget's count updates
+    }
+  }
+
+  @override
+  void dispose() {
+    _controller.dispose(); // Dispose of the controller to avoid memory leaks
+    super.dispose();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Row(
@@ -505,41 +531,49 @@ class _SomethingState extends State<Something> {
             padding: EdgeInsets.all(5.dw),
             decoration: BoxDecoration(
                 color: const Color(0xffdcdcdc),
-                borderRadius: BorderRadius.circular(5.dw)),
-            child: Icon(
-              Icons.remove,
-              size: 18.dw,
+                borderRadius: BorderRadius.circular(5.dw)
             ),
+            child: Icon(Icons.remove, size: 18.dw),
           ),
         ),
-        SizedBox(
-          width: 6.dw,
-        ),
+        SizedBox(width: 6.dw),
         SizedBox(
           width: 40.dw,
           height: 35.dh,
-          child: Center(child: Text(widget.count.toString())),
+          child: Center(
+            child: TextFormField(
+              controller: _controller,
+              textAlign: TextAlign.center,
+              keyboardType: TextInputType.number,
+              decoration: const InputDecoration(
+                border: InputBorder.none,
+              ),
+              onChanged: (value) {
+                int? newCount = int.tryParse(value);
+                if (newCount != null && newCount != widget.count) {
+                  widget.updateCount(newCount);  // Update count via callback
+                }
+              },
+            ),
+          ),
         ),
-        SizedBox(
-          width: 6.dw,
-        ),
+        SizedBox(width: 6.dw),
         InkWell(
           onTap: widget.onAdd,
           child: Container(
             padding: EdgeInsets.all(5.dw),
             decoration: BoxDecoration(
                 color: const Color(0xffdcdcdc),
-                borderRadius: BorderRadius.circular(5.dw)),
-            child: Icon(
-              Icons.add,
-              size: 18.dw,
+                borderRadius: BorderRadius.circular(5.dw)
             ),
+            child: Icon(Icons.add, size: 18.dw),
           ),
-        )
+        ),
       ],
     );
   }
 }
+
 
 class ProductCard extends StatefulWidget {
   final HomepageModel model;
@@ -589,6 +623,12 @@ class _ProductCardState extends State<ProductCard> {
 
   void refreshCount() {
     setState(() => _count = moq);
+  }
+
+  void updateCount(int newCount) {
+    setState(() {
+      _count = newCount;  // Update the state with the new count
+    });
   }
 
   @override
@@ -774,6 +814,7 @@ class _ProductCardState extends State<ProductCard> {
       _count,
       onAdd: onAdd,
       onSubtract: onSubtract,
+      updateCount: updateCount,
     );
     //  return Row(
     //    children: [

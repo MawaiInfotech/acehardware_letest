@@ -1,8 +1,6 @@
-
 import 'package:badges/badges.dart';
 import 'package:flutter/material.dart';
-import 'package:persistent_bottom_nav_bar_v2/persistent-tab-view.dart';
-
+import 'package:persistent_bottom_nav_bar_2/persistent_tab_view.dart';
 import 'package:provider/provider.dart';
 import '../bloc/addtocart_bloc.dart';
 import '../bloc/cart_bloc.dart';
@@ -18,7 +16,6 @@ import 'graph.dart';
 import 'home_page.dart';
 import 'login_page.dart';
 import 'package:badges/badges.dart' as badges;
-
 import 'orders_page.dart';
 
 class NavigationPage extends StatefulWidget {
@@ -62,7 +59,6 @@ class _NavigationPageState extends State<NavigationPage>
     removeProductBloc = RemoveProductBloc(loginService, cartService);
     placeOrderBloc = PlaceOrderBloc(loginService, cartService);
     addtoCartBloc = AddtoCartBloc(loginService, cartService);
-
     cartBloc = context.read<CartBloc>();
     cartBloc.init();
   }
@@ -132,7 +128,7 @@ class _NavigationPageState extends State<NavigationPage>
               activeColorPrimary: AppColors.black,
               inactiveColorPrimary: AppColors.darkGrey,
               routeAndNavigatorSettings:
-                  const RouteAndNavigatorSettings(initialRoute: "/", routes: {
+              const RouteAndNavigatorSettings(initialRoute: "/", routes: {
                 //"/orderDetailPage" : (final context) => OrderHistoryDetailPage(orderNumber),
               })),
           PersistentBottomNavBarItem(
@@ -165,39 +161,39 @@ class _NavigationPageState extends State<NavigationPage>
         popAllScreensOnTapOfSelectedTab: true,
         popActionScreens: PopActionScreensType.once,
         navBarStyle: NavBarStyle.style6,
-        onWillPop: (final context) async {
-          return showExitPopup();
-        },
+        // onWillPop: (final context) async {
+        //   return showExitPopup();
+        // },
       ),
     );
   }
 
   Future<bool> showExitPopup() async {
     return await showDialog(
-            context: context,
-            builder: (context) {
-              return AlertDialog(
-                title: const Text("Confirm"),
-                content: const Text("Do you want to exit the App"),
-                actions: [
-                  ElevatedButton(
-                      onPressed: () {
-                        Navigator.of(context).pop();
-                      },
-                      child: const Text("No")),
-                  ElevatedButton(
-                      onPressed: () {
-                        Navigator.pushAndRemoveUntil(
-                            context,
-                            MaterialPageRoute(
-                                builder: (BuildContext context) =>
-                                    const LoginPage()),
+        context: context,
+        builder: (context) {
+          return AlertDialog(
+            title: const Text("Confirm"),
+            content: const Text("Do you want to exit the App"),
+            actions: [
+              ElevatedButton(
+                  onPressed: () {
+                    Navigator.of(context).pop();
+                  },
+                  child: const Text("No")),
+              ElevatedButton(
+                  onPressed: () {
+                    Navigator.pushAndRemoveUntil(
+                        context,
+                        MaterialPageRoute(
+                            builder: (BuildContext context) =>
+                            const LoginPage()),
                             (route) => false);
-                      },
-                      child: const Text("Yes"))
-                ],
-              );
-            }) ??
+                  },
+                  child: const Text("Yes"))
+            ],
+          );
+        }) ??
         false;
   }
 }

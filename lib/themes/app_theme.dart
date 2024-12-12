@@ -13,7 +13,7 @@ class AppTheme {
     //  colorScheme: ColorScheme(background: Colors.white)
     colorScheme: ColorScheme.fromSeed(
       seedColor: Colors.blue, // Adjust based on your app's primary color
-      background: Colors.white,
+      //background: Colors.white,
     ),
   );
 }
