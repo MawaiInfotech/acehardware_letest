@@ -22,12 +22,8 @@ BannerModel _$BannerModelFromJson(Map<String, dynamic> json) {
 mixin _$BannerModel {
   String get banner_URL => throw _privateConstructorUsedError;
 
-  /// Serializes this BannerModel to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-
-  /// Create a copy of BannerModel
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   $BannerModelCopyWith<BannerModel> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -51,8 +47,6 @@ class _$BannerModelCopyWithImpl<$Res, $Val extends BannerModel>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
-  /// Create a copy of BannerModel
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -86,8 +80,6 @@ class __$$BannerModelImplCopyWithImpl<$Res>
       _$BannerModelImpl _value, $Res Function(_$BannerModelImpl) _then)
       : super(_value, _then);
 
-  /// Create a copy of BannerModel
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -128,13 +120,11 @@ class _$BannerModelImpl extends _BannerModel {
                 other.banner_URL == banner_URL));
   }
 
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   @override
   int get hashCode => Object.hash(runtimeType, banner_URL);
 
-  /// Create a copy of BannerModel
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
   _$$BannerModelImplCopyWith<_$BannerModelImpl> get copyWith =>
@@ -157,11 +147,8 @@ abstract class _BannerModel extends BannerModel {
 
   @override
   String get banner_URL;
-
-  /// Create a copy of BannerModel
-  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   _$$BannerModelImplCopyWith<_$BannerModelImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

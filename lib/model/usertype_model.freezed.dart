@@ -25,12 +25,8 @@ mixin _$UserTypeModel {
   String get user_type => throw _privateConstructorUsedError;
   String get status => throw _privateConstructorUsedError;
 
-  /// Serializes this UserTypeModel to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-
-  /// Create a copy of UserTypeModel
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   $UserTypeModelCopyWith<UserTypeModel> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -55,8 +51,6 @@ class _$UserTypeModelCopyWithImpl<$Res, $Val extends UserTypeModel>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
-  /// Create a copy of UserTypeModel
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -106,8 +100,6 @@ class __$$UserTypeModelImplCopyWithImpl<$Res>
       _$UserTypeModelImpl _value, $Res Function(_$UserTypeModelImpl) _then)
       : super(_value, _then);
 
-  /// Create a copy of UserTypeModel
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -181,14 +173,12 @@ class _$UserTypeModelImpl implements _UserTypeModel {
             (identical(other.status, status) || other.status == status));
   }
 
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   @override
   int get hashCode =>
       Object.hash(runtimeType, user_name, password, user_type, status);
 
-  /// Create a copy of UserTypeModel
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
   _$$UserTypeModelImplCopyWith<_$UserTypeModelImpl> get copyWith =>
@@ -220,11 +210,8 @@ abstract class _UserTypeModel implements UserTypeModel {
   String get user_type;
   @override
   String get status;
-
-  /// Create a copy of UserTypeModel
-  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   _$$UserTypeModelImplCopyWith<_$UserTypeModelImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

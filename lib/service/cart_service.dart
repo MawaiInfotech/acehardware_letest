@@ -2,6 +2,7 @@ import 'dart:async';
 import 'dart:convert';
 import 'dart:io';
 import 'dart:math';
+import 'package:acehardware_mawai_letest/model/cartNumber_model.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:http/http.dart' as http;
 import '../error/api_error.dart';
@@ -35,6 +36,30 @@ class CartService extends ChangeNotifier{
     }
     //return CartDetailsModel();
   }
+
+  /// Cart Number
+
+  Future<CartNumberModel> getCartNumber() async {
+
+    const url = '${root}cartNumber';
+    final body = {
+      "token" : token,
+      "custid": userCode
+    };
+    final response = await http.post(Uri.parse(url),body: json.encode(body), headers: headers);
+    try {
+      final responseBody = json.decode(response.body);
+      if(responseBody["status"] == true){
+        await prefsBox.put(kCartNumber, responseBody["data"]["code"]);
+      }else{
+        throw ApiError.fromResponse(responseBody["message"]);
+      }
+    } catch (e) {
+      _handleError(e);
+    }
+    return CartNumberModel();
+  }
+
 
   //add to cart
   Future<String?> getAddtoCartData(Map<String, dynamic>data) async {

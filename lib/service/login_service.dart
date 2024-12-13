@@ -1,6 +1,8 @@
 import 'dart:async';
 import 'dart:convert';
 import 'dart:io';
+import 'package:acehardware_mawai_letest/service/cart_service.dart';
+
 import '../error/api_error.dart';
 import '../model/vendors_model.dart';
 import '../prefbox.dart';
@@ -9,6 +11,9 @@ import 'package:http/http.dart' as http;
 
 
 class LoginService {
+
+
+  CartService cartService = CartService();
 
   Future<String?> getLogin(String password, String username, bool isRemember, String employeController, String type) async {
     const url = '${root}login';
@@ -35,6 +40,8 @@ class LoginService {
           await prefsBox.put(kUserName2, username);
           await prefsBox.put(kpassword2, password);
         }
+        //Cart No Generation
+        await cartService.getCartNumber();
         return responseBody['message'];
       } else {
         throw ApiError.fromResponse(responseBody['message']);

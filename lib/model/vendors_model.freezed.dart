@@ -29,12 +29,8 @@ mixin _$VendorsModel {
   @JsonKey(name: "vendor_name")
   String get vendorName => throw _privateConstructorUsedError;
 
-  /// Serializes this VendorsModel to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-
-  /// Create a copy of VendorsModel
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   $VendorsModelCopyWith<VendorsModel> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -62,8 +58,6 @@ class _$VendorsModelCopyWithImpl<$Res, $Val extends VendorsModel>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
-  /// Create a copy of VendorsModel
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -116,8 +110,6 @@ class __$$VendorsModelImplCopyWithImpl<$Res>
       _$VendorsModelImpl _value, $Res Function(_$VendorsModelImpl) _then)
       : super(_value, _then);
 
-  /// Create a copy of VendorsModel
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -193,14 +185,12 @@ class _$VendorsModelImpl extends _VendorsModel {
                 other.vendorName == vendorName));
   }
 
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   @override
   int get hashCode => Object.hash(
       runtimeType, vendorCode, employeeCode, employeePassword, vendorName);
 
-  /// Create a copy of VendorsModel
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
   _$$VendorsModelImplCopyWith<_$VendorsModelImpl> get copyWith =>
@@ -238,11 +228,8 @@ abstract class _VendorsModel extends VendorsModel {
   @override
   @JsonKey(name: "vendor_name")
   String get vendorName;
-
-  /// Create a copy of VendorsModel
-  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   _$$VendorsModelImplCopyWith<_$VendorsModelImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

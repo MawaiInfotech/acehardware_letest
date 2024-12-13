@@ -27,7 +27,6 @@ class _LoginPageState extends State<LoginPage> with SingleTickerProviderStateMix
   late TabController _tabController;
 
   final TextEditingController _userController = TextEditingController();
-
   final TextEditingController _passwordController = TextEditingController();
   final TextEditingController _employeeController = TextEditingController();
   final TextEditingController _empPasswordController = TextEditingController();

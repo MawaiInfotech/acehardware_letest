@@ -45,12 +45,8 @@ mixin _$OrderHistoryModel {
   @JsonKey(name: "erp_order_number")
   String get erpOrderNumber => throw _privateConstructorUsedError;
 
-  /// Serializes this OrderHistoryModel to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-
-  /// Create a copy of OrderHistoryModel
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   $OrderHistoryModelCopyWith<OrderHistoryModel> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -86,8 +82,6 @@ class _$OrderHistoryModelCopyWithImpl<$Res, $Val extends OrderHistoryModel>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
-  /// Create a copy of OrderHistoryModel
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -188,8 +182,6 @@ class __$$OrderHistoryModelImplCopyWithImpl<$Res>
       $Res Function(_$OrderHistoryModelImpl) _then)
       : super(_value, _then);
 
-  /// Create a copy of OrderHistoryModel
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -349,7 +341,7 @@ class _$OrderHistoryModelImpl implements _OrderHistoryModel {
                 other.erpOrderNumber == erpOrderNumber));
   }
 
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   @override
   int get hashCode => Object.hash(
       runtimeType,
@@ -366,9 +358,7 @@ class _$OrderHistoryModelImpl implements _OrderHistoryModel {
       orderStatus,
       erpOrderNumber);
 
-  /// Create a copy of OrderHistoryModel
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
   _$$OrderHistoryModelImplCopyWith<_$OrderHistoryModelImpl> get copyWith =>
@@ -438,11 +428,8 @@ abstract class _OrderHistoryModel implements OrderHistoryModel {
   @override
   @JsonKey(name: "erp_order_number")
   String get erpOrderNumber;
-
-  /// Create a copy of OrderHistoryModel
-  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   _$$OrderHistoryModelImplCopyWith<_$OrderHistoryModelImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

@@ -36,12 +36,8 @@ mixin _$SubProdPopModel {
   String get pmg => throw _privateConstructorUsedError;
   Map<String, String?> get errors => throw _privateConstructorUsedError;
 
-  /// Serializes this SubProdPopModel to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-
-  /// Create a copy of SubProdPopModel
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   $SubProdPopModelCopyWith<SubProdPopModel> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -73,8 +69,6 @@ class _$SubProdPopModelCopyWithImpl<$Res, $Val extends SubProdPopModel>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
-  /// Create a copy of SubProdPopModel
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -151,8 +145,6 @@ class __$$SubProdPopModelImplCopyWithImpl<$Res>
       _$SubProdPopModelImpl _value, $Res Function(_$SubProdPopModelImpl) _then)
       : super(_value, _then);
 
-  /// Create a copy of SubProdPopModel
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -275,7 +267,7 @@ class _$SubProdPopModelImpl implements _SubProdPopModel {
             const DeepCollectionEquality().equals(other._errors, _errors));
   }
 
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   @override
   int get hashCode => Object.hash(
       runtimeType,
@@ -288,9 +280,7 @@ class _$SubProdPopModelImpl implements _SubProdPopModel {
       pmg,
       const DeepCollectionEquality().hash(_errors));
 
-  /// Create a copy of SubProdPopModel
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
   _$$SubProdPopModelImplCopyWith<_$SubProdPopModelImpl> get copyWith =>
@@ -342,11 +332,8 @@ abstract class _SubProdPopModel implements SubProdPopModel {
   String get pmg;
   @override
   Map<String, String?> get errors;
-
-  /// Create a copy of SubProdPopModel
-  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   _$$SubProdPopModelImplCopyWith<_$SubProdPopModelImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

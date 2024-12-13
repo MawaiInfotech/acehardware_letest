@@ -28,12 +28,8 @@ mixin _$SalesTrendGraphModel {
   String get value => throw _privateConstructorUsedError;
   Map<String, String?> get errors => throw _privateConstructorUsedError;
 
-  /// Serializes this SalesTrendGraphModel to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-
-  /// Create a copy of SalesTrendGraphModel
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   $SalesTrendGraphModelCopyWith<SalesTrendGraphModel> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -62,8 +58,6 @@ class _$SalesTrendGraphModelCopyWithImpl<$Res,
   // ignore: unused_field
   final $Res Function($Val) _then;
 
-  /// Create a copy of SalesTrendGraphModel
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -116,8 +110,6 @@ class __$$SalesTrendGraphModelImplCopyWithImpl<$Res>
       $Res Function(_$SalesTrendGraphModelImpl) _then)
       : super(_value, _then);
 
-  /// Create a copy of SalesTrendGraphModel
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -195,14 +187,12 @@ class _$SalesTrendGraphModelImpl implements _SalesTrendGraphModel {
             const DeepCollectionEquality().equals(other._errors, _errors));
   }
 
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   @override
   int get hashCode => Object.hash(runtimeType, customerCode, label, value,
       const DeepCollectionEquality().hash(_errors));
 
-  /// Create a copy of SalesTrendGraphModel
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
   _$$SalesTrendGraphModelImplCopyWith<_$SalesTrendGraphModelImpl>
@@ -239,11 +229,8 @@ abstract class _SalesTrendGraphModel implements SalesTrendGraphModel {
   String get value;
   @override
   Map<String, String?> get errors;
-
-  /// Create a copy of SalesTrendGraphModel
-  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   _$$SalesTrendGraphModelImplCopyWith<_$SalesTrendGraphModelImpl>
       get copyWith => throw _privateConstructorUsedError;
 }

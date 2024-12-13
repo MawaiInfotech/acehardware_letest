@@ -30,12 +30,8 @@ mixin _$PaymentGraphModel {
   String get pendingBalance => throw _privateConstructorUsedError;
   Map<String, String?> get errors => throw _privateConstructorUsedError;
 
-  /// Serializes this PaymentGraphModel to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-
-  /// Create a copy of PaymentGraphModel
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   $PaymentGraphModelCopyWith<PaymentGraphModel> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -64,8 +60,6 @@ class _$PaymentGraphModelCopyWithImpl<$Res, $Val extends PaymentGraphModel>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
-  /// Create a copy of PaymentGraphModel
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -124,8 +118,6 @@ class __$$PaymentGraphModelImplCopyWithImpl<$Res>
       $Res Function(_$PaymentGraphModelImpl) _then)
       : super(_value, _then);
 
-  /// Create a copy of PaymentGraphModel
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -215,7 +207,7 @@ class _$PaymentGraphModelImpl implements _PaymentGraphModel {
             const DeepCollectionEquality().equals(other._errors, _errors));
   }
 
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   @override
   int get hashCode => Object.hash(
       runtimeType,
@@ -225,9 +217,7 @@ class _$PaymentGraphModelImpl implements _PaymentGraphModel {
       pendingBalance,
       const DeepCollectionEquality().hash(_errors));
 
-  /// Create a copy of PaymentGraphModel
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
   _$$PaymentGraphModelImplCopyWith<_$PaymentGraphModelImpl> get copyWith =>
@@ -267,11 +257,8 @@ abstract class _PaymentGraphModel implements PaymentGraphModel {
   String get pendingBalance;
   @override
   Map<String, String?> get errors;
-
-  /// Create a copy of PaymentGraphModel
-  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   _$$PaymentGraphModelImplCopyWith<_$PaymentGraphModelImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

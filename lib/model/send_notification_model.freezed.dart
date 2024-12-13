@@ -26,12 +26,8 @@ mixin _$SendNotificationModel {
   @JsonKey(name: "msg")
   String get message => throw _privateConstructorUsedError;
 
-  /// Serializes this SendNotificationModel to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-
-  /// Create a copy of SendNotificationModel
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   $SendNotificationModelCopyWith<SendNotificationModel> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -58,8 +54,6 @@ class _$SendNotificationModelCopyWithImpl<$Res,
   // ignore: unused_field
   final $Res Function($Val) _then;
 
-  /// Create a copy of SendNotificationModel
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -102,8 +96,6 @@ class __$$SendNotificationModelImplCopyWithImpl<$Res>
       $Res Function(_$SendNotificationModelImpl) _then)
       : super(_value, _then);
 
-  /// Create a copy of SendNotificationModel
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -154,13 +146,11 @@ class _$SendNotificationModelImpl implements _SendNotificationModel {
             (identical(other.message, message) || other.message == message));
   }
 
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   @override
   int get hashCode => Object.hash(runtimeType, status, message);
 
-  /// Create a copy of SendNotificationModel
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
   _$$SendNotificationModelImplCopyWith<_$SendNotificationModelImpl>
@@ -190,11 +180,8 @@ abstract class _SendNotificationModel implements SendNotificationModel {
   @override
   @JsonKey(name: "msg")
   String get message;
-
-  /// Create a copy of SendNotificationModel
-  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   _$$SendNotificationModelImplCopyWith<_$SendNotificationModelImpl>
       get copyWith => throw _privateConstructorUsedError;
 }

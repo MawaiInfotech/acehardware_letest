@@ -25,12 +25,8 @@ mixin _$PlaceOrderModel {
   @JsonKey(name: "entryCount")
   String get entryCount => throw _privateConstructorUsedError;
 
-  /// Serializes this PlaceOrderModel to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-
-  /// Create a copy of PlaceOrderModel
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   $PlaceOrderModelCopyWith<PlaceOrderModel> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -56,8 +52,6 @@ class _$PlaceOrderModelCopyWithImpl<$Res, $Val extends PlaceOrderModel>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
-  /// Create a copy of PlaceOrderModel
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -98,8 +92,6 @@ class __$$PlaceOrderModelImplCopyWithImpl<$Res>
       _$PlaceOrderModelImpl _value, $Res Function(_$PlaceOrderModelImpl) _then)
       : super(_value, _then);
 
-  /// Create a copy of PlaceOrderModel
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -151,13 +143,11 @@ class _$PlaceOrderModelImpl implements _PlaceOrderModel {
                 other.entryCount == entryCount));
   }
 
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   @override
   int get hashCode => Object.hash(runtimeType, status, entryCount);
 
-  /// Create a copy of PlaceOrderModel
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
   _$$PlaceOrderModelImplCopyWith<_$PlaceOrderModelImpl> get copyWith =>
@@ -187,11 +177,8 @@ abstract class _PlaceOrderModel implements PlaceOrderModel {
   @override
   @JsonKey(name: "entryCount")
   String get entryCount;
-
-  /// Create a copy of PlaceOrderModel
-  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   _$$PlaceOrderModelImplCopyWith<_$PlaceOrderModelImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

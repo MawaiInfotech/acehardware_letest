@@ -62,9 +62,7 @@ mixin _$UserTypeState {
   }) =>
       throw _privateConstructorUsedError;
 
-  /// Create a copy of UserTypeState
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   $UserTypeStateCopyWith<UserTypeState> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -90,8 +88,6 @@ class _$UserTypeStateCopyWithImpl<$Res, $Val extends UserTypeState>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
-  /// Create a copy of UserTypeState
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -105,8 +101,6 @@ class _$UserTypeStateCopyWithImpl<$Res, $Val extends UserTypeState>
     ) as $Val);
   }
 
-  /// Create a copy of UserTypeState
-  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $UserTypeModelCopyWith<$Res> get userTypeModel {
@@ -138,8 +132,6 @@ class __$$LoadingImplCopyWithImpl<$Res>
       _$LoadingImpl _value, $Res Function(_$LoadingImpl) _then)
       : super(_value, _then);
 
-  /// Create a copy of UserTypeState
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -179,9 +171,7 @@ class _$LoadingImpl implements _Loading {
   @override
   int get hashCode => Object.hash(runtimeType, userTypeModel);
 
-  /// Create a copy of UserTypeState
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
   _$$LoadingImplCopyWith<_$LoadingImpl> get copyWith =>
@@ -261,11 +251,8 @@ abstract class _Loading implements UserTypeState {
 
   @override
   UserTypeModel get userTypeModel;
-
-  /// Create a copy of UserTypeState
-  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   _$$LoadingImplCopyWith<_$LoadingImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -292,8 +279,6 @@ class __$$ContentImplCopyWithImpl<$Res>
       _$ContentImpl _value, $Res Function(_$ContentImpl) _then)
       : super(_value, _then);
 
-  /// Create a copy of UserTypeState
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -333,9 +318,7 @@ class _$ContentImpl implements _Content {
   @override
   int get hashCode => Object.hash(runtimeType, userTypeModel);
 
-  /// Create a copy of UserTypeState
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
   _$$ContentImplCopyWith<_$ContentImpl> get copyWith =>
@@ -415,11 +398,8 @@ abstract class _Content implements UserTypeState {
 
   @override
   UserTypeModel get userTypeModel;
-
-  /// Create a copy of UserTypeState
-  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   _$$ContentImplCopyWith<_$ContentImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -446,8 +426,6 @@ class __$$SuccessImplCopyWithImpl<$Res>
       _$SuccessImpl _value, $Res Function(_$SuccessImpl) _then)
       : super(_value, _then);
 
-  /// Create a copy of UserTypeState
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -487,9 +465,7 @@ class _$SuccessImpl implements _Success {
   @override
   int get hashCode => Object.hash(runtimeType, userTypeModel);
 
-  /// Create a copy of UserTypeState
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
   _$$SuccessImplCopyWith<_$SuccessImpl> get copyWith =>
@@ -569,11 +545,8 @@ abstract class _Success implements UserTypeState {
 
   @override
   UserTypeModel get userTypeModel;
-
-  /// Create a copy of UserTypeState
-  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   _$$SuccessImplCopyWith<_$SuccessImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

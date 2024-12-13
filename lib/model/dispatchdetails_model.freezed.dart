@@ -33,12 +33,8 @@ mixin _$DispatchdetailsModel {
   String get docket_no => throw _privateConstructorUsedError;
   String get cour_name => throw _privateConstructorUsedError;
 
-  /// Serializes this DispatchdetailsModel to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-
-  /// Create a copy of DispatchdetailsModel
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   $DispatchdetailsModelCopyWith<DispatchdetailsModel> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -75,8 +71,6 @@ class _$DispatchdetailsModelCopyWithImpl<$Res,
   // ignore: unused_field
   final $Res Function($Val) _then;
 
-  /// Create a copy of DispatchdetailsModel
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -177,8 +171,6 @@ class __$$DispatchdetailsModelImplCopyWithImpl<$Res>
       $Res Function(_$DispatchdetailsModelImpl) _then)
       : super(_value, _then);
 
-  /// Create a copy of DispatchdetailsModel
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -338,7 +330,7 @@ class _$DispatchdetailsModelImpl implements _DispatchdetailsModel {
                 other.cour_name == cour_name));
   }
 
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   @override
   int get hashCode => Object.hash(
       runtimeType,
@@ -355,9 +347,7 @@ class _$DispatchdetailsModelImpl implements _DispatchdetailsModel {
       docket_no,
       cour_name);
 
-  /// Create a copy of DispatchdetailsModel
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
   _$$DispatchdetailsModelImplCopyWith<_$DispatchdetailsModelImpl>
@@ -415,11 +405,8 @@ abstract class _DispatchdetailsModel implements DispatchdetailsModel {
   String get docket_no;
   @override
   String get cour_name;
-
-  /// Create a copy of DispatchdetailsModel
-  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   _$$DispatchdetailsModelImplCopyWith<_$DispatchdetailsModelImpl>
       get copyWith => throw _privateConstructorUsedError;
 }

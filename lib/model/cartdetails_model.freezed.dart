@@ -32,12 +32,8 @@ mixin _$CartDetailsModel {
   int get entryCount => throw _privateConstructorUsedError;
   List<CartEntriesModel> get entries => throw _privateConstructorUsedError;
 
-  /// Serializes this CartDetailsModel to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-
-  /// Create a copy of CartDetailsModel
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   $CartDetailsModelCopyWith<CartDetailsModel> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -67,8 +63,6 @@ class _$CartDetailsModelCopyWithImpl<$Res, $Val extends CartDetailsModel>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
-  /// Create a copy of CartDetailsModel
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -133,8 +127,6 @@ class __$$CartDetailsModelImplCopyWithImpl<$Res>
       $Res Function(_$CartDetailsModelImpl) _then)
       : super(_value, _then);
 
-  /// Create a copy of CartDetailsModel
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -233,14 +225,12 @@ class _$CartDetailsModelImpl extends _CartDetailsModel {
             const DeepCollectionEquality().equals(other._entries, _entries));
   }
 
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   @override
   int get hashCode => Object.hash(runtimeType, code, total, status, userId,
       entryCount, const DeepCollectionEquality().hash(_entries));
 
-  /// Create a copy of CartDetailsModel
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
   _$$CartDetailsModelImplCopyWith<_$CartDetailsModelImpl> get copyWith =>
@@ -285,11 +275,8 @@ abstract class _CartDetailsModel extends CartDetailsModel {
   int get entryCount;
   @override
   List<CartEntriesModel> get entries;
-
-  /// Create a copy of CartDetailsModel
-  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   _$$CartDetailsModelImplCopyWith<_$CartDetailsModelImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

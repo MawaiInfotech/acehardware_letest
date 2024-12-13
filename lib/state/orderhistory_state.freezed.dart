@@ -73,9 +73,7 @@ mixin _$OrderHistoryState {
   }) =>
       throw _privateConstructorUsedError;
 
-  /// Create a copy of OrderHistoryState
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   $OrderHistoryStateCopyWith<OrderHistoryState> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -99,8 +97,6 @@ class _$OrderHistoryStateCopyWithImpl<$Res, $Val extends OrderHistoryState>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
-  /// Create a copy of OrderHistoryState
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -134,8 +130,6 @@ class __$$LoadingImplCopyWithImpl<$Res>
       _$LoadingImpl _value, $Res Function(_$LoadingImpl) _then)
       : super(_value, _then);
 
-  /// Create a copy of OrderHistoryState
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -183,9 +177,7 @@ class _$LoadingImpl implements _Loading {
   int get hashCode => Object.hash(
       runtimeType, const DeepCollectionEquality().hash(_orderHistoryList));
 
-  /// Create a copy of OrderHistoryState
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
   _$$LoadingImplCopyWith<_$LoadingImpl> get copyWith =>
@@ -276,11 +268,8 @@ abstract class _Loading implements OrderHistoryState {
 
   @override
   List<OrderHistoryModel> get orderHistoryList;
-
-  /// Create a copy of OrderHistoryState
-  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   _$$LoadingImplCopyWith<_$LoadingImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -304,8 +293,6 @@ class __$$ContentImplCopyWithImpl<$Res>
       _$ContentImpl _value, $Res Function(_$ContentImpl) _then)
       : super(_value, _then);
 
-  /// Create a copy of OrderHistoryState
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -353,9 +340,7 @@ class _$ContentImpl implements _Content {
   int get hashCode => Object.hash(
       runtimeType, const DeepCollectionEquality().hash(_orderHistoryList));
 
-  /// Create a copy of OrderHistoryState
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
   _$$ContentImplCopyWith<_$ContentImpl> get copyWith =>
@@ -446,11 +431,8 @@ abstract class _Content implements OrderHistoryState {
 
   @override
   List<OrderHistoryModel> get orderHistoryList;
-
-  /// Create a copy of OrderHistoryState
-  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   _$$ContentImplCopyWith<_$ContentImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -474,8 +456,6 @@ class __$$SuccessImplCopyWithImpl<$Res>
       _$SuccessImpl _value, $Res Function(_$SuccessImpl) _then)
       : super(_value, _then);
 
-  /// Create a copy of OrderHistoryState
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -523,9 +503,7 @@ class _$SuccessImpl implements _Success {
   int get hashCode => Object.hash(
       runtimeType, const DeepCollectionEquality().hash(_orderHistoryList));
 
-  /// Create a copy of OrderHistoryState
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
   _$$SuccessImplCopyWith<_$SuccessImpl> get copyWith =>
@@ -616,11 +594,8 @@ abstract class _Success implements OrderHistoryState {
 
   @override
   List<OrderHistoryModel> get orderHistoryList;
-
-  /// Create a copy of OrderHistoryState
-  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   _$$SuccessImplCopyWith<_$SuccessImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -644,8 +619,6 @@ class __$$FailedImplCopyWithImpl<$Res>
       _$FailedImpl _value, $Res Function(_$FailedImpl) _then)
       : super(_value, _then);
 
-  /// Create a copy of OrderHistoryState
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -703,9 +676,7 @@ class _$FailedImpl implements _Failed {
   int get hashCode => Object.hash(runtimeType,
       const DeepCollectionEquality().hash(_orderHistoryList), message);
 
-  /// Create a copy of OrderHistoryState
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
   _$$FailedImplCopyWith<_$FailedImpl> get copyWith =>
@@ -797,11 +768,8 @@ abstract class _Failed implements OrderHistoryState {
   @override
   List<OrderHistoryModel> get orderHistoryList;
   String get message;
-
-  /// Create a copy of OrderHistoryState
-  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   _$$FailedImplCopyWith<_$FailedImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
