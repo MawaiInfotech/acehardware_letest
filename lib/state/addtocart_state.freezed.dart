@@ -16,31 +16,31 @@ final _privateConstructorUsedError = UnsupportedError(
 
 /// @nodoc
 mixin _$AddtoCartState {
-  CartDetailsModel get addtoCartModel => throw _privateConstructorUsedError;
+  AddToCartModel get addtoCartModel => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(CartDetailsModel addtoCartModel) loading,
-    required TResult Function(CartDetailsModel addtoCartModel) content,
-    required TResult Function(CartDetailsModel addtoCartModel, String? msg)
+    required TResult Function(AddToCartModel addtoCartModel) loading,
+    required TResult Function(AddToCartModel addtoCartModel) content,
+    required TResult Function(AddToCartModel addtoCartModel, String? msg)
         success,
-    required TResult Function(CartDetailsModel addtoCartModel, String message)
+    required TResult Function(AddToCartModel addtoCartModel, String message)
         failed,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(CartDetailsModel addtoCartModel)? loading,
-    TResult? Function(CartDetailsModel addtoCartModel)? content,
-    TResult? Function(CartDetailsModel addtoCartModel, String? msg)? success,
-    TResult? Function(CartDetailsModel addtoCartModel, String message)? failed,
+    TResult? Function(AddToCartModel addtoCartModel)? loading,
+    TResult? Function(AddToCartModel addtoCartModel)? content,
+    TResult? Function(AddToCartModel addtoCartModel, String? msg)? success,
+    TResult? Function(AddToCartModel addtoCartModel, String message)? failed,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(CartDetailsModel addtoCartModel)? loading,
-    TResult Function(CartDetailsModel addtoCartModel)? content,
-    TResult Function(CartDetailsModel addtoCartModel, String? msg)? success,
-    TResult Function(CartDetailsModel addtoCartModel, String message)? failed,
+    TResult Function(AddToCartModel addtoCartModel)? loading,
+    TResult Function(AddToCartModel addtoCartModel)? content,
+    TResult Function(AddToCartModel addtoCartModel, String? msg)? success,
+    TResult Function(AddToCartModel addtoCartModel, String message)? failed,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -70,7 +70,9 @@ mixin _$AddtoCartState {
   }) =>
       throw _privateConstructorUsedError;
 
-  @JsonKey(ignore: true)
+  /// Create a copy of AddtoCartState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $AddtoCartStateCopyWith<AddtoCartState> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -81,9 +83,9 @@ abstract class $AddtoCartStateCopyWith<$Res> {
           AddtoCartState value, $Res Function(AddtoCartState) then) =
       _$AddtoCartStateCopyWithImpl<$Res, AddtoCartState>;
   @useResult
-  $Res call({CartDetailsModel addtoCartModel});
+  $Res call({AddToCartModel addtoCartModel});
 
-  $CartDetailsModelCopyWith<$Res> get addtoCartModel;
+  $AddToCartModelCopyWith<$Res> get addtoCartModel;
 }
 
 /// @nodoc
@@ -96,6 +98,8 @@ class _$AddtoCartStateCopyWithImpl<$Res, $Val extends AddtoCartState>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of AddtoCartState
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -105,14 +109,16 @@ class _$AddtoCartStateCopyWithImpl<$Res, $Val extends AddtoCartState>
       addtoCartModel: null == addtoCartModel
           ? _value.addtoCartModel
           : addtoCartModel // ignore: cast_nullable_to_non_nullable
-              as CartDetailsModel,
+              as AddToCartModel,
     ) as $Val);
   }
 
+  /// Create a copy of AddtoCartState
+  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
-  $CartDetailsModelCopyWith<$Res> get addtoCartModel {
-    return $CartDetailsModelCopyWith<$Res>(_value.addtoCartModel, (value) {
+  $AddToCartModelCopyWith<$Res> get addtoCartModel {
+    return $AddToCartModelCopyWith<$Res>(_value.addtoCartModel, (value) {
       return _then(_value.copyWith(addtoCartModel: value) as $Val);
     });
   }
@@ -126,10 +132,10 @@ abstract class _$$LoadingImplCopyWith<$Res>
       __$$LoadingImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({CartDetailsModel addtoCartModel});
+  $Res call({AddToCartModel addtoCartModel});
 
   @override
-  $CartDetailsModelCopyWith<$Res> get addtoCartModel;
+  $AddToCartModelCopyWith<$Res> get addtoCartModel;
 }
 
 /// @nodoc
@@ -140,6 +146,8 @@ class __$$LoadingImplCopyWithImpl<$Res>
       _$LoadingImpl _value, $Res Function(_$LoadingImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of AddtoCartState
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -149,7 +157,7 @@ class __$$LoadingImplCopyWithImpl<$Res>
       null == addtoCartModel
           ? _value.addtoCartModel
           : addtoCartModel // ignore: cast_nullable_to_non_nullable
-              as CartDetailsModel,
+              as AddToCartModel,
     ));
   }
 }
@@ -160,7 +168,7 @@ class _$LoadingImpl implements _Loading {
   const _$LoadingImpl(this.addtoCartModel);
 
   @override
-  final CartDetailsModel addtoCartModel;
+  final AddToCartModel addtoCartModel;
 
   @override
   String toString() {
@@ -179,7 +187,9 @@ class _$LoadingImpl implements _Loading {
   @override
   int get hashCode => Object.hash(runtimeType, addtoCartModel);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of AddtoCartState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$LoadingImplCopyWith<_$LoadingImpl> get copyWith =>
@@ -188,11 +198,11 @@ class _$LoadingImpl implements _Loading {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(CartDetailsModel addtoCartModel) loading,
-    required TResult Function(CartDetailsModel addtoCartModel) content,
-    required TResult Function(CartDetailsModel addtoCartModel, String? msg)
+    required TResult Function(AddToCartModel addtoCartModel) loading,
+    required TResult Function(AddToCartModel addtoCartModel) content,
+    required TResult Function(AddToCartModel addtoCartModel, String? msg)
         success,
-    required TResult Function(CartDetailsModel addtoCartModel, String message)
+    required TResult Function(AddToCartModel addtoCartModel, String message)
         failed,
   }) {
     return loading(addtoCartModel);
@@ -201,10 +211,10 @@ class _$LoadingImpl implements _Loading {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(CartDetailsModel addtoCartModel)? loading,
-    TResult? Function(CartDetailsModel addtoCartModel)? content,
-    TResult? Function(CartDetailsModel addtoCartModel, String? msg)? success,
-    TResult? Function(CartDetailsModel addtoCartModel, String message)? failed,
+    TResult? Function(AddToCartModel addtoCartModel)? loading,
+    TResult? Function(AddToCartModel addtoCartModel)? content,
+    TResult? Function(AddToCartModel addtoCartModel, String? msg)? success,
+    TResult? Function(AddToCartModel addtoCartModel, String message)? failed,
   }) {
     return loading?.call(addtoCartModel);
   }
@@ -212,10 +222,10 @@ class _$LoadingImpl implements _Loading {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(CartDetailsModel addtoCartModel)? loading,
-    TResult Function(CartDetailsModel addtoCartModel)? content,
-    TResult Function(CartDetailsModel addtoCartModel, String? msg)? success,
-    TResult Function(CartDetailsModel addtoCartModel, String message)? failed,
+    TResult Function(AddToCartModel addtoCartModel)? loading,
+    TResult Function(AddToCartModel addtoCartModel)? content,
+    TResult Function(AddToCartModel addtoCartModel, String? msg)? success,
+    TResult Function(AddToCartModel addtoCartModel, String message)? failed,
     required TResult orElse(),
   }) {
     if (loading != null) {
@@ -263,12 +273,15 @@ class _$LoadingImpl implements _Loading {
 }
 
 abstract class _Loading implements AddtoCartState {
-  const factory _Loading(final CartDetailsModel addtoCartModel) = _$LoadingImpl;
+  const factory _Loading(final AddToCartModel addtoCartModel) = _$LoadingImpl;
 
   @override
-  CartDetailsModel get addtoCartModel;
+  AddToCartModel get addtoCartModel;
+
+  /// Create a copy of AddtoCartState
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$LoadingImplCopyWith<_$LoadingImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -281,10 +294,10 @@ abstract class _$$ContentImplCopyWith<$Res>
       __$$ContentImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({CartDetailsModel addtoCartModel});
+  $Res call({AddToCartModel addtoCartModel});
 
   @override
-  $CartDetailsModelCopyWith<$Res> get addtoCartModel;
+  $AddToCartModelCopyWith<$Res> get addtoCartModel;
 }
 
 /// @nodoc
@@ -295,6 +308,8 @@ class __$$ContentImplCopyWithImpl<$Res>
       _$ContentImpl _value, $Res Function(_$ContentImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of AddtoCartState
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -304,7 +319,7 @@ class __$$ContentImplCopyWithImpl<$Res>
       null == addtoCartModel
           ? _value.addtoCartModel
           : addtoCartModel // ignore: cast_nullable_to_non_nullable
-              as CartDetailsModel,
+              as AddToCartModel,
     ));
   }
 }
@@ -315,7 +330,7 @@ class _$ContentImpl implements _Content {
   const _$ContentImpl(this.addtoCartModel);
 
   @override
-  final CartDetailsModel addtoCartModel;
+  final AddToCartModel addtoCartModel;
 
   @override
   String toString() {
@@ -334,7 +349,9 @@ class _$ContentImpl implements _Content {
   @override
   int get hashCode => Object.hash(runtimeType, addtoCartModel);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of AddtoCartState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$ContentImplCopyWith<_$ContentImpl> get copyWith =>
@@ -343,11 +360,11 @@ class _$ContentImpl implements _Content {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(CartDetailsModel addtoCartModel) loading,
-    required TResult Function(CartDetailsModel addtoCartModel) content,
-    required TResult Function(CartDetailsModel addtoCartModel, String? msg)
+    required TResult Function(AddToCartModel addtoCartModel) loading,
+    required TResult Function(AddToCartModel addtoCartModel) content,
+    required TResult Function(AddToCartModel addtoCartModel, String? msg)
         success,
-    required TResult Function(CartDetailsModel addtoCartModel, String message)
+    required TResult Function(AddToCartModel addtoCartModel, String message)
         failed,
   }) {
     return content(addtoCartModel);
@@ -356,10 +373,10 @@ class _$ContentImpl implements _Content {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(CartDetailsModel addtoCartModel)? loading,
-    TResult? Function(CartDetailsModel addtoCartModel)? content,
-    TResult? Function(CartDetailsModel addtoCartModel, String? msg)? success,
-    TResult? Function(CartDetailsModel addtoCartModel, String message)? failed,
+    TResult? Function(AddToCartModel addtoCartModel)? loading,
+    TResult? Function(AddToCartModel addtoCartModel)? content,
+    TResult? Function(AddToCartModel addtoCartModel, String? msg)? success,
+    TResult? Function(AddToCartModel addtoCartModel, String message)? failed,
   }) {
     return content?.call(addtoCartModel);
   }
@@ -367,10 +384,10 @@ class _$ContentImpl implements _Content {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(CartDetailsModel addtoCartModel)? loading,
-    TResult Function(CartDetailsModel addtoCartModel)? content,
-    TResult Function(CartDetailsModel addtoCartModel, String? msg)? success,
-    TResult Function(CartDetailsModel addtoCartModel, String message)? failed,
+    TResult Function(AddToCartModel addtoCartModel)? loading,
+    TResult Function(AddToCartModel addtoCartModel)? content,
+    TResult Function(AddToCartModel addtoCartModel, String? msg)? success,
+    TResult Function(AddToCartModel addtoCartModel, String message)? failed,
     required TResult orElse(),
   }) {
     if (content != null) {
@@ -418,12 +435,15 @@ class _$ContentImpl implements _Content {
 }
 
 abstract class _Content implements AddtoCartState {
-  const factory _Content(final CartDetailsModel addtoCartModel) = _$ContentImpl;
+  const factory _Content(final AddToCartModel addtoCartModel) = _$ContentImpl;
 
   @override
-  CartDetailsModel get addtoCartModel;
+  AddToCartModel get addtoCartModel;
+
+  /// Create a copy of AddtoCartState
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$ContentImplCopyWith<_$ContentImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -436,10 +456,10 @@ abstract class _$$SuccessImplCopyWith<$Res>
       __$$SuccessImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({CartDetailsModel addtoCartModel, String? msg});
+  $Res call({AddToCartModel addtoCartModel, String? msg});
 
   @override
-  $CartDetailsModelCopyWith<$Res> get addtoCartModel;
+  $AddToCartModelCopyWith<$Res> get addtoCartModel;
 }
 
 /// @nodoc
@@ -450,6 +470,8 @@ class __$$SuccessImplCopyWithImpl<$Res>
       _$SuccessImpl _value, $Res Function(_$SuccessImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of AddtoCartState
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -460,7 +482,7 @@ class __$$SuccessImplCopyWithImpl<$Res>
       null == addtoCartModel
           ? _value.addtoCartModel
           : addtoCartModel // ignore: cast_nullable_to_non_nullable
-              as CartDetailsModel,
+              as AddToCartModel,
       freezed == msg
           ? _value.msg
           : msg // ignore: cast_nullable_to_non_nullable
@@ -475,7 +497,7 @@ class _$SuccessImpl implements _Success {
   const _$SuccessImpl(this.addtoCartModel, this.msg);
 
   @override
-  final CartDetailsModel addtoCartModel;
+  final AddToCartModel addtoCartModel;
   @override
   final String? msg;
 
@@ -497,7 +519,9 @@ class _$SuccessImpl implements _Success {
   @override
   int get hashCode => Object.hash(runtimeType, addtoCartModel, msg);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of AddtoCartState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$SuccessImplCopyWith<_$SuccessImpl> get copyWith =>
@@ -506,11 +530,11 @@ class _$SuccessImpl implements _Success {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(CartDetailsModel addtoCartModel) loading,
-    required TResult Function(CartDetailsModel addtoCartModel) content,
-    required TResult Function(CartDetailsModel addtoCartModel, String? msg)
+    required TResult Function(AddToCartModel addtoCartModel) loading,
+    required TResult Function(AddToCartModel addtoCartModel) content,
+    required TResult Function(AddToCartModel addtoCartModel, String? msg)
         success,
-    required TResult Function(CartDetailsModel addtoCartModel, String message)
+    required TResult Function(AddToCartModel addtoCartModel, String message)
         failed,
   }) {
     return success(addtoCartModel, msg);
@@ -519,10 +543,10 @@ class _$SuccessImpl implements _Success {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(CartDetailsModel addtoCartModel)? loading,
-    TResult? Function(CartDetailsModel addtoCartModel)? content,
-    TResult? Function(CartDetailsModel addtoCartModel, String? msg)? success,
-    TResult? Function(CartDetailsModel addtoCartModel, String message)? failed,
+    TResult? Function(AddToCartModel addtoCartModel)? loading,
+    TResult? Function(AddToCartModel addtoCartModel)? content,
+    TResult? Function(AddToCartModel addtoCartModel, String? msg)? success,
+    TResult? Function(AddToCartModel addtoCartModel, String message)? failed,
   }) {
     return success?.call(addtoCartModel, msg);
   }
@@ -530,10 +554,10 @@ class _$SuccessImpl implements _Success {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(CartDetailsModel addtoCartModel)? loading,
-    TResult Function(CartDetailsModel addtoCartModel)? content,
-    TResult Function(CartDetailsModel addtoCartModel, String? msg)? success,
-    TResult Function(CartDetailsModel addtoCartModel, String message)? failed,
+    TResult Function(AddToCartModel addtoCartModel)? loading,
+    TResult Function(AddToCartModel addtoCartModel)? content,
+    TResult Function(AddToCartModel addtoCartModel, String? msg)? success,
+    TResult Function(AddToCartModel addtoCartModel, String message)? failed,
     required TResult orElse(),
   }) {
     if (success != null) {
@@ -582,13 +606,16 @@ class _$SuccessImpl implements _Success {
 
 abstract class _Success implements AddtoCartState {
   const factory _Success(
-      final CartDetailsModel addtoCartModel, final String? msg) = _$SuccessImpl;
+      final AddToCartModel addtoCartModel, final String? msg) = _$SuccessImpl;
 
   @override
-  CartDetailsModel get addtoCartModel;
+  AddToCartModel get addtoCartModel;
   String? get msg;
+
+  /// Create a copy of AddtoCartState
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$SuccessImplCopyWith<_$SuccessImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -601,10 +628,10 @@ abstract class _$$FailedImplCopyWith<$Res>
       __$$FailedImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({CartDetailsModel addtoCartModel, String message});
+  $Res call({AddToCartModel addtoCartModel, String message});
 
   @override
-  $CartDetailsModelCopyWith<$Res> get addtoCartModel;
+  $AddToCartModelCopyWith<$Res> get addtoCartModel;
 }
 
 /// @nodoc
@@ -615,6 +642,8 @@ class __$$FailedImplCopyWithImpl<$Res>
       _$FailedImpl _value, $Res Function(_$FailedImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of AddtoCartState
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -625,7 +654,7 @@ class __$$FailedImplCopyWithImpl<$Res>
       null == addtoCartModel
           ? _value.addtoCartModel
           : addtoCartModel // ignore: cast_nullable_to_non_nullable
-              as CartDetailsModel,
+              as AddToCartModel,
       null == message
           ? _value.message
           : message // ignore: cast_nullable_to_non_nullable
@@ -640,7 +669,7 @@ class _$FailedImpl implements _Failed {
   const _$FailedImpl(this.addtoCartModel, this.message);
 
   @override
-  final CartDetailsModel addtoCartModel;
+  final AddToCartModel addtoCartModel;
   @override
   final String message;
 
@@ -662,7 +691,9 @@ class _$FailedImpl implements _Failed {
   @override
   int get hashCode => Object.hash(runtimeType, addtoCartModel, message);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of AddtoCartState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$FailedImplCopyWith<_$FailedImpl> get copyWith =>
@@ -671,11 +702,11 @@ class _$FailedImpl implements _Failed {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(CartDetailsModel addtoCartModel) loading,
-    required TResult Function(CartDetailsModel addtoCartModel) content,
-    required TResult Function(CartDetailsModel addtoCartModel, String? msg)
+    required TResult Function(AddToCartModel addtoCartModel) loading,
+    required TResult Function(AddToCartModel addtoCartModel) content,
+    required TResult Function(AddToCartModel addtoCartModel, String? msg)
         success,
-    required TResult Function(CartDetailsModel addtoCartModel, String message)
+    required TResult Function(AddToCartModel addtoCartModel, String message)
         failed,
   }) {
     return failed(addtoCartModel, message);
@@ -684,10 +715,10 @@ class _$FailedImpl implements _Failed {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(CartDetailsModel addtoCartModel)? loading,
-    TResult? Function(CartDetailsModel addtoCartModel)? content,
-    TResult? Function(CartDetailsModel addtoCartModel, String? msg)? success,
-    TResult? Function(CartDetailsModel addtoCartModel, String message)? failed,
+    TResult? Function(AddToCartModel addtoCartModel)? loading,
+    TResult? Function(AddToCartModel addtoCartModel)? content,
+    TResult? Function(AddToCartModel addtoCartModel, String? msg)? success,
+    TResult? Function(AddToCartModel addtoCartModel, String message)? failed,
   }) {
     return failed?.call(addtoCartModel, message);
   }
@@ -695,10 +726,10 @@ class _$FailedImpl implements _Failed {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(CartDetailsModel addtoCartModel)? loading,
-    TResult Function(CartDetailsModel addtoCartModel)? content,
-    TResult Function(CartDetailsModel addtoCartModel, String? msg)? success,
-    TResult Function(CartDetailsModel addtoCartModel, String message)? failed,
+    TResult Function(AddToCartModel addtoCartModel)? loading,
+    TResult Function(AddToCartModel addtoCartModel)? content,
+    TResult Function(AddToCartModel addtoCartModel, String? msg)? success,
+    TResult Function(AddToCartModel addtoCartModel, String message)? failed,
     required TResult orElse(),
   }) {
     if (failed != null) {
@@ -747,14 +778,16 @@ class _$FailedImpl implements _Failed {
 
 abstract class _Failed implements AddtoCartState {
   const factory _Failed(
-          final CartDetailsModel addtoCartModel, final String message) =
-      _$FailedImpl;
+      final AddToCartModel addtoCartModel, final String message) = _$FailedImpl;
 
   @override
-  CartDetailsModel get addtoCartModel;
+  AddToCartModel get addtoCartModel;
   String get message;
+
+  /// Create a copy of AddtoCartState
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$FailedImplCopyWith<_$FailedImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

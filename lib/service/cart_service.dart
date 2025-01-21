@@ -34,6 +34,7 @@ class CartService extends ChangeNotifier{
       print(e);
       _handleError(e);
     }
+    return null;
     //return CartDetailsModel();
   }
 
@@ -51,13 +52,14 @@ class CartService extends ChangeNotifier{
       final responseBody = json.decode(response.body);
       if(responseBody["status"] == true){
         await prefsBox.put(kCartNumber, responseBody["data"]["code"]);
+     //   print("Hello " + responseBody["data"]["code"]);
       }else{
         throw ApiError.fromResponse(responseBody["message"]);
       }
     } catch (e) {
       _handleError(e);
     }
-    return CartNumberModel();
+    return const CartNumberModel();
   }
 
 
@@ -72,9 +74,9 @@ class CartService extends ChangeNotifier{
       if (responseBody['status'] == true) {
         final model = _cartDetails.copyWith(entryCount: _cartDetails.entryCount + 1);
         update(model);
-        return responseBody ['msg'];
+        return responseBody ['message'];
       }else{
-        throw ApiError.fromResponse(responseBody['msg']);
+        throw ApiError.fromResponse(responseBody['message']);
       }
     } catch (e) {
       _handleError(e);
