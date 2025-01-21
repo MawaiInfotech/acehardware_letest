@@ -11,7 +11,7 @@ _$CartDetailsModelImpl _$$CartDetailsModelImplFromJson(
     _$CartDetailsModelImpl(
       code: (json['code'] as num?)?.toInt() ?? 0,
       total: (json['total'] as num?)?.toDouble() ?? 0.0,
-      status: json['status'] as String? ?? "",
+      status: json['status'] as bool? ?? false,
       userId: json['userId'] as String? ?? "",
       entryCount: (json['entryCount'] as num?)?.toInt() ?? 0,
       entries: (json['entries'] as List<dynamic>?)

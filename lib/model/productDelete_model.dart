@@ -6,7 +6,7 @@ part 'productDelete_model.freezed.dart';
 @freezed
 class ProductDeleteModel with _$ProductDeleteModel{
   const factory ProductDeleteModel({
-    @JsonKey(name: "status") @Default("") String status,
+    @JsonKey(name: "status") @Default(false) bool status,
     @JsonKey(name: "message") @Default("") String message,
   }) = _ProductDeleteModel;
 

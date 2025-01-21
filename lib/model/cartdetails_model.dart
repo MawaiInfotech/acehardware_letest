@@ -11,7 +11,7 @@ class CartDetailsModel with _$CartDetailsModel{
   const factory CartDetailsModel({
     @JsonKey(name: "code") @Default(0) int code,
     @JsonKey(name: "total") @Default(0.0) double total,
-    @JsonKey(name: "status") @Default("") String status,
+    @JsonKey(name: "status") @Default(false) bool status,
     @JsonKey(name: "userId") @Default("") String userId,
     @JsonKey(name: "entryCount") @Default(0) int entryCount,
     @Default(<CartEntriesModel>[]) List<CartEntriesModel> entries,

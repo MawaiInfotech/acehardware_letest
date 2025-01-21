@@ -32,8 +32,12 @@ mixin _$SubcategoryModel {
   String get image => throw _privateConstructorUsedError;
   Map<String, String?> get errors => throw _privateConstructorUsedError;
 
+  /// Serializes this SubcategoryModel to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of SubcategoryModel
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $SubcategoryModelCopyWith<SubcategoryModel> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -63,6 +67,8 @@ class _$SubcategoryModelCopyWithImpl<$Res, $Val extends SubcategoryModel>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of SubcategoryModel
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -127,6 +133,8 @@ class __$$SubcategoryModelImplCopyWithImpl<$Res>
       $Res Function(_$SubcategoryModelImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of SubcategoryModel
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -226,12 +234,14 @@ class _$SubcategoryModelImpl implements _SubcategoryModel {
             const DeepCollectionEquality().equals(other._errors, _errors));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(runtimeType, productCode, productDescription,
       cust_code, pmg, image, const DeepCollectionEquality().hash(_errors));
 
-  @JsonKey(ignore: true)
+  /// Create a copy of SubcategoryModel
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$SubcategoryModelImplCopyWith<_$SubcategoryModelImpl> get copyWith =>
@@ -275,8 +285,11 @@ abstract class _SubcategoryModel implements SubcategoryModel {
   String get image;
   @override
   Map<String, String?> get errors;
+
+  /// Create a copy of SubcategoryModel
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$SubcategoryModelImplCopyWith<_$SubcategoryModelImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

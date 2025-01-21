@@ -73,7 +73,9 @@ mixin _$CreditlimitGraphState {
   }) =>
       throw _privateConstructorUsedError;
 
-  @JsonKey(ignore: true)
+  /// Create a copy of CreditlimitGraphState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $CreditlimitGraphStateCopyWith<CreditlimitGraphState> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -98,6 +100,8 @@ class _$CreditlimitGraphStateCopyWithImpl<$Res,
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of CreditlimitGraphState
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -131,6 +135,8 @@ class __$$LoadingImplCopyWithImpl<$Res>
       _$LoadingImpl _value, $Res Function(_$LoadingImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of CreditlimitGraphState
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -177,7 +183,9 @@ class _$LoadingImpl implements _Loading {
   int get hashCode =>
       Object.hash(runtimeType, const DeepCollectionEquality().hash(_graphList));
 
-  @JsonKey(ignore: true)
+  /// Create a copy of CreditlimitGraphState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$LoadingImplCopyWith<_$LoadingImpl> get copyWith =>
@@ -268,8 +276,11 @@ abstract class _Loading implements CreditlimitGraphState {
 
   @override
   List<CreditlimitGraphModel> get graphList;
+
+  /// Create a copy of CreditlimitGraphState
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$LoadingImplCopyWith<_$LoadingImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -293,6 +304,8 @@ class __$$ContentImplCopyWithImpl<$Res>
       _$ContentImpl _value, $Res Function(_$ContentImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of CreditlimitGraphState
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -339,7 +352,9 @@ class _$ContentImpl implements _Content {
   int get hashCode =>
       Object.hash(runtimeType, const DeepCollectionEquality().hash(_graphList));
 
-  @JsonKey(ignore: true)
+  /// Create a copy of CreditlimitGraphState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$ContentImplCopyWith<_$ContentImpl> get copyWith =>
@@ -430,8 +445,11 @@ abstract class _Content implements CreditlimitGraphState {
 
   @override
   List<CreditlimitGraphModel> get graphList;
+
+  /// Create a copy of CreditlimitGraphState
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$ContentImplCopyWith<_$ContentImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -455,6 +473,8 @@ class __$$SuccessImplCopyWithImpl<$Res>
       _$SuccessImpl _value, $Res Function(_$SuccessImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of CreditlimitGraphState
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -501,7 +521,9 @@ class _$SuccessImpl implements _Success {
   int get hashCode =>
       Object.hash(runtimeType, const DeepCollectionEquality().hash(_graphList));
 
-  @JsonKey(ignore: true)
+  /// Create a copy of CreditlimitGraphState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$SuccessImplCopyWith<_$SuccessImpl> get copyWith =>
@@ -592,8 +614,11 @@ abstract class _Success implements CreditlimitGraphState {
 
   @override
   List<CreditlimitGraphModel> get graphList;
+
+  /// Create a copy of CreditlimitGraphState
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$SuccessImplCopyWith<_$SuccessImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -617,6 +642,8 @@ class __$$FailedImplCopyWithImpl<$Res>
       _$FailedImpl _value, $Res Function(_$FailedImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of CreditlimitGraphState
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -672,7 +699,9 @@ class _$FailedImpl implements _Failed {
   int get hashCode => Object.hash(
       runtimeType, const DeepCollectionEquality().hash(_graphList), message);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of CreditlimitGraphState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$FailedImplCopyWith<_$FailedImpl> get copyWith =>
@@ -765,8 +794,11 @@ abstract class _Failed implements CreditlimitGraphState {
   @override
   List<CreditlimitGraphModel> get graphList;
   String get message;
+
+  /// Create a copy of CreditlimitGraphState
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$FailedImplCopyWith<_$FailedImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

@@ -71,7 +71,9 @@ mixin _$CartNumberState {
   }) =>
       throw _privateConstructorUsedError;
 
-  @JsonKey(ignore: true)
+  /// Create a copy of CartNumberState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $CartNumberStateCopyWith<CartNumberState> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -97,6 +99,8 @@ class _$CartNumberStateCopyWithImpl<$Res, $Val extends CartNumberState>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of CartNumberState
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -110,6 +114,8 @@ class _$CartNumberStateCopyWithImpl<$Res, $Val extends CartNumberState>
     ) as $Val);
   }
 
+  /// Create a copy of CartNumberState
+  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $CartNumberModelCopyWith<$Res> get cartNumberModel {
@@ -141,6 +147,8 @@ class __$$LoadingImplCopyWithImpl<$Res>
       _$LoadingImpl _value, $Res Function(_$LoadingImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of CartNumberState
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -180,7 +188,9 @@ class _$LoadingImpl implements _Loading {
   @override
   int get hashCode => Object.hash(runtimeType, cartNumberModel);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of CartNumberState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$LoadingImplCopyWith<_$LoadingImpl> get copyWith =>
@@ -269,8 +279,11 @@ abstract class _Loading implements CartNumberState {
 
   @override
   CartNumberModel get cartNumberModel;
+
+  /// Create a copy of CartNumberState
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$LoadingImplCopyWith<_$LoadingImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -297,6 +310,8 @@ class __$$ContentImplCopyWithImpl<$Res>
       _$ContentImpl _value, $Res Function(_$ContentImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of CartNumberState
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -336,7 +351,9 @@ class _$ContentImpl implements _Content {
   @override
   int get hashCode => Object.hash(runtimeType, cartNumberModel);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of CartNumberState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$ContentImplCopyWith<_$ContentImpl> get copyWith =>
@@ -425,8 +442,11 @@ abstract class _Content implements CartNumberState {
 
   @override
   CartNumberModel get cartNumberModel;
+
+  /// Create a copy of CartNumberState
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$ContentImplCopyWith<_$ContentImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -453,6 +473,8 @@ class __$$SuccessImplCopyWithImpl<$Res>
       _$SuccessImpl _value, $Res Function(_$SuccessImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of CartNumberState
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -500,7 +522,9 @@ class _$SuccessImpl implements _Success {
   @override
   int get hashCode => Object.hash(runtimeType, cartNumberModel, message);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of CartNumberState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$SuccessImplCopyWith<_$SuccessImpl> get copyWith =>
@@ -592,8 +616,11 @@ abstract class _Success implements CartNumberState {
   @override
   CartNumberModel get cartNumberModel;
   String? get message;
+
+  /// Create a copy of CartNumberState
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$SuccessImplCopyWith<_$SuccessImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -620,6 +647,8 @@ class __$$FailedImplCopyWithImpl<$Res>
       _$FailedImpl _value, $Res Function(_$FailedImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of CartNumberState
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -667,7 +696,9 @@ class _$FailedImpl implements _Failed {
   @override
   int get hashCode => Object.hash(runtimeType, cartNumberModel, message);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of CartNumberState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$FailedImplCopyWith<_$FailedImpl> get copyWith =>
@@ -759,8 +790,11 @@ abstract class _Failed implements CartNumberState {
   @override
   CartNumberModel get cartNumberModel;
   String get message;
+
+  /// Create a copy of CartNumberState
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$FailedImplCopyWith<_$FailedImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
