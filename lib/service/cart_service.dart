@@ -91,6 +91,33 @@ class CartService extends ChangeNotifier{
     return null;
   }
 
+  /// Increase Decrease Cart Item Quantity
+
+  Future<String?> getCartItemQuantity(String qty) async {
+    const url = '${root}addToCart';
+    final body = {
+      "token" : token,
+      "qty" : qty,
+      "Cart_ID" : cartNumber
+    };
+    try {
+      final response = await http.post(Uri.parse(url),
+          body: json.encode(body), headers: getHeaders());
+      final responseBody = json.decode(response.body);
+      if (responseBody['status'] == true) {
+        // final model = _cartDetails.copyWith(entryCount: _cartDetails.entryCount + 1);
+        // update(model);
+        return responseBody ['message'];
+      }else{
+        throw ApiError.fromResponse(responseBody['message']);
+      }
+    } catch (e) {
+      _handleError(e);
+    }
+    return null;
+  }
+
+
   // place order
   Future<String?> getPlaceOrderData(Map<String, dynamic>data) async {
     const url = '${root}placeOrder';

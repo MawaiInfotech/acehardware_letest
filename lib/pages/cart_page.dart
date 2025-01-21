@@ -1,3 +1,4 @@
+import 'package:acehardware_mawai_letest/bloc/cart_item_qty_bloc.dart';
 import 'package:confetti/confetti.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -35,6 +36,8 @@ class _CartPageState extends State<CartPage> {
 
   late final AddtoCartBloc addtoCartBloc;
 
+  late final CartItemQtyBloc cartItemQtyBloc;
+
   late final RemoveProductBloc removeProductBloc;
 
   late final PlaceOrderBloc placeOrderBloc;
@@ -54,6 +57,7 @@ class _CartPageState extends State<CartPage> {
     // cartBloc = CartBloc(cartService, loginService);
      addtoCartBloc = AddtoCartBloc(loginService, cartService);
     // cartBloc.init();
+    cartItemQtyBloc = CartItemQtyBloc(cartService);
     cartBloc = context.read<CartBloc>();
     removeProductBloc = RemoveProductBloc(loginService, cartService);
     placeOrderBloc = PlaceOrderBloc(loginService, cartService);
