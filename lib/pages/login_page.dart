@@ -280,7 +280,6 @@ class _LoginPageState extends State<LoginPage> with SingleTickerProviderStateMix
                 vendorsBloc.init();
                 _showVendorList();
               } else{
-                await cartService.getCartList();
                 ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text(message??"Successful Login")));
                 Navigator.pushNamed(context, AppRoutes.navigationPage);
               }
@@ -331,7 +330,6 @@ class _LoginPageState extends State<LoginPage> with SingleTickerProviderStateMix
                 vendorsBloc.init();
                 _showVendorList();
               } else{
-                await cartService.getCartList();
                 ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text(message??"Successful Login")));
                 Navigator.pushNamed(context, AppRoutes.navigationPage);
               }
@@ -395,7 +393,6 @@ class _LoginPageState extends State<LoginPage> with SingleTickerProviderStateMix
                                     vendorName = state.vendorList[index].vendorName;
                                     vendorCode = state.vendorList[index].vendorCode;
                                     await prefsBox.put(kUserName, vendorCode);
-                                    await cartService.getCartList();
                                     Navigator.pop(context);
                                     ScaffoldMessenger.of(context).showSnackBar(const SnackBar(content: Text("Successful Login")));
                                     Navigator.pushNamed(context, AppRoutes.navigationPage);
