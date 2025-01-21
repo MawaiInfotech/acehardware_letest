@@ -399,13 +399,14 @@ class _ProductDetailsPageState extends State<ProductDetailsPage> {
 
   void _addToCart(HomepageModel model, int index) async {
     final data = {
-      'cartId': cartCode,
-      'itemPosition': 0,
-      'netPrice': model.netMRP,
-      'productCode': model.code,
+      'token' : token,
+      'cart_id': cartCode,
+     // 'netPrice': model.netMRP,
+      'product_code': model.code,
+      'cust_code': model.customerCode,
       'qty': _itemCount,
-      'uom': model.uom,
-      'vendor_code': model.customerCode,
+    //  'uom': model.uom,
+
     };
     await addtoCartBloc.UpdateRequest(data);
     final state = addtoCartBloc.state;
@@ -924,14 +925,16 @@ class _ProductCardState extends State<ProductCard> {
 
   void _addToCart(HomepageModel model, int index) async {
     final data = {
-      'cartId': cartCode,
-      'itemPosition': 0,
-      'netPrice': model.netMRP,
-      'productCode': model.code,
+
+      'token' : token,
+      'cart_id': cartNumber,
+      // 'netPrice': model.netMRP,
+      'product_code': model.code,
+      'cust_code': model.customerCode,
       'qty': _count,
-      'uom': model.uom,
-      'vendor_code': model.customerCode,
+      //  'uom': model.uom,
     };
+    print(data);
     await addtoCartBloc.UpdateRequest(data);
     final state = addtoCartBloc.state;
     state.maybeWhen(

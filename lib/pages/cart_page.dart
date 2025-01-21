@@ -393,7 +393,6 @@ class _CartPageState extends State<CartPage> {
                  ),
                ),
           ),
-
           SizedBox(width: 20.dw,),
           Expanded(
               flex: 3,
@@ -487,7 +486,7 @@ class _CartPageState extends State<CartPage> {
   }
 
   void _removeProduct(CartEntriesModel model) async {
-    await removeProductBloc.UpdateRequest(model.productCode);
+    await removeProductBloc.deleteProduct(model.productCode, model.id.toString());
     ScaffoldMessenger.of(context).showSnackBar(const SnackBar(content: Text("Item Deleted Successfully")));
     cartBloc.init();
 

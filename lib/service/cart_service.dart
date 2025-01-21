@@ -3,7 +3,9 @@ import 'dart:convert';
 import 'dart:io';
 import 'dart:math';
 import 'package:acehardware_mawai_letest/model/cartNumber_model.dart';
+import 'package:acehardware_mawai_letest/model/productDelete_model.dart';
 import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 import '../error/api_error.dart';
 import '../model/cartdetails_model.dart';
@@ -34,6 +36,7 @@ class CartService extends ChangeNotifier{
       print(e);
       _handleError(e);
     }
+    return null;
     //return CartDetailsModel();
   }
 
@@ -51,13 +54,14 @@ class CartService extends ChangeNotifier{
       final responseBody = json.decode(response.body);
       if(responseBody["status"] == true){
         await prefsBox.put(kCartNumber, responseBody["data"]["code"]);
+     //   print("Hello " + responseBody["data"]["code"]);
       }else{
         throw ApiError.fromResponse(responseBody["message"]);
       }
     } catch (e) {
       _handleError(e);
     }
-    return CartNumberModel();
+    return const CartNumberModel();
   }
 
 
@@ -72,9 +76,9 @@ class CartService extends ChangeNotifier{
       if (responseBody['status'] == true) {
         final model = _cartDetails.copyWith(entryCount: _cartDetails.entryCount + 1);
         update(model);
-        return responseBody ['msg'];
+        return responseBody ['message'];
       }else{
-        throw ApiError.fromResponse(responseBody['msg']);
+        throw ApiError.fromResponse(responseBody['message']);
       }
     } catch (e) {
       _handleError(e);
@@ -98,19 +102,26 @@ class CartService extends ChangeNotifier{
   }
 
   //delete cart item in cart
-  Future<String> getDeleteCartData(String productCode) async {
-     print("getDeleteCartData");
-    final url = '$root$cartCode/entries/$userCode/delete?productCode=$productCode';
-    final body = {"productCode" : productCode};
+  Future<String?> getDeleteCartData(String productCode, String productId) async {
+    const url = "${root}deleteProductInCart";
+    final body = {
+      "token" : token,
+      "cart_no" : cartNumber,
+      "product_id" : productId,
+      "product_code" : productCode
+    };
+    final response = await http.post(Uri.parse(url),body: json.encode(body), headers: headers);
     try {
-      final response = await http.post(Uri.parse(url), body: json.encode(body), headers: getHeaders());
-      //final responseBody = json.decode(response.body);
-      return "Item Deleted Successfully";
+      final responseBody = json.decode(response.body);
+      if(responseBody["status"] == true){
+      return responseBody['message'];
+      }else{
+        throw ApiError.fromResponse(responseBody["message"]);
+      }
     } catch (e) {
       _handleError(e);
     }
-    return "";
-    // return null;
+    return null;
   }
 
   _handleError(var e) {
