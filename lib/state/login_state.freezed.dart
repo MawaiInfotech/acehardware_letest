@@ -69,7 +69,9 @@ mixin _$LoginPageState {
   }) =>
       throw _privateConstructorUsedError;
 
-  @JsonKey(ignore: true)
+  /// Create a copy of LoginPageState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $LoginPageStateCopyWith<LoginPageState> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -93,6 +95,8 @@ class _$LoginPageStateCopyWithImpl<$Res, $Val extends LoginPageState>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of LoginPageState
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -126,6 +130,8 @@ class __$$LoadingImplCopyWithImpl<$Res>
       _$LoadingImpl _value, $Res Function(_$LoadingImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of LoginPageState
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -165,7 +171,9 @@ class _$LoadingImpl implements _Loading {
   @override
   int get hashCode => Object.hash(runtimeType, loginModel);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of LoginPageState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$LoadingImplCopyWith<_$LoadingImpl> get copyWith =>
@@ -252,8 +260,11 @@ abstract class _Loading implements LoginPageState {
 
   @override
   LoginModel get loginModel;
+
+  /// Create a copy of LoginPageState
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$LoadingImplCopyWith<_$LoadingImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -277,6 +288,8 @@ class __$$ContentImplCopyWithImpl<$Res>
       _$ContentImpl _value, $Res Function(_$ContentImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of LoginPageState
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -316,7 +329,9 @@ class _$ContentImpl implements _Content {
   @override
   int get hashCode => Object.hash(runtimeType, loginModel);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of LoginPageState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$ContentImplCopyWith<_$ContentImpl> get copyWith =>
@@ -403,8 +418,11 @@ abstract class _Content implements LoginPageState {
 
   @override
   LoginModel get loginModel;
+
+  /// Create a copy of LoginPageState
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$ContentImplCopyWith<_$ContentImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -428,6 +446,8 @@ class __$$SuccessImplCopyWithImpl<$Res>
       _$SuccessImpl _value, $Res Function(_$SuccessImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of LoginPageState
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -473,7 +493,9 @@ class _$SuccessImpl implements _Success {
   int get hashCode => Object.hash(
       runtimeType, loginModel, const DeepCollectionEquality().hash(message));
 
-  @JsonKey(ignore: true)
+  /// Create a copy of LoginPageState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$SuccessImplCopyWith<_$SuccessImpl> get copyWith =>
@@ -562,8 +584,11 @@ abstract class _Success implements LoginPageState {
   @override
   LoginModel get loginModel;
   dynamic get message;
+
+  /// Create a copy of LoginPageState
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$SuccessImplCopyWith<_$SuccessImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -587,6 +612,8 @@ class __$$FailedImplCopyWithImpl<$Res>
       _$FailedImpl _value, $Res Function(_$FailedImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of LoginPageState
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -635,7 +662,9 @@ class _$FailedImpl implements _Failed {
   @override
   int get hashCode => Object.hash(runtimeType, loginModel, error_description);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of LoginPageState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$FailedImplCopyWith<_$FailedImpl> get copyWith =>
@@ -725,8 +754,11 @@ abstract class _Failed implements LoginPageState {
   @override
   LoginModel get loginModel;
   String get error_description;
+
+  /// Create a copy of LoginPageState
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$FailedImplCopyWith<_$FailedImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

@@ -25,8 +25,12 @@ mixin _$OrderDeleteModel {
   @JsonKey(name: "entryCount")
   String get entryCount => throw _privateConstructorUsedError;
 
+  /// Serializes this OrderDeleteModel to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of OrderDeleteModel
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $OrderDeleteModelCopyWith<OrderDeleteModel> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -52,6 +56,8 @@ class _$OrderDeleteModelCopyWithImpl<$Res, $Val extends OrderDeleteModel>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of OrderDeleteModel
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -92,6 +98,8 @@ class __$$OrderDeleteModelImplCopyWithImpl<$Res>
       $Res Function(_$OrderDeleteModelImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of OrderDeleteModel
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -143,11 +151,13 @@ class _$OrderDeleteModelImpl implements _OrderDeleteModel {
                 other.entryCount == entryCount));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(runtimeType, status, entryCount);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of OrderDeleteModel
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$OrderDeleteModelImplCopyWith<_$OrderDeleteModelImpl> get copyWith =>
@@ -177,8 +187,11 @@ abstract class _OrderDeleteModel implements OrderDeleteModel {
   @override
   @JsonKey(name: "entryCount")
   String get entryCount;
+
+  /// Create a copy of OrderDeleteModel
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$OrderDeleteModelImplCopyWith<_$OrderDeleteModelImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

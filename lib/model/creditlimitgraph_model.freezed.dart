@@ -29,8 +29,12 @@ mixin _$CreditlimitGraphModel {
   String get maxValue => throw _privateConstructorUsedError;
   Map<String, String?> get errors => throw _privateConstructorUsedError;
 
+  /// Serializes this CreditlimitGraphModel to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of CreditlimitGraphModel
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $CreditlimitGraphModelCopyWith<CreditlimitGraphModel> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -59,6 +63,8 @@ class _$CreditlimitGraphModelCopyWithImpl<$Res,
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of CreditlimitGraphModel
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -113,6 +119,8 @@ class __$$CreditlimitGraphModelImplCopyWithImpl<$Res>
       $Res Function(_$CreditlimitGraphModelImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of CreditlimitGraphModel
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -191,12 +199,14 @@ class _$CreditlimitGraphModelImpl implements _CreditlimitGraphModel {
             const DeepCollectionEquality().equals(other._errors, _errors));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(runtimeType, customerCode, value, maxValue,
       const DeepCollectionEquality().hash(_errors));
 
-  @JsonKey(ignore: true)
+  /// Create a copy of CreditlimitGraphModel
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$CreditlimitGraphModelImplCopyWith<_$CreditlimitGraphModelImpl>
@@ -232,8 +242,11 @@ abstract class _CreditlimitGraphModel implements CreditlimitGraphModel {
   String get maxValue;
   @override
   Map<String, String?> get errors;
+
+  /// Create a copy of CreditlimitGraphModel
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$CreditlimitGraphModelImplCopyWith<_$CreditlimitGraphModelImpl>
       get copyWith => throw _privateConstructorUsedError;
 }

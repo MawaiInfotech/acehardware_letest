@@ -21,12 +21,16 @@ ProductDeleteModel _$ProductDeleteModelFromJson(Map<String, dynamic> json) {
 /// @nodoc
 mixin _$ProductDeleteModel {
   @JsonKey(name: "status")
-  String get status => throw _privateConstructorUsedError;
+  bool get status => throw _privateConstructorUsedError;
   @JsonKey(name: "message")
   String get message => throw _privateConstructorUsedError;
 
+  /// Serializes this ProductDeleteModel to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of ProductDeleteModel
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $ProductDeleteModelCopyWith<ProductDeleteModel> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -38,7 +42,7 @@ abstract class $ProductDeleteModelCopyWith<$Res> {
       _$ProductDeleteModelCopyWithImpl<$Res, ProductDeleteModel>;
   @useResult
   $Res call(
-      {@JsonKey(name: "status") String status,
+      {@JsonKey(name: "status") bool status,
       @JsonKey(name: "message") String message});
 }
 
@@ -52,6 +56,8 @@ class _$ProductDeleteModelCopyWithImpl<$Res, $Val extends ProductDeleteModel>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of ProductDeleteModel
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -62,7 +68,7 @@ class _$ProductDeleteModelCopyWithImpl<$Res, $Val extends ProductDeleteModel>
       status: null == status
           ? _value.status
           : status // ignore: cast_nullable_to_non_nullable
-              as String,
+              as bool,
       message: null == message
           ? _value.message
           : message // ignore: cast_nullable_to_non_nullable
@@ -80,7 +86,7 @@ abstract class _$$ProductDeleteModelImplCopyWith<$Res>
   @override
   @useResult
   $Res call(
-      {@JsonKey(name: "status") String status,
+      {@JsonKey(name: "status") bool status,
       @JsonKey(name: "message") String message});
 }
 
@@ -92,6 +98,8 @@ class __$$ProductDeleteModelImplCopyWithImpl<$Res>
       $Res Function(_$ProductDeleteModelImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of ProductDeleteModel
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -102,7 +110,7 @@ class __$$ProductDeleteModelImplCopyWithImpl<$Res>
       status: null == status
           ? _value.status
           : status // ignore: cast_nullable_to_non_nullable
-              as String,
+              as bool,
       message: null == message
           ? _value.message
           : message // ignore: cast_nullable_to_non_nullable
@@ -115,7 +123,7 @@ class __$$ProductDeleteModelImplCopyWithImpl<$Res>
 @JsonSerializable()
 class _$ProductDeleteModelImpl implements _ProductDeleteModel {
   const _$ProductDeleteModelImpl(
-      {@JsonKey(name: "status") this.status = "",
+      {@JsonKey(name: "status") this.status = false,
       @JsonKey(name: "message") this.message = ""});
 
   factory _$ProductDeleteModelImpl.fromJson(Map<String, dynamic> json) =>
@@ -123,7 +131,7 @@ class _$ProductDeleteModelImpl implements _ProductDeleteModel {
 
   @override
   @JsonKey(name: "status")
-  final String status;
+  final bool status;
   @override
   @JsonKey(name: "message")
   final String message;
@@ -142,11 +150,13 @@ class _$ProductDeleteModelImpl implements _ProductDeleteModel {
             (identical(other.message, message) || other.message == message));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(runtimeType, status, message);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of ProductDeleteModel
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$ProductDeleteModelImplCopyWith<_$ProductDeleteModelImpl> get copyWith =>
@@ -163,7 +173,7 @@ class _$ProductDeleteModelImpl implements _ProductDeleteModel {
 
 abstract class _ProductDeleteModel implements ProductDeleteModel {
   const factory _ProductDeleteModel(
-          {@JsonKey(name: "status") final String status,
+          {@JsonKey(name: "status") final bool status,
           @JsonKey(name: "message") final String message}) =
       _$ProductDeleteModelImpl;
 
@@ -172,12 +182,15 @@ abstract class _ProductDeleteModel implements ProductDeleteModel {
 
   @override
   @JsonKey(name: "status")
-  String get status;
+  bool get status;
   @override
   @JsonKey(name: "message")
   String get message;
+
+  /// Create a copy of ProductDeleteModel
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$ProductDeleteModelImplCopyWith<_$ProductDeleteModelImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

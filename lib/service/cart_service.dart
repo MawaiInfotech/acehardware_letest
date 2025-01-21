@@ -24,11 +24,16 @@ class CartService extends ChangeNotifier{
    }
 
   Future<CartDetailsModel?> getCartList()async{
-    final url = '${root}cart/$userCode';
+    const url = '${root}cartItemlist';
+    final body = {
+      "token" : token,
+      "cart_id": cartNumber
+    };
+  //  print(body);
     try{
-      final response = await http.get(Uri.parse(url), headers:  getHeaders());
+      final response = await http.post(Uri.parse(url),body: json.encode(body), headers:  getHeaders());
       final responseBody = json.decode(response.body);
-      await prefsBox.put(kcode, responseBody['code'] );
+   //    await prefsBox.put(kcode, responseBody['code'] );
       final model = CartDetailsModel.fromJson(responseBody);
       update(model);
       return model;
@@ -106,11 +111,13 @@ class CartService extends ChangeNotifier{
     const url = "${root}deleteProductInCart";
     final body = {
       "token" : token,
-      "cart_no" : cartNumber,
+      "cart_id" : cartNumber,
       "product_id" : productId,
       "product_code" : productCode
     };
+    print(body);
     final response = await http.post(Uri.parse(url),body: json.encode(body), headers: headers);
+    print(response.body);
     try {
       final responseBody = json.decode(response.body);
       if(responseBody["status"] == true){

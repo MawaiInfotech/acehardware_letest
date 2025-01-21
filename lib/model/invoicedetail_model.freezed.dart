@@ -37,8 +37,12 @@ mixin _$InvoiceDetailModel {
   @JsonKey(name: "uom")
   String get uom => throw _privateConstructorUsedError;
 
+  /// Serializes this InvoiceDetailModel to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of InvoiceDetailModel
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $InvoiceDetailModelCopyWith<InvoiceDetailModel> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -70,6 +74,8 @@ class _$InvoiceDetailModelCopyWithImpl<$Res, $Val extends InvoiceDetailModel>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of InvoiceDetailModel
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -146,6 +152,8 @@ class __$$InvoiceDetailModelImplCopyWithImpl<$Res>
       $Res Function(_$InvoiceDetailModelImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of InvoiceDetailModel
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -260,12 +268,14 @@ class _$InvoiceDetailModelImpl implements _InvoiceDetailModel {
             (identical(other.uom, uom) || other.uom == uom));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(runtimeType, invoiceNumber, date, refere,
       productCode, dispatchQuantity, price, description, uom);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of InvoiceDetailModel
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$InvoiceDetailModelImplCopyWith<_$InvoiceDetailModelImpl> get copyWith =>
@@ -318,8 +328,11 @@ abstract class _InvoiceDetailModel implements InvoiceDetailModel {
   @override
   @JsonKey(name: "uom")
   String get uom;
+
+  /// Create a copy of InvoiceDetailModel
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$InvoiceDetailModelImplCopyWith<_$InvoiceDetailModelImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

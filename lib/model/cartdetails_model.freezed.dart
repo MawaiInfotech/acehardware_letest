@@ -25,15 +25,19 @@ mixin _$CartDetailsModel {
   @JsonKey(name: "total")
   double get total => throw _privateConstructorUsedError;
   @JsonKey(name: "status")
-  String get status => throw _privateConstructorUsedError;
+  bool get status => throw _privateConstructorUsedError;
   @JsonKey(name: "userId")
   String get userId => throw _privateConstructorUsedError;
   @JsonKey(name: "entryCount")
   int get entryCount => throw _privateConstructorUsedError;
   List<CartEntriesModel> get entries => throw _privateConstructorUsedError;
 
+  /// Serializes this CartDetailsModel to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of CartDetailsModel
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $CartDetailsModelCopyWith<CartDetailsModel> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -47,7 +51,7 @@ abstract class $CartDetailsModelCopyWith<$Res> {
   $Res call(
       {@JsonKey(name: "code") int code,
       @JsonKey(name: "total") double total,
-      @JsonKey(name: "status") String status,
+      @JsonKey(name: "status") bool status,
       @JsonKey(name: "userId") String userId,
       @JsonKey(name: "entryCount") int entryCount,
       List<CartEntriesModel> entries});
@@ -63,6 +67,8 @@ class _$CartDetailsModelCopyWithImpl<$Res, $Val extends CartDetailsModel>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of CartDetailsModel
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -85,7 +91,7 @@ class _$CartDetailsModelCopyWithImpl<$Res, $Val extends CartDetailsModel>
       status: null == status
           ? _value.status
           : status // ignore: cast_nullable_to_non_nullable
-              as String,
+              as bool,
       userId: null == userId
           ? _value.userId
           : userId // ignore: cast_nullable_to_non_nullable
@@ -113,7 +119,7 @@ abstract class _$$CartDetailsModelImplCopyWith<$Res>
   $Res call(
       {@JsonKey(name: "code") int code,
       @JsonKey(name: "total") double total,
-      @JsonKey(name: "status") String status,
+      @JsonKey(name: "status") bool status,
       @JsonKey(name: "userId") String userId,
       @JsonKey(name: "entryCount") int entryCount,
       List<CartEntriesModel> entries});
@@ -127,6 +133,8 @@ class __$$CartDetailsModelImplCopyWithImpl<$Res>
       $Res Function(_$CartDetailsModelImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of CartDetailsModel
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -149,7 +157,7 @@ class __$$CartDetailsModelImplCopyWithImpl<$Res>
       status: null == status
           ? _value.status
           : status // ignore: cast_nullable_to_non_nullable
-              as String,
+              as bool,
       userId: null == userId
           ? _value.userId
           : userId // ignore: cast_nullable_to_non_nullable
@@ -172,7 +180,7 @@ class _$CartDetailsModelImpl extends _CartDetailsModel {
   const _$CartDetailsModelImpl(
       {@JsonKey(name: "code") this.code = 0,
       @JsonKey(name: "total") this.total = 0.0,
-      @JsonKey(name: "status") this.status = "",
+      @JsonKey(name: "status") this.status = false,
       @JsonKey(name: "userId") this.userId = "",
       @JsonKey(name: "entryCount") this.entryCount = 0,
       final List<CartEntriesModel> entries = const <CartEntriesModel>[]})
@@ -190,7 +198,7 @@ class _$CartDetailsModelImpl extends _CartDetailsModel {
   final double total;
   @override
   @JsonKey(name: "status")
-  final String status;
+  final bool status;
   @override
   @JsonKey(name: "userId")
   final String userId;
@@ -225,12 +233,14 @@ class _$CartDetailsModelImpl extends _CartDetailsModel {
             const DeepCollectionEquality().equals(other._entries, _entries));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(runtimeType, code, total, status, userId,
       entryCount, const DeepCollectionEquality().hash(_entries));
 
-  @JsonKey(ignore: true)
+  /// Create a copy of CartDetailsModel
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$CartDetailsModelImplCopyWith<_$CartDetailsModelImpl> get copyWith =>
@@ -249,7 +259,7 @@ abstract class _CartDetailsModel extends CartDetailsModel {
   const factory _CartDetailsModel(
       {@JsonKey(name: "code") final int code,
       @JsonKey(name: "total") final double total,
-      @JsonKey(name: "status") final String status,
+      @JsonKey(name: "status") final bool status,
       @JsonKey(name: "userId") final String userId,
       @JsonKey(name: "entryCount") final int entryCount,
       final List<CartEntriesModel> entries}) = _$CartDetailsModelImpl;
@@ -266,7 +276,7 @@ abstract class _CartDetailsModel extends CartDetailsModel {
   double get total;
   @override
   @JsonKey(name: "status")
-  String get status;
+  bool get status;
   @override
   @JsonKey(name: "userId")
   String get userId;
@@ -275,8 +285,11 @@ abstract class _CartDetailsModel extends CartDetailsModel {
   int get entryCount;
   @override
   List<CartEntriesModel> get entries;
+
+  /// Create a copy of CartDetailsModel
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$CartDetailsModelImplCopyWith<_$CartDetailsModelImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

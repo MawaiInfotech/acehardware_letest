@@ -9,7 +9,7 @@ part of 'productDelete_model.dart';
 _$ProductDeleteModelImpl _$$ProductDeleteModelImplFromJson(
         Map<String, dynamic> json) =>
     _$ProductDeleteModelImpl(
-      status: json['status'] as String? ?? "",
+      status: json['status'] as bool? ?? false,
       message: json['message'] as String? ?? "",
     );
 
