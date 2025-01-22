@@ -94,7 +94,7 @@ class CartService extends ChangeNotifier{
   /// Increase Decrease Cart Item Quantity
 
   Future<String?> getCartItemQuantity(String qty) async {
-    const url = '${root}addToCart';
+    const url = '${root}cartItemQty';
     final body = {
       "token" : token,
       "qty" : qty,
