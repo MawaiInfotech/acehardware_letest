@@ -49,7 +49,6 @@ Future <void> main()async {
         BlocProvider(create: (_) => SalesTrendGraphBloc(loginService, graphService)),
         BlocProvider(create: (_) => CreditlimitGraphBloc(loginService, graphService)),
         BlocProvider(create: (_) => PaymentGraphBloc(loginService, graphService)),
-        BlocProvider(create: (_) => CartBloc(cartService, loginService)),
         BlocProvider(create: (_) => CartItemCountBloc(cartService, loginService))
       ],
       child: MyApp(),),

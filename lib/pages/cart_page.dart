@@ -8,6 +8,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:intl/intl.dart';
 import 'package:provider/provider.dart';
 import '../bloc/addtocart_bloc.dart';
+import '../bloc/cartItemCount_bloc.dart';
 import '../bloc/cart_bloc.dart';
 import '../bloc/placeorder_bloc.dart';
 import '../bloc/removeorder_bloc.dart';
@@ -45,6 +46,8 @@ class _CartPageState extends State<CartPage> {
 
   late final PlaceOrderBloc placeOrderBloc;
 
+  late final CartItemCountBloc cartItemCountBloc;
+
   late int nextValue;
 
   late CartEntriesModel cartEntriesModel = const CartEntriesModel();
@@ -64,6 +67,7 @@ class _CartPageState extends State<CartPage> {
   //   cartBloc = context.read<CartBloc>();
     removeProductBloc = RemoveProductBloc(loginService, cartService);
     placeOrderBloc = PlaceOrderBloc(loginService, cartService);
+    cartItemCountBloc = CartItemCountBloc(cartService, loginService);
     _controllerCenter = ConfettiController(duration: const Duration(seconds: 10));
   }
 
@@ -488,15 +492,14 @@ class _CartPageState extends State<CartPage> {
     await removeProductBloc.deleteProduct(model.productCode, model.id.toString());
     ScaffoldMessenger.of(context).showSnackBar(const SnackBar(content: Text("Item Deleted Successfully")));
     cartListBloc.init();
-
+    cartItemCountBloc.refresh();
   }
 
   void _placeOrder(CartListModel model) async {
     final data = {
-      'cartId': cartCode,
-      'itemPosition': 0,
-      'netPrice': model.total,
-      'vendor_code': userCode,
+      'token': token,
+      'cart_id': cartNumber,
+      'cust_code': userCode,
     };
     await placeOrderBloc.placeOrder(data);
     ScaffoldMessenger.of(context).showSnackBar(const SnackBar(content: Text("Order Placed Successfully")));

@@ -32,8 +32,6 @@ class _ProductDetailsPageState extends State<ProductDetailsPage> {
 
   late final AddtoCartBloc addtoCartBloc;
 
-  late final CartBloc cartBloc;
-
   late final CartItemCountBloc cartItemCountBloc;
 
   final scaffoldKey = GlobalKey<ScaffoldState>();
@@ -48,7 +46,6 @@ class _ProductDetailsPageState extends State<ProductDetailsPage> {
     final cartService = Provider.of<CartService>(context, listen: false);
     productDetailsBloc = ProductDetailsBloc(productService, loginService);
     addtoCartBloc = AddtoCartBloc(loginService, cartService);
-    cartBloc = CartBloc(cartService, loginService);
     cartItemCountBloc = CartItemCountBloc(cartService, loginService);
     productDetailsBloc.init(widget.productGroup);
   }
@@ -285,7 +282,6 @@ class _ProductCardState extends State<ProductCard> {
 
   late final AddtoCartBloc addtoCartBloc;
 
-  late final CartBloc cartBloc;
 
   late final CartItemCountBloc cartItemCountBloc;
 
@@ -300,7 +296,6 @@ class _ProductCardState extends State<ProductCard> {
     final cartService = Provider.of<CartService>(context, listen: false);
     productDetailsBloc = ProductDetailsBloc(productService, loginService);
     addtoCartBloc = AddtoCartBloc(loginService, cartService);
-    cartBloc = CartBloc(cartService, loginService);
     cartItemCountBloc = CartItemCountBloc(cartService, loginService);
     productDetailsBloc.init(widget.productGroup);
     _count = widget.model.moq;
