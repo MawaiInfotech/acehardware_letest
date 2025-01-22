@@ -1,3 +1,4 @@
+import 'package:acehardware_mawai_letest/bloc/cartItemCount_bloc.dart';
 import 'package:acehardware_mawai_letest/utils/screen_size_config.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -33,6 +34,8 @@ class _ProductDetailsPageState extends State<ProductDetailsPage> {
 
   late final CartBloc cartBloc;
 
+  late final CartItemCountBloc cartItemCountBloc;
+
   final scaffoldKey = GlobalKey<ScaffoldState>();
 
   final int _itemCount = 0;
@@ -46,6 +49,7 @@ class _ProductDetailsPageState extends State<ProductDetailsPage> {
     productDetailsBloc = ProductDetailsBloc(productService, loginService);
     addtoCartBloc = AddtoCartBloc(loginService, cartService);
     cartBloc = CartBloc(cartService, loginService);
+    cartItemCountBloc = CartItemCountBloc(cartService, loginService);
     productDetailsBloc.init(widget.productGroup);
   }
 
@@ -113,320 +117,8 @@ class _ProductDetailsPageState extends State<ProductDetailsPage> {
 
   Widget _buildCard(HomepageModel model, int index) {
     return ProductCard(model, index, widget.productGroup);
-    // return Card(
-    //   child: Padding(
-    //     padding: EdgeInsets.symmetric(vertical: 10.dw, horizontal: 5.dw),
-    //     child: Column(
-    //       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-    //       children: [
-    //         Row(
-    //           crossAxisAlignment: CrossAxisAlignment.start,
-    //           children: [
-    //             _buildImageRow(model),
-    //             _buildProductDetailsColumn(model, index)
-    //           ],
-    //         ),
-    //         _buildCartButtonRow(model, index)
-    //       ],
-    //     ),
-    //   ),
-    // );
   }
 
-  // _buildImageRow(HomepageModel model) {
-  //   return SizedBox(
-  //     width: 170.dw,
-  //     height: 120.dw,
-  //     child: Image.network(
-  //       model.image,
-  //       alignment: Alignment.center,
-  //       fit: BoxFit.scaleDown,
-  //       //   height: 200.dw,
-  //     ),
-  //   );
-  // }
-  //
-  // _buildProductDetailsColumn(HomepageModel model, int index) {
-  //   return Expanded(
-  //       flex: 3,
-  //       child: Padding(
-  //         padding: const EdgeInsets.only(left: 8.0),
-  //         child: Column(
-  //           mainAxisSize: MainAxisSize.min,
-  //           crossAxisAlignment: CrossAxisAlignment.start,
-  //           children: [
-  //             Text(
-  //               model.productDiscription,
-  //               style: TextStyle(fontSize: 16.dw, fontWeight: FontWeight.w600),
-  //             ),
-  //             SizedBox(
-  //               height: 10.dh,
-  //             ),
-  //             Text(
-  //               model.code,
-  //               style: const TextStyle(fontWeight: FontWeight.w600),
-  //             ),
-  //             SizedBox(
-  //               height: 10.dh,
-  //             ),
-  //             _buildMRPDiscountRow(model),
-  //             SizedBox(
-  //               height: 10.dh,
-  //             ),
-  //             _buildPriceQuantityRow(model, index),
-  //             SizedBox(
-  //               height: 10.dw,
-  //             ),
-  //           ],
-  //         ),
-  //       ));
-  // }
-
-  // _buildMRPDiscountRow(HomepageModel model) {
-  //   return Row(
-  //     children: [
-  //       Container(
-  //         width: 100.dw,
-  //         //  height: 55.dh,
-  //         decoration: BoxDecoration(
-  //           borderRadius: BorderRadius.circular(5.dw),
-  //           //  border: Border.all(color: Colors.black54)
-  //         ),
-  //         child: Column(
-  //           crossAxisAlignment: CrossAxisAlignment.start,
-  //           children: [
-  //             Text(
-  //               " MRP",
-  //               style: TextStyle(
-  //                   fontSize: 17.dw,
-  //                   color: Colors.grey.shade700,
-  //                   fontWeight: FontWeight.w500),
-  //             ),
-  //             Text(
-  //               NumberFormat.currency(
-  //                 symbol: '₹ ',
-  //                 locale: "HI",
-  //                 decimalDigits: 2,
-  //               ).format(model.currentMrp),
-  //               style: TextStyle(
-  //                   fontSize: 17.dw,
-  //                   color: AppColors.black,
-  //                   fontWeight: FontWeight.w500),
-  //             )
-  //           ],
-  //         ),
-  //       ),
-  //       // _buildContainer(" MRP",""+ model.currentMrp.toString().inRupeeFormat() ),
-  //       _buildContainer(" Discount", model.discount.toString()),
-  //     ],
-  //   );
-  // }
-  //
-  // _buildPriceQuantityRow(HomepageModel model, int index) {
-  //   return Row(
-  //     children: [
-  //       Container(
-  //         width: 100.dw,
-  //         decoration: BoxDecoration(
-  //           borderRadius: BorderRadius.circular(5.dw),
-  //         ),
-  //         child: Column(
-  //           crossAxisAlignment: CrossAxisAlignment.start,
-  //           children: [
-  //             Text(
-  //               "Price",
-  //               style: TextStyle(
-  //                   fontSize: 17.dw,
-  //                   color: Colors.grey.shade700,
-  //                   fontWeight: FontWeight.w500),
-  //             ),
-  //             Text(
-  //               NumberFormat.currency(
-  //                 symbol: '₹ ',
-  //                 locale: "HI",
-  //                 decimalDigits: 2,
-  //               ).format(model.netMRP),
-  //               style: TextStyle(
-  //                   fontSize: 17.dw,
-  //                   color: AppColors.black,
-  //                   fontWeight: FontWeight.w500),
-  //             )
-  //           ],
-  //         ),
-  //       ),
-  //       _buildItemQuantityRow(controllers[index], model)
-  //     ],
-  //   );
-  // }
-  //
-  // _buildItemQuantityRow(TextEditingController controller, HomepageModel model) {
-  //   return Something(model.moq);
-  //   //  return Row(
-  //   //    children: [
-  //   //      InkWell(
-  //   //        onTap: (){
-  //   //          controller.text = model.moq.toString();
-  //   //          final currentvalue = int.parse(controller.text);
-  //   //          if (currentvalue > model.moq) {
-  //   //            final nextValue = currentvalue - 1;
-  //   //            controller.text = nextValue.toString();
-  //   //          }
-  //   //        },
-  //   //        child: Container(
-  //   //          padding: EdgeInsets.all(5.dw),
-  //   //          decoration: BoxDecoration(
-  //   //              color: const Color(0xffdcdcdc),
-  //   //              borderRadius: BorderRadius.circular(5.dw)),
-  //   //          child: Icon(
-  //   //            Icons.remove,
-  //   //            size: 18.dw,
-  //   //          ),
-  //   //        ),
-  //   //      ),
-  //   //      SizedBox(
-  //   //        width: 6.dw,
-  //   //      ),
-  //   //      SizedBox(
-  //   //        width: 40.dw,
-  //   //        height: 35.dh,
-  //   //        child: TextFormField(
-  //   //          controller: controller,
-  //   //          textAlign: TextAlign.center,
-  //   //          readOnly: true,
-  //   //          decoration: InputDecoration(
-  //   //            // border: InputBorder.none
-  //   //            hintText: model.moq.toString(),
-  //   //              contentPadding: EdgeInsets.symmetric(vertical:1.dw),
-  //   //              border: const OutlineInputBorder(),
-  //   //              focusedBorder: const OutlineInputBorder(
-  //   //                  borderSide: BorderSide(color: AppColors.lightOrange)
-  //   //              )
-  //   //          ),
-  //   //        ),
-  //   //      ),
-  //   //      SizedBox(
-  //   //        width: 6.dw,
-  //   //      ),
-  //   //      InkWell(
-  //   //        onTap: (){
-  //   //          int currentValue = model.moq;
-  //   //          if (controller.text.isNotEmpty) {
-  //   //            currentValue = int.parse(controller.text);
-  //   //          }
-  //   //          final nextValue = currentValue + 1;
-  //   //          controller.text = nextValue.toString();
-  //   //        },
-  //   //        child: Container(
-  //   //          padding: EdgeInsets.all(5.dw),
-  //   //          decoration: BoxDecoration(
-  //   //              color: const Color(0xffdcdcdc),
-  //   //              borderRadius: BorderRadius.circular(5.dw)),
-  //   //          child: Icon(
-  //   //            Icons.add,
-  //   //            size: 18.dw,
-  //   //          ),
-  //   //        ),
-  //   //      )
-  //   //    ],
-  //   //  );
-  // }
-
-  // _buildContainer(String title, String value) {
-  //   return Container(
-  //     width: 100.dw,
-  //     //  height: 55.dh,
-  //     decoration: BoxDecoration(
-  //       borderRadius: BorderRadius.circular(5.dw),
-  //       //  border: Border.all(color: Colors.black54)
-  //     ),
-  //     child: Column(
-  //       crossAxisAlignment: CrossAxisAlignment.start,
-  //       children: [
-  //         Text(
-  //           title,
-  //           style: TextStyle(
-  //               fontSize: 17.dw,
-  //               color: Colors.grey.shade700,
-  //               fontWeight: FontWeight.w500),
-  //         ),
-  //         Text(
-  //           value,
-  //           style: TextStyle(
-  //               fontSize: 17.dw,
-  //               color: AppColors.black,
-  //               fontWeight: FontWeight.w500),
-  //         )
-  //       ],
-  //     ),
-  //   );
-  // }
-
-  // _buildCartButtonRow(HomepageModel model, int index) {
-  //   return Row(
-  //     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-  //     children: [
-  //       _buildGoToCartButton(),
-  //       SizedBox(
-  //         width: 20.dw,
-  //       ),
-  //       _buildAddToCartButton(model, index)
-  //     ],
-  //   );
-  // }
-
-  _buildGoToCartButton() {
-    return Expanded(
-      child: ElevatedButton(
-          onPressed: () {
-            Navigator.push(context,
-                MaterialPageRoute(builder: (context) => const CartPage()));
-          },
-          style: ElevatedButton.styleFrom(backgroundColor: AppColors.darkGrey),
-          child: const Text("Go To Cart")),
-    );
-  }
-
-  _buildAddToCartButton(HomepageModel model, int index) {
-    return Expanded(
-      child: ElevatedButton(
-          onPressed: () {
-            _addToCart(model, index);
-          },
-          style: ElevatedButton.styleFrom(backgroundColor: Colors.orange),
-          child: const Text("Add To Cart")),
-    );
-  }
-
-  void _addToCart(HomepageModel model, int index) async {
-    final data = {
-      'token' : token,
-      'cart_id': cartCode,
-     // 'netPrice': model.netMRP,
-      'product_code': model.code,
-      'cust_code': model.customerCode,
-      'qty': _itemCount,
-    //  'uom': model.uom,
-
-    };
-    await addtoCartBloc.UpdateRequest(data);
-    final state = addtoCartBloc.state;
-    state.maybeWhen(
-        success: (model, msg) {
-          ScaffoldMessenger.of(scaffoldKey.currentContext!)
-              .showSnackBar(SnackBar(
-              content: Text(
-                msg!,
-                style: const TextStyle(color: Colors.white),
-              )));
-          productDetailsBloc.init(widget.productGroup);
-          cartBloc.refresh();
-        },
-        failed: (model, message) {
-          ScaffoldMessenger.of(scaffoldKey.currentContext!)
-              .showSnackBar(SnackBar(content: Text(message)));
-        },
-        orElse: () {});
-  }
 
   _buildSearchField(
       List<HomepageModel> model, SearchableListNotifier listNotifier) {
@@ -595,6 +287,8 @@ class _ProductCardState extends State<ProductCard> {
 
   late final CartBloc cartBloc;
 
+  late final CartItemCountBloc cartItemCountBloc;
+
   final scaffoldKey = GlobalKey<ScaffoldState>();
 
   @override
@@ -607,6 +301,7 @@ class _ProductCardState extends State<ProductCard> {
     productDetailsBloc = ProductDetailsBloc(productService, loginService);
     addtoCartBloc = AddtoCartBloc(loginService, cartService);
     cartBloc = CartBloc(cartService, loginService);
+    cartItemCountBloc = CartItemCountBloc(cartService, loginService);
     productDetailsBloc.init(widget.productGroup);
     _count = widget.model.moq;
     moq = widget.model.moq;
@@ -917,6 +612,7 @@ class _ProductCardState extends State<ProductCard> {
       child: ElevatedButton(
           onPressed: () {
             _addToCart(model, index);
+            cartItemCountBloc.refresh();
           },
           style: ElevatedButton.styleFrom(backgroundColor: Colors.orange),
           child: const Text("Add To Cart")),
@@ -934,21 +630,12 @@ class _ProductCardState extends State<ProductCard> {
       'qty': _count,
       //  'uom': model.uom,
     };
-    print(data);
     await addtoCartBloc.UpdateRequest(data);
     final state = addtoCartBloc.state;
     state.maybeWhen(
         success: (model, msg) async {
           refreshCount();
           showSnackBar(msg ?? "Successfully added to the cart");
-          //_controllerCenter.play();
-          // _controllerCenter.dispose();
-          // ScaffoldMessenger.of(scaffoldKey.currentContext!)
-          //     .showSnackBar(SnackBar(
-          //         content: Text(
-          //   msg!,
-          //   style: const TextStyle(color: Colors.white),
-          // )));
           productDetailsBloc.init(widget.productGroup);
         },
         failed: (model, msg) {

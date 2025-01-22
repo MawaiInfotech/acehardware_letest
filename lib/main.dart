@@ -1,4 +1,5 @@
 
+import 'package:acehardware_mawai_letest/bloc/cartItemCount_bloc.dart';
 import 'package:acehardware_mawai_letest/prefbox.dart';
 import 'package:acehardware_mawai_letest/service/banner_service.dart';
 import 'package:acehardware_mawai_letest/service/cart_service.dart';
@@ -49,6 +50,7 @@ Future <void> main()async {
         BlocProvider(create: (_) => CreditlimitGraphBloc(loginService, graphService)),
         BlocProvider(create: (_) => PaymentGraphBloc(loginService, graphService)),
         BlocProvider(create: (_) => CartBloc(cartService, loginService)),
+        BlocProvider(create: (_) => CartItemCountBloc(cartService, loginService))
       ],
       child: MyApp(),),
   );

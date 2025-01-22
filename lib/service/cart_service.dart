@@ -2,6 +2,7 @@ import 'dart:async';
 import 'dart:convert';
 import 'dart:io';
 import 'dart:math';
+import 'package:acehardware_mawai_letest/model/cartItemCount_model.dart';
 import 'package:acehardware_mawai_letest/model/cartNumber_model.dart';
 import 'package:acehardware_mawai_letest/model/productDelete_model.dart';
 import 'package:flutter/cupertino.dart';
@@ -14,12 +15,12 @@ import 'constant.dart';
 
 class CartService extends ChangeNotifier{
 
-  var _cartDetails = const CartDetailsModel();
+  var _cartItemCount = const CartItemCountModel();
 
-  CartDetailsModel get getCartDetails => _cartDetails;
+  CartItemCountModel get getCartDetails => _cartItemCount;
 
-   void update(CartDetailsModel model) {
-     _cartDetails = model;
+   void update(CartItemCountModel model) {
+     _cartItemCount = model;
      notifyListeners();
    }
 
@@ -33,9 +34,9 @@ class CartService extends ChangeNotifier{
     try{
       final response = await http.post(Uri.parse(url),body: json.encode(body), headers:  getHeaders());
       final responseBody = json.decode(response.body);
-   //    await prefsBox.put(kcode, responseBody['code'] );
+      await prefsBox.put(kcode, responseBody['code'] );
       final model = CartDetailsModel.fromJson(responseBody);
-      update(model);
+      // update(model);
       return model;
     }catch(e){
       print(e);
@@ -59,7 +60,6 @@ class CartService extends ChangeNotifier{
       final responseBody = json.decode(response.body);
       if(responseBody["status"] == true){
         await prefsBox.put(kCartNumber, responseBody["data"]["code"]);
-     //   print("Hello " + responseBody["data"]["code"]);
       }else{
         throw ApiError.fromResponse(responseBody["message"]);
       }
@@ -67,6 +67,31 @@ class CartService extends ChangeNotifier{
       _handleError(e);
     }
     return const CartNumberModel();
+  }
+
+  ///Cart Item Count
+
+  Future<CartItemCountModel> getCartItemCount() async {
+    const url = "${root}cartItemCount";
+    final body = {
+      "token" : token,
+      "cart_id" : cartNumber,
+    };
+    final response = await http.post(Uri.parse(url),body: json.encode(body), headers: headers);
+    try {
+      final responseBody = json.decode(response.body);
+      if(responseBody["status"] == true){
+        final model = CartItemCountModel.fromJson(responseBody);
+        update(model);
+        return model;
+        return responseBody['cartcount'];
+      }else{
+        throw ApiError.fromResponse(responseBody["message"]);
+      }
+    } catch (e) {
+      _handleError(e);
+    }
+    return CartItemCountModel();
   }
 
 
@@ -79,8 +104,8 @@ class CartService extends ChangeNotifier{
           body: json.encode(body), headers: getHeaders());
       final responseBody = json.decode(response.body);
       if (responseBody['status'] == true) {
-        final model = _cartDetails.copyWith(entryCount: _cartDetails.entryCount + 1);
-        update(model);
+        // final model = _cartDetails.copyWith(entryCount: _cartDetails.entryCount + 1);
+        // update(model);
         return responseBody ['message'];
       }else{
         throw ApiError.fromResponse(responseBody['message']);
@@ -91,13 +116,40 @@ class CartService extends ChangeNotifier{
     return null;
   }
 
+  /// Increase Decrease Cart Item Quantity
+
+  Future<String?> getCartItemQuantity(String qty) async {
+    const url = '${root}cartItemQty';
+    final body = {
+      "token" : token,
+      "qty" : qty,
+      "Cart_ID" : cartNumber
+    };
+    try {
+      final response = await http.post(Uri.parse(url),
+          body: json.encode(body), headers: getHeaders());
+      final responseBody = json.decode(response.body);
+      if (responseBody['status'] == true) {
+        // final model = _cartDetails.copyWith(entryCount: _cartDetails.entryCount + 1);
+        // update(model);
+        return responseBody ['message'];
+      }else{
+        throw ApiError.fromResponse(responseBody['message']);
+      }
+    } catch (e) {
+      _handleError(e);
+    }
+    return null;
+  }
+
+
   // place order
   Future<String?> getPlaceOrderData(Map<String, dynamic>data) async {
     const url = '${root}placeOrder';
     final body = data;
     try {
       final response = await http.post(Uri.parse(url), body: json.encode(body), headers: getHeaders());
-      update(_cartDetails.copyWith(entryCount: 0));
+      // update(_cartDetails.copyWith(entryCount: 0));
       return "Order Placed Successfully";
     } catch (e) {
       _handleError(e);
