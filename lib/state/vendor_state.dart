@@ -10,5 +10,5 @@ class VendorState with _$VendorState{
   const factory VendorState.success(List<VendorsModel> vendorList) = _Success;
   const factory VendorState.failed(List<VendorsModel> vendorList) = _Failed;
 
-  factory VendorState.initial() => VendorState.content([]);
+  factory VendorState.initial() => const VendorState.content([]);
 }

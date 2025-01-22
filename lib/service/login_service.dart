@@ -28,7 +28,7 @@ class LoginService {
         final token = responseBody["model"]["token"];
         await prefsBox.put(kToken, token);
         await prefsBox.put(kUserName, responseBody["model"]["username"]);
-        await prefsBox.put(kUserType, responseBody['model']['userType']);
+        await prefsBox.put(kUserType, responseBody['model']['usertype']);
         await prefsBox.put(kpassword, password);
         await prefsBox.put(knotificationIcon, employeController);
        // await NotificationsService.init();
@@ -41,7 +41,7 @@ class LoginService {
           await prefsBox.put(kpassword2, password);
         }
         //Cart No Generation
-        await cartService.getCartNumber();
+
         return responseBody['message'];
       } else {
         throw ApiError.fromResponse(responseBody['message']);
@@ -71,11 +71,14 @@ class LoginService {
   }
 
   Future<List<VendorsModel>> getVendorsList() async {
-    final url = '${root}getAllVendorList/$userCode';
+    const url = '${root}getAllVendorList';
+    final body = {
+      "emp_code" : userCode
+    };
     try {
-      final response = await http.get(Uri.parse(url), headers: getHeaders());
+      final response = await http.post(Uri.parse(url),body: json.encode(body), headers: headers);
       final responseBody = json.decode(response.body);
-      final itemList = responseBody['getVendorList'] as List;
+      final itemList = responseBody['vendors'] as List;
       return itemList.map((e) => VendorsModel.fromJson(e)).toList();
     } catch (e) {
       _handleError(e);

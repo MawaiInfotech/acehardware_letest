@@ -17,4 +17,6 @@ class CartListBloc extends Cubit<CartListState>{
       emit(CartListState.failed(state.cartListModel,  error.message));
     }
   }
+
+
 }

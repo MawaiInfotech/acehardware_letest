@@ -1,4 +1,5 @@
 import 'package:acehardware_mawai_letest/bloc/cartItemCount_bloc.dart';
+import 'package:acehardware_mawai_letest/bloc/cart_list_bloc.dart';
 import 'package:badges/badges.dart';
 import 'package:flutter/material.dart';
 import 'package:persistent_bottom_nav_bar_2/persistent_tab_view.dart';
@@ -46,7 +47,7 @@ class _NavigationPageState extends State<NavigationPage>
 
   late PlaceOrderBloc placeOrderBloc;
 
-  //late CartBloc cartBloc;
+  late CartListBloc cartListBloc;
 
   late CartItemCountBloc cartItemCountBloc;
 
@@ -64,6 +65,8 @@ class _NavigationPageState extends State<NavigationPage>
     addtoCartBloc = AddtoCartBloc(loginService, cartService);
     cartItemCountBloc = context.read<CartItemCountBloc>();
     cartItemCountBloc.init();
+    cartListBloc = CartListBloc(cartService);
+    cartListBloc.init();
     //cartBloc = context.read<CartBloc>();
     //cartBloc.init();
   }
@@ -186,7 +189,8 @@ class _NavigationPageState extends State<NavigationPage>
                   onPressed: () {
                     Navigator.of(context).pop();
                   },
-                  child: const Text("No")),
+                  child: const Text("No"),
+              ),
               ElevatedButton(
                   onPressed: () {
                     Navigator.pushAndRemoveUntil(

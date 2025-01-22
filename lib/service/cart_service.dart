@@ -31,8 +31,10 @@ class CartService extends ChangeNotifier{
       "token" : token,
       "cart_id": cartNumber
     };
+    // print(body);
     final response = await http.post(Uri.parse(url), headers: getHeaders(), body: json.encode(body));
     final responseBody = json.decode(response.body);
+    // print(responseBody);
     try {
 
       if (responseBody['status'] == true) {
@@ -66,6 +68,7 @@ class CartService extends ChangeNotifier{
       "token" : token,
       "custid": userCode
     };
+    print(body);
     final response = await http.post(Uri.parse(url),body: json.encode(body), headers: headers);
     try {
       final responseBody = json.decode(response.body);
@@ -102,7 +105,7 @@ class CartService extends ChangeNotifier{
     } catch (e) {
       _handleError(e);
     }
-    return CartItemCountModel();
+    return const CartItemCountModel();
   }
 
 

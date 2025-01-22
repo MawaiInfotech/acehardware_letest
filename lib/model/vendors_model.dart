@@ -8,10 +8,10 @@ class VendorsModel with _$VendorsModel{
   const VendorsModel._();
 
   const factory VendorsModel({
-    @JsonKey(name: "vENDOR_CODE") @Default("") String vendorCode,
-    @JsonKey(name: "eMP_CODE") @Default("") String employeeCode,
-    @JsonKey(name: "eMP_PWD") @Default("") String employeePassword,
-    @JsonKey(name: "vendor_name") @Default("") String vendorName,
+    @JsonKey(name: "vendor_code") @Default("") String vendorCode,
+    @JsonKey(name: "emp_code") @Default("") String employeeCode,
+    @JsonKey(name: "emp_pwd") @Default("") String employeePassword,
+    @JsonKey(name: "name") @Default("") String vendorName,
 
   }) = _VendorsModel;
 

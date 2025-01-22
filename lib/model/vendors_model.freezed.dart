@@ -20,13 +20,13 @@ VendorsModel _$VendorsModelFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$VendorsModel {
-  @JsonKey(name: "vENDOR_CODE")
+  @JsonKey(name: "vendor_code")
   String get vendorCode => throw _privateConstructorUsedError;
-  @JsonKey(name: "eMP_CODE")
+  @JsonKey(name: "emp_code")
   String get employeeCode => throw _privateConstructorUsedError;
-  @JsonKey(name: "eMP_PWD")
+  @JsonKey(name: "emp_pwd")
   String get employeePassword => throw _privateConstructorUsedError;
-  @JsonKey(name: "vendor_name")
+  @JsonKey(name: "name")
   String get vendorName => throw _privateConstructorUsedError;
 
   /// Serializes this VendorsModel to a JSON map.
@@ -46,10 +46,10 @@ abstract class $VendorsModelCopyWith<$Res> {
       _$VendorsModelCopyWithImpl<$Res, VendorsModel>;
   @useResult
   $Res call(
-      {@JsonKey(name: "vENDOR_CODE") String vendorCode,
-      @JsonKey(name: "eMP_CODE") String employeeCode,
-      @JsonKey(name: "eMP_PWD") String employeePassword,
-      @JsonKey(name: "vendor_name") String vendorName});
+      {@JsonKey(name: "vendor_code") String vendorCode,
+      @JsonKey(name: "emp_code") String employeeCode,
+      @JsonKey(name: "emp_pwd") String employeePassword,
+      @JsonKey(name: "name") String vendorName});
 }
 
 /// @nodoc
@@ -102,10 +102,10 @@ abstract class _$$VendorsModelImplCopyWith<$Res>
   @override
   @useResult
   $Res call(
-      {@JsonKey(name: "vENDOR_CODE") String vendorCode,
-      @JsonKey(name: "eMP_CODE") String employeeCode,
-      @JsonKey(name: "eMP_PWD") String employeePassword,
-      @JsonKey(name: "vendor_name") String vendorName});
+      {@JsonKey(name: "vendor_code") String vendorCode,
+      @JsonKey(name: "emp_code") String employeeCode,
+      @JsonKey(name: "emp_pwd") String employeePassword,
+      @JsonKey(name: "name") String vendorName});
 }
 
 /// @nodoc
@@ -151,26 +151,26 @@ class __$$VendorsModelImplCopyWithImpl<$Res>
 @JsonSerializable()
 class _$VendorsModelImpl extends _VendorsModel {
   const _$VendorsModelImpl(
-      {@JsonKey(name: "vENDOR_CODE") this.vendorCode = "",
-      @JsonKey(name: "eMP_CODE") this.employeeCode = "",
-      @JsonKey(name: "eMP_PWD") this.employeePassword = "",
-      @JsonKey(name: "vendor_name") this.vendorName = ""})
+      {@JsonKey(name: "vendor_code") this.vendorCode = "",
+      @JsonKey(name: "emp_code") this.employeeCode = "",
+      @JsonKey(name: "emp_pwd") this.employeePassword = "",
+      @JsonKey(name: "name") this.vendorName = ""})
       : super._();
 
   factory _$VendorsModelImpl.fromJson(Map<String, dynamic> json) =>
       _$$VendorsModelImplFromJson(json);
 
   @override
-  @JsonKey(name: "vENDOR_CODE")
+  @JsonKey(name: "vendor_code")
   final String vendorCode;
   @override
-  @JsonKey(name: "eMP_CODE")
+  @JsonKey(name: "emp_code")
   final String employeeCode;
   @override
-  @JsonKey(name: "eMP_PWD")
+  @JsonKey(name: "emp_pwd")
   final String employeePassword;
   @override
-  @JsonKey(name: "vendor_name")
+  @JsonKey(name: "name")
   final String vendorName;
 
   @override
@@ -216,27 +216,26 @@ class _$VendorsModelImpl extends _VendorsModel {
 
 abstract class _VendorsModel extends VendorsModel {
   const factory _VendorsModel(
-          {@JsonKey(name: "vENDOR_CODE") final String vendorCode,
-          @JsonKey(name: "eMP_CODE") final String employeeCode,
-          @JsonKey(name: "eMP_PWD") final String employeePassword,
-          @JsonKey(name: "vendor_name") final String vendorName}) =
-      _$VendorsModelImpl;
+      {@JsonKey(name: "vendor_code") final String vendorCode,
+      @JsonKey(name: "emp_code") final String employeeCode,
+      @JsonKey(name: "emp_pwd") final String employeePassword,
+      @JsonKey(name: "name") final String vendorName}) = _$VendorsModelImpl;
   const _VendorsModel._() : super._();
 
   factory _VendorsModel.fromJson(Map<String, dynamic> json) =
       _$VendorsModelImpl.fromJson;
 
   @override
-  @JsonKey(name: "vENDOR_CODE")
+  @JsonKey(name: "vendor_code")
   String get vendorCode;
   @override
-  @JsonKey(name: "eMP_CODE")
+  @JsonKey(name: "emp_code")
   String get employeeCode;
   @override
-  @JsonKey(name: "eMP_PWD")
+  @JsonKey(name: "emp_pwd")
   String get employeePassword;
   @override
-  @JsonKey(name: "vendor_name")
+  @JsonKey(name: "name")
   String get vendorName;
 
   /// Create a copy of VendorsModel

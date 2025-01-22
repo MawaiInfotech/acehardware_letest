@@ -449,7 +449,8 @@ class _ProductCardState extends State<ProductCard> {
                 style: TextStyle(
                     fontSize: 17.dw,
                     color: Colors.grey.shade700,
-                    fontWeight: FontWeight.w500),
+                    fontWeight: FontWeight.w500
+                ),
               ),
               Text(
                 NumberFormat.currency(
@@ -507,74 +508,6 @@ class _ProductCardState extends State<ProductCard> {
       onSubtract: onSubtract,
       updateCount: updateCount,
     );
-    //  return Row(
-    //    children: [
-    //      InkWell(
-    //        onTap: (){
-    //          controller.text = model.moq.toString();
-    //          final currentvalue = int.parse(controller.text);
-    //          if (currentvalue > model.moq) {
-    //            final nextValue = currentvalue - 1;
-    //            controller.text = nextValue.toString();
-    //          }
-    //        },
-    //        child: Container(
-    //          padding: EdgeInsets.all(5.dw),
-    //          decoration: BoxDecoration(
-    //              color: const Color(0xffdcdcdc),
-    //              borderRadius: BorderRadius.circular(5.dw)),
-    //          child: Icon(
-    //            Icons.remove,
-    //            size: 18.dw,
-    //          ),
-    //        ),
-    //      ),
-    //      SizedBox(
-    //        width: 6.dw,
-    //      ),
-    //      SizedBox(
-    //        width: 40.dw,
-    //        height: 35.dh,
-    //        child: TextFormField(
-    //          controller: controller,
-    //          textAlign: TextAlign.center,
-    //          readOnly: true,
-    //          decoration: InputDecoration(
-    //            // border: InputBorder.none
-    //            hintText: model.moq.toString(),
-    //              contentPadding: EdgeInsets.symmetric(vertical:1.dw),
-    //              border: const OutlineInputBorder(),
-    //              focusedBorder: const OutlineInputBorder(
-    //                  borderSide: BorderSide(color: AppColors.lightOrange)
-    //              )
-    //          ),
-    //        ),
-    //      ),
-    //      SizedBox(
-    //        width: 6.dw,
-    //      ),
-    //      InkWell(
-    //        onTap: (){
-    //          int currentValue = model.moq;
-    //          if (controller.text.isNotEmpty) {
-    //            currentValue = int.parse(controller.text);
-    //          }
-    //          final nextValue = currentValue + 1;
-    //          controller.text = nextValue.toString();
-    //        },
-    //        child: Container(
-    //          padding: EdgeInsets.all(5.dw),
-    //          decoration: BoxDecoration(
-    //              color: const Color(0xffdcdcdc),
-    //              borderRadius: BorderRadius.circular(5.dw)),
-    //          child: Icon(
-    //            Icons.add,
-    //            size: 18.dw,
-    //          ),
-    //        ),
-    //      )
-    //    ],
-    //  );
   }
 
   _buildCartButtonRow() {

@@ -8,16 +8,16 @@ part of 'vendors_model.dart';
 
 _$VendorsModelImpl _$$VendorsModelImplFromJson(Map<String, dynamic> json) =>
     _$VendorsModelImpl(
-      vendorCode: json['vENDOR_CODE'] as String? ?? "",
-      employeeCode: json['eMP_CODE'] as String? ?? "",
-      employeePassword: json['eMP_PWD'] as String? ?? "",
-      vendorName: json['vendor_name'] as String? ?? "",
+      vendorCode: json['vendor_code'] as String? ?? "",
+      employeeCode: json['emp_code'] as String? ?? "",
+      employeePassword: json['emp_pwd'] as String? ?? "",
+      vendorName: json['name'] as String? ?? "",
     );
 
 Map<String, dynamic> _$$VendorsModelImplToJson(_$VendorsModelImpl instance) =>
     <String, dynamic>{
-      'vENDOR_CODE': instance.vendorCode,
-      'eMP_CODE': instance.employeeCode,
-      'eMP_PWD': instance.employeePassword,
-      'vendor_name': instance.vendorName,
+      'vendor_code': instance.vendorCode,
+      'emp_code': instance.employeeCode,
+      'emp_pwd': instance.employeePassword,
+      'name': instance.vendorName,
     };

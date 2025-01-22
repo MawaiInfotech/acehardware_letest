@@ -65,7 +65,7 @@ class _LoginPageState extends State<LoginPage> with SingleTickerProviderStateMix
     if(userCode2 != ""){
       _employeeController.text = userCode2;
     }
-    if(password1 != ""){
+    if(password2 != ""){
       _empPasswordController.text = password2;
     }
   }
@@ -280,6 +280,7 @@ class _LoginPageState extends State<LoginPage> with SingleTickerProviderStateMix
                 vendorsBloc.init();
                 _showVendorList();
               } else{
+               await cartService.getCartNumber();
                 ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text(message??"Successful Login")));
                 Navigator.pushNamed(context, AppRoutes.navigationPage);
               }
@@ -346,7 +347,7 @@ class _LoginPageState extends State<LoginPage> with SingleTickerProviderStateMix
             orElse: (){
               return  ElevatedButton(
                   onPressed: () async {
-                    await loginBloc.proccessLogin(_empPasswordController.text, _empPasswordController.text,isRememberCheck1, _employeeController.text,"E");
+                    await loginBloc.proccessLogin(_employeeController.text, _empPasswordController.text,isRememberCheck1, _employeeController.text,"E");
                   },
                   style: ElevatedButton.styleFrom(backgroundColor: Colors.grey.shade400,
                     shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(30.dw)),
@@ -393,6 +394,7 @@ class _LoginPageState extends State<LoginPage> with SingleTickerProviderStateMix
                                     vendorName = state.vendorList[index].vendorName;
                                     vendorCode = state.vendorList[index].vendorCode;
                                     await prefsBox.put(kUserName, vendorCode);
+                                    await cartService.getCartNumber();
                                     Navigator.pop(context);
                                     ScaffoldMessenger.of(context).showSnackBar(const SnackBar(content: Text("Successful Login")));
                                     Navigator.pushNamed(context, AppRoutes.navigationPage);
