@@ -1,3 +1,4 @@
+import 'package:acehardware_mawai_letest/bloc/cartItemCount_bloc.dart';
 import 'package:badges/badges.dart';
 import 'package:flutter/material.dart';
 import 'package:persistent_bottom_nav_bar_2/persistent_tab_view.dart';
@@ -45,7 +46,9 @@ class _NavigationPageState extends State<NavigationPage>
 
   late PlaceOrderBloc placeOrderBloc;
 
-  late CartBloc cartBloc;
+  //late CartBloc cartBloc;
+
+  late CartItemCountBloc cartItemCountBloc;
 
   @override
   void initState() {
@@ -59,13 +62,16 @@ class _NavigationPageState extends State<NavigationPage>
     removeProductBloc = RemoveProductBloc(loginService, cartService);
     placeOrderBloc = PlaceOrderBloc(loginService, cartService);
     addtoCartBloc = AddtoCartBloc(loginService, cartService);
-    cartBloc = context.read<CartBloc>();
-    cartBloc.init();
+    cartItemCountBloc = context.read<CartItemCountBloc>();
+    cartItemCountBloc.init();
+    //cartBloc = context.read<CartBloc>();
+    //cartBloc.init();
   }
 
   void onTabTapped(int index) {
     if (index == 1) {
-      cartBloc.refresh();
+      //cartBloc.refresh();
+      cartItemCountBloc.refresh();
     }
   }
 
@@ -108,7 +114,7 @@ class _NavigationPageState extends State<NavigationPage>
               // ),
               badgeContent: Consumer<CartService> (
                 builder: (_, service, __ ) {
-                  return Text(service.getCartDetails.entryCount.toString());
+                  return Text(service.getCartDetails.cartcount.toString());
                 },
               ),
               child: const Icon(Icons.shopping_cart),

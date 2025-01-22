@@ -2,22 +2,23 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import '../error/api_error.dart';
 import '../service/cart_service.dart';
 import '../service/login_service.dart';
+import '../state/cartItemCount_state.dart';
 import '../state/cart_state.dart';
 
-class CartBloc extends Cubit<CartState>{
-  CartBloc(this.cartService, this.loginService) : super(CartState.initial());
+class CartItemCountBloc extends Cubit<CartItemCountState>{
+  CartItemCountBloc(this.cartService, this.loginService) : super(CartItemCountState.initial());
 
   CartService cartService;
   LoginService loginService;
 
   Future<void> init([String? code])async{
     if(state.maybeWhen(orElse: ()=> false, loading: (_) => true)) return;
-    emit(CartState.loading(state.cartmodelList));
+    emit(CartItemCountState.loading(state.cartItemCount));
     try{
-      final cartList = await cartService.getCartList();
-      emit(CartState.content(cartList!));
+      final cartList = await cartService.getCartItemCount();
+      emit(CartItemCountState.content(cartList!));
     }on ApiError catch(error){
-      emit(CartState.failed(state.cartmodelList,  error.message));
+      emit(CartItemCountState.failed(state.cartItemCount,  error.message));
     }
   }
 
