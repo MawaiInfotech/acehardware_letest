@@ -8,10 +8,10 @@ class CartItemQtyBloc extends Cubit<CartItemQtyState>{
 
   final CartService cartService;
 
-  Future<void> init(String qty)async{
+  Future<void> init(String qty, String id)async{
     emit(CartItemQtyState.loading(state.cartItemQtyModel));
     try{
-      final message = await cartService.getCartItemQuantity(qty);
+      final message = await cartService.getCartItemQuantity(qty,id);
 
       emit(CartItemQtyState.success(state.cartItemQtyModel, message));
     }on ApiError catch(error){

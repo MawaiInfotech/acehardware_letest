@@ -1,4 +1,7 @@
 import 'package:acehardware_mawai_letest/bloc/cart_item_qty_bloc.dart';
+import 'package:acehardware_mawai_letest/bloc/cart_list_bloc.dart';
+import 'package:acehardware_mawai_letest/model/cart_list_model.dart';
+import 'package:acehardware_mawai_letest/state/cart_list_state.dart';
 import 'package:confetti/confetti.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -26,7 +29,7 @@ class CartPage extends StatefulWidget {
 
 class _CartPageState extends State<CartPage> {
 
-  late CartBloc cartBloc;
+  late CartListBloc cartListBloc;
 
   late CartDetailsModel cartDetailModel = const CartDetailsModel();
 
@@ -54,11 +57,11 @@ class _CartPageState extends State<CartPage> {
     super.initState();
      final cartService = Provider.of<CartService>(context, listen: false);
     final loginService = Provider.of<LoginService>(context, listen: false);
-     cartBloc = CartBloc(cartService, loginService);
+     cartListBloc = CartListBloc(cartService);
      addtoCartBloc = AddtoCartBloc(loginService, cartService);
-      cartBloc.init();
+      cartListBloc.init();
     cartItemQtyBloc = CartItemQtyBloc(cartService);
-    cartBloc = context.read<CartBloc>();
+  //   cartBloc = context.read<CartBloc>();
     removeProductBloc = RemoveProductBloc(loginService, cartService);
     placeOrderBloc = PlaceOrderBloc(loginService, cartService);
     _controllerCenter = ConfettiController(duration: const Duration(seconds: 10));
@@ -77,8 +80,8 @@ class _CartPageState extends State<CartPage> {
   @override
   Widget build(BuildContext context) {
 
-    return BlocConsumer<CartBloc, CartState>(
-      bloc: cartBloc,
+    return BlocConsumer<CartListBloc, CartListState>(
+      bloc: cartListBloc,
       listener: (_, state){
         // final contentsNumber = state.maybeWhen(content: (cartPageList) => cartPageList.entries.length, orElse: () => 0);
         // if (contentsNumber != 0 &&
@@ -100,10 +103,10 @@ class _CartPageState extends State<CartPage> {
   }
 
 
-  Widget _buildLoading(CartDetailsModel cartDetails) {return const Scaffold(body: Center(child: CircularProgressIndicator()));}
+  Widget _buildLoading(CartListModel cartDetails) {return const Scaffold(body: Center(child: CircularProgressIndicator()));}
 
-  Widget _buildContent(CartDetailsModel cartList){
-    cartDetailModel = cartList;
+  Widget _buildContent(CartListModel cartList){
+   // cartDetailModel = cartList;
     return Scaffold(
       key: scaffoldKey,
       bottomNavigationBar: _buildBottomBar(cartList),
@@ -277,7 +280,7 @@ class _CartPageState extends State<CartPage> {
             //   currentValue = int.parse(controller.text);
             // }
             nextValue =  model.quantity - 1;
-            _addToCart(model);
+            increaseDecreaseQty(model.id.toString());
           },
           child: Container(
             padding: EdgeInsets.all(6.dw),
@@ -326,7 +329,7 @@ class _CartPageState extends State<CartPage> {
         InkWell(
           onTap: (){
             nextValue = model.quantity + 1;
-            _addToCart(model);
+            increaseDecreaseQty(model.id.toString());
           },
           child: Container(
             padding: EdgeInsets.all(6.dw),
@@ -407,7 +410,7 @@ class _CartPageState extends State<CartPage> {
     );
   }
 
-  _buildBottomBar(CartDetailsModel model){
+  _buildBottomBar(CartListModel model){
     return BottomAppBar(
       child: Container(
         height: 80.dh,
@@ -438,7 +441,7 @@ class _CartPageState extends State<CartPage> {
             Expanded(flex: 1,
                 child: InkWell(
                   onTap: ()async{
-                    if(model.entryCount != 0) {
+                    if(model.entries.isNotEmpty) {
                       _buildShowDialog(model);
                       _controllerCenter.play();
                       await Future.delayed(const Duration(seconds: 5));
@@ -460,18 +463,10 @@ class _CartPageState extends State<CartPage> {
     );
   }
 
-  void _addToCart(CartEntriesModel model) async {
-    final data = {
-      'cartId': cartCode,
-      'itemPosition': 0,
-      'netPrice': model.productPrice,
-      'productCode': model.productCode,
-      'qty': nextValue,
-      'uom': model.uom,
-      'vendor_code': userCode,
-    };
-    await addtoCartBloc.UpdateRequest(data);
-    final state = addtoCartBloc.state;
+  void increaseDecreaseQty(String id) async {
+
+    await cartItemQtyBloc.init(nextValue.toString(),id);
+    final state = cartItemQtyBloc.state;
     state.maybeWhen(
         success: (model, msg) {
           ScaffoldMessenger.of(scaffoldKey.currentContext!)
@@ -480,7 +475,7 @@ class _CartPageState extends State<CartPage> {
                 msg!,
                 style: const TextStyle(color: Colors.white),
               )));
-          cartBloc.init();
+          cartListBloc.init();
         },
         failed: (model, message) {
           ScaffoldMessenger.of(scaffoldKey.currentContext!)
@@ -492,11 +487,11 @@ class _CartPageState extends State<CartPage> {
   void _removeProduct(CartEntriesModel model) async {
     await removeProductBloc.deleteProduct(model.productCode, model.id.toString());
     ScaffoldMessenger.of(context).showSnackBar(const SnackBar(content: Text("Item Deleted Successfully")));
-    cartBloc.init();
+    cartListBloc.init();
 
   }
 
-  void _placeOrder(CartDetailsModel model) async {
+  void _placeOrder(CartListModel model) async {
     final data = {
       'cartId': cartCode,
       'itemPosition': 0,
@@ -505,10 +500,10 @@ class _CartPageState extends State<CartPage> {
     };
     await placeOrderBloc.placeOrder(data);
     ScaffoldMessenger.of(context).showSnackBar(const SnackBar(content: Text("Order Placed Successfully")));
-    cartBloc.init();
+    cartListBloc.init();
   }
 
-  _buildShowDialog(CartDetailsModel model){
+  _buildShowDialog(CartListModel model){
     return 
       showDialog(
         context: context,

@@ -4,6 +4,7 @@ import 'dart:io';
 import 'dart:math';
 import 'package:acehardware_mawai_letest/model/cartItemCount_model.dart';
 import 'package:acehardware_mawai_letest/model/cartNumber_model.dart';
+import 'package:acehardware_mawai_letest/model/cart_list_model.dart';
 import 'package:acehardware_mawai_letest/model/productDelete_model.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -24,25 +25,35 @@ class CartService extends ChangeNotifier{
      notifyListeners();
    }
 
-  Future<CartDetailsModel?> getCartList()async{
+  Future<CartListModel?> getCartList()async{
     const url = '${root}cartItemlist';
     final body = {
       "token" : token,
       "cart_id": cartNumber
     };
-  //  print(body);
-    try{
-      final response = await http.post(Uri.parse(url),body: json.encode(body), headers:  getHeaders());
-      final responseBody = json.decode(response.body);
-      await prefsBox.put(kcode, responseBody['code'] );
-      final model = CartDetailsModel.fromJson(responseBody);
-      // update(model);
-      return model;
-    }catch(e){
-      print(e);
+    final response = await http.post(Uri.parse(url), headers: getHeaders(), body: json.encode(body));
+    final responseBody = json.decode(response.body);
+    try {
+
+      if (responseBody['status'] == true) {
+        return CartListModel.fromJson(responseBody);
+      }
+    } catch (e) {
       _handleError(e);
     }
-    return null;
+  //  print(body);
+  //   try{
+  //     final response = await http.post(Uri.parse(url),body: json.encode(body), headers:  getHeaders());
+  //     final responseBody = json.decode(response.body);
+  //   //  await prefsBox.put(kcode, responseBody['code'] );
+  //     final model = CartDetailsModel.fromJson(responseBody);
+  //     // update(model);
+  //     return model;
+  //   }catch(e){
+  //     print(e);
+  //     _handleError(e);
+  //   }
+    return const CartListModel();
     //return CartDetailsModel();
   }
 
@@ -118,17 +129,19 @@ class CartService extends ChangeNotifier{
 
   /// Increase Decrease Cart Item Quantity
 
-  Future<String?> getCartItemQuantity(String qty) async {
+  Future<String?> getCartItemQuantity(String qty, String id) async {
     const url = '${root}cartItemQty';
     final body = {
       "token" : token,
       "qty" : qty,
-      "Cart_ID" : cartNumber
+      "Cart_ID" : id
     };
+    // print(body);
     try {
       final response = await http.post(Uri.parse(url),
           body: json.encode(body), headers: getHeaders());
       final responseBody = json.decode(response.body);
+      // print(responseBody);
       if (responseBody['status'] == true) {
         // final model = _cartDetails.copyWith(entryCount: _cartDetails.entryCount + 1);
         // update(model);
@@ -167,9 +180,9 @@ class CartService extends ChangeNotifier{
       "product_id" : productId,
       "product_code" : productCode
     };
-    print(body);
+  //  print(body);
     final response = await http.post(Uri.parse(url),body: json.encode(body), headers: headers);
-    print(response.body);
+   //  print(response.body);
     try {
       final responseBody = json.decode(response.body);
       if(responseBody["status"] == true){

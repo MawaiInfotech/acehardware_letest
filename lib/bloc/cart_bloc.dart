@@ -15,7 +15,7 @@ class CartBloc extends Cubit<CartState>{
     emit(CartState.loading(state.cartmodelList));
     try{
       final cartList = await cartService.getCartList();
-      emit(CartState.content(cartList!));
+    //  emit(CartState.content(cartList!));
     }on ApiError catch(error){
       emit(CartState.failed(state.cartmodelList,  error.message));
     }

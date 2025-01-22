@@ -9,7 +9,7 @@ class CartState with _$CartState {
   const factory CartState.loading(CartDetailsModel cartmodelList) = _Loading;
   const factory CartState.content(CartDetailsModel cartmodelList) = _Content;
   const factory CartState.success(CartDetailsModel cartmodelList) = _Success;
-  const factory CartState.failed(CartDetailsModel cartmodelList, String? message) = _Failed;
+  const factory CartState.failed( CartDetailsModel cartmodelList, String? message) = _Failed;
 
   factory CartState.initial() => const CartState.content(CartDetailsModel());
 }
