@@ -15,6 +15,7 @@ import 'constant.dart';
      };
    //  const url = '${loginroot}notification_flutter';
      const url = '${root}notification_flutter';
+     print(url);
      try {
 
        final response = http.MultipartRequest("POST", Uri.parse(url), );
@@ -24,6 +25,7 @@ import 'constant.dart';
        var res = await response.send();
        var results = await http.Response.fromStream(res);
        var finalres = jsonDecode(results.body) as Map<String,dynamic>;
+       print(finalres);
        if (finalres['status'] == true) {
          return finalres ['msg'];
        }else{

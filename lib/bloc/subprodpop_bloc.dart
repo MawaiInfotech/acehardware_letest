@@ -23,4 +23,8 @@ class SubProdPopBloc extends Cubit<SubProdPopState>{
     }
   }
 
+  void reset() {
+    emit(const SubProdPopState.loading([]));
+  }
+
 }

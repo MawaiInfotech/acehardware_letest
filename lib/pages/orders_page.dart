@@ -1,4 +1,5 @@
 
+import 'package:acehardware_mawai_letest/prefbox.dart';
 import 'package:acehardware_mawai_letest/themes/app_colors.dart';
 import 'package:acehardware_mawai_letest/utils/screen_size_config.dart';
 import 'package:flutter/cupertino.dart';
@@ -186,7 +187,8 @@ class _OrderHistoryPageState extends State<OrderHistoryPage> {
 
   void _orderDelete(OrderHistoryModel model) async {
     final data = {
-      'order_numer': model.orderNumber,
+      'token' : token,
+      'order_no': model.orderNumber,
     };
     await orderDeleteBloc.orderDelete(data);
     ScaffoldMessenger.of(context).showSnackBar(const SnackBar(content: Text("Order Deleted Successfully")));

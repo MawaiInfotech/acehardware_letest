@@ -9,7 +9,6 @@ import 'package:intl/intl.dart';
 import 'package:provider/provider.dart';
 import '../bloc/addtocart_bloc.dart';
 import '../bloc/cartItemCount_bloc.dart';
-import '../bloc/cart_bloc.dart';
 import '../bloc/placeorder_bloc.dart';
 import '../bloc/removeorder_bloc.dart';
 import '../model/cartdetails_model.dart';
@@ -17,7 +16,6 @@ import '../model/cartentries_model.dart';
 import '../prefbox.dart';
 import '../service/cart_service.dart';
 import '../service/login_service.dart';
-import '../state/cart_state.dart';
 import '../themes/app_colors.dart';
 import '../utils/screen_size_config.dart';
 
@@ -172,10 +170,12 @@ class _CartPageState extends State<CartPage> {
                       height: 200.dh,
                       width: 30.dw,
                       child: Image.network(
-                        "http://117.55.242.59:8080/Aceh_hardware/images/${model.productCode}",
+                      //  "http://117.55.242.59:8080/Aceh_hardware/images/${model.productCode}",
+                        "http://117.55.242.59:91/images/PRODPHOTO/${model.productCode}.jpg",
                         fit: BoxFit.scaleDown,
                         errorBuilder: (BuildContext context, Object exception, StackTrace? stackTrace){
-                          return Image.network("http://117.55.242.59:8080/Aceh_hardware/itemImage/COMING_SOON");
+                          return Image.network("http://117.55.242.59:91/images/PRODPHOTO/COMING_SOON.jpg");
+                        //  return Image.network("http://117.55.242.59:8080/Aceh_hardware/itemImage/COMING_SOON");
                         },
                       ),
                     ),
@@ -194,6 +194,8 @@ class _CartPageState extends State<CartPage> {
   }
 
   _buildProductDetailsColumn(CartEntriesModel model, int index){
+    print(model.productDescription);
+    print(model.quantity);
     return Expanded(
         flex: 3,
         child: Padding(
@@ -310,6 +312,7 @@ class _CartPageState extends State<CartPage> {
             child: TextFormField(
               controller: _controller,
               textAlign: TextAlign.center,
+              readOnly: true,
               decoration: InputDecoration(
                 // border: InputBorder.none
                 hintText: model.quantity.toString(),

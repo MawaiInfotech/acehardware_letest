@@ -2,7 +2,7 @@
   "project_info": {
     "project_number": "148230738363",
     "project_id": "acehardwaremawai",
-    "storage_bucket": "acehardwaremawai.appspot.com"
+    "storage_bucket": "acehardwaremawai.firebasestorage.app"
   },
   "client": [
     {

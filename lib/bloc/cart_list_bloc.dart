@@ -9,6 +9,7 @@ class CartListBloc extends Cubit<CartListState>{
   final CartService cartService;
 
   Future<void> init()async{
+    if(state.maybeWhen(orElse: ()=> false, loading: (_) => true)) return;
     emit(CartListState.loading(state.cartListModel));
     try{
       final cartData = await cartService.getCartList();
@@ -17,6 +18,6 @@ class CartListBloc extends Cubit<CartListState>{
       emit(CartListState.failed(state.cartListModel,  error.message));
     }
   }
-
+  Future<void> refresh() => init();
 
 }

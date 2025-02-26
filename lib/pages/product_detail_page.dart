@@ -7,6 +7,7 @@ import 'package:provider/provider.dart';
 import '../app.dart';
 import '../bloc/addtocart_bloc.dart';
 import '../bloc/cart_bloc.dart';
+import '../bloc/cart_list_bloc.dart';
 import '../bloc/productdetail_bloc.dart';
 import '../model/homepage_model.dart';
 import '../prefbox.dart';
@@ -282,6 +283,7 @@ class _ProductCardState extends State<ProductCard> {
 
   late final AddtoCartBloc addtoCartBloc;
 
+  late final CartListBloc cartBloc;
 
   late final CartItemCountBloc cartItemCountBloc;
 
@@ -298,6 +300,7 @@ class _ProductCardState extends State<ProductCard> {
     addtoCartBloc = AddtoCartBloc(loginService, cartService);
     cartItemCountBloc = CartItemCountBloc(cartService, loginService);
     productDetailsBloc.init(widget.productGroup);
+    cartBloc = CartListBloc(cartService);
     _count = widget.model.moq;
     moq = widget.model.moq;
   }
@@ -565,6 +568,7 @@ class _ProductCardState extends State<ProductCard> {
           refreshCount();
           showSnackBar(msg ?? "Successfully added to the cart");
           productDetailsBloc.init(widget.productGroup);
+          cartBloc.init();
         },
         failed: (model, msg) {
           showSnackBar(msg ?? "Product Quantity Must Be Greater Than 0");

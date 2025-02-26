@@ -65,7 +65,7 @@ class _NavigationPageState extends State<NavigationPage>
     addtoCartBloc = AddtoCartBloc(loginService, cartService);
     cartItemCountBloc = context.read<CartItemCountBloc>();
     cartItemCountBloc.init();
-    cartListBloc = CartListBloc(cartService);
+    cartListBloc = context.read<CartListBloc>();
     cartListBloc.init();
     //cartBloc = context.read<CartBloc>();
     //cartBloc.init();
@@ -75,6 +75,7 @@ class _NavigationPageState extends State<NavigationPage>
     if (index == 1) {
       //cartBloc.refresh();
       cartItemCountBloc.refresh();
+      cartListBloc.refresh();
     }
   }
 

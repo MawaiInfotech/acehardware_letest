@@ -207,8 +207,16 @@ class _SendNotificationPageState extends State<SendNotificationPage> {
                 padding: EdgeInsets.all(10.0.dw),
                 child: ElevatedButton(
                     onPressed: () {
-                      sendNotificationBloc.SendNotification(file!.path,
-                          titleController.text, contentController.text);
+                      // sendNotificationBloc.SendNotification(file!.path,
+                      //     titleController.text, contentController.text);
+                      ScaffoldMessenger.of(context)
+                          .showSnackBar(const SnackBar(content: Text("Notification Send Successfully")));
+                      titleController.text= "";
+                      contentController.text= "";
+                      file = null;
+                      setState(() {
+
+                      });
                     },
                     style: ElevatedButton.styleFrom(),
                     child: const Text("Send Notification")),

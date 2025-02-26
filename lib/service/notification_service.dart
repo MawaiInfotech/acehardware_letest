@@ -1,6 +1,5 @@
 import 'dart:async';
 import 'dart:convert';
-import 'dart:io';
 import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:flutter_local_notifications/flutter_local_notifications.dart';
 import 'package:hive/hive.dart';
@@ -45,7 +44,7 @@ class NotificationsService {
       _token = token;
     } else {
       _token = await FirebaseMessaging.instance.getToken();
-      print(_token);
+    //   print(_token);
     }
     if (_token == null) throw "Token is null";
 

@@ -367,7 +367,7 @@ class _LoginPageState extends State<LoginPage> with SingleTickerProviderStateMix
   }
 
   void _processLogin() async {
-    await loginBloc.proccessLogin(_userController.text, _passwordController.text,isRememberCheck, _employeeController.text,"C");
+    await loginBloc.proccessLogin(_userController.text, _passwordController.text,isRememberCheck, _userController.text,"C");
   }
 
   Future<void> _showVendorList() async {

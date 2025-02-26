@@ -53,16 +53,18 @@ class ProductService{
 
   Future<List<SubProdPopModel>> getSubproductPop(String customerCode, String productCategory, String pmg) async {
     const url = '${root}getSubGroupPopup1';
+    print(url);
     final body = {
       "token" : token,
       "cust_code" : customerCode,
       "prod_cate" : productCategory,
       "pmg" : pmg,
     };
+  //  print(body);
     try {
       final response = await http.post(Uri.parse(url),body: json.encode(body), headers: headers);
       final responseBody = json.decode(response.body);
-      print(responseBody);
+    //   print(responseBody);
       final itemList = responseBody['model'] as List;
       return itemList.map((e) => SubProdPopModel.fromJson(e)).toList();
     } catch (e) {
@@ -80,6 +82,7 @@ class ProductService{
       "cust_code" : customerCode,
       "prod_group" :productGroup
     };
+    print(body);
     try {
       final response = await http.post(Uri.parse(url),body: json.encode(body), headers: headers);
       final responseBody = json.decode(response.body);

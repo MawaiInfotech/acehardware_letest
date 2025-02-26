@@ -105,9 +105,12 @@ class _SubCategoryPageState extends State<SubCategoryPage>{
             itemBuilder: (BuildContext context, int index) {
               return InkWell(
                 onTap: () {
-                  subProdPopBloc.init(model[index].productCode, model[index].pmg);
-                  _buildShowDialog(context, model[index].productCode, model[index].pmg);
-                 // Navigator.push(context, MaterialPageRoute(builder: (context) => ProductDetailsPage(model[index].productCode)));
+                  subProdPopBloc.reset(); // 🔥 clear previous dialog data
+                  subProdPopBloc.init(
+                    model[index].productCode,
+                    model[index].pmg,
+                  );
+                  _buildShowDialog(context);
                 },
                 child: Card(
                   color: Colors.white,
@@ -136,22 +139,19 @@ class _SubCategoryPageState extends State<SubCategoryPage>{
     );
   }
 
-  _buildShowDialog(BuildContext oldContext, String productCode, String pmg){
-    setState(() {
-      mainContext = oldContext;
-    });
-      return showDialog(
-        context: context,
-        builder: (context) {
-          return StatefulBuilder(
-              builder:(BuildContext oldContext, StateSetter setState){
-            return _buildSubProbPopBody(oldContext);
-          });
-        }
+  _buildShowDialog(BuildContext oldContext) {
+    mainContext = oldContext;
+    return showDialog(
+      context: context,
+      builder: (_) {
+        return _buildSubProbPopBody();
+      },
     );
   }
 
-  _buildSubProbPopBody(BuildContext oldContext){
+
+
+  _buildSubProbPopBody(){
 
     return BlocConsumer<SubProdPopBloc, SubProdPopState>(
       bloc: subProdPopBloc,

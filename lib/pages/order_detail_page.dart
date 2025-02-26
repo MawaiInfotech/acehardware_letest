@@ -195,7 +195,7 @@ class _OrderHistoryDetailPageState extends State<OrderHistoryDetailPage> {
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
                     _buildHeadingText("Item Qty"),
-                    _buildText("40 Pc"),
+                    _buildText(model.quantity),
                   ],
                 ),
                 Column(
@@ -222,16 +222,27 @@ class _OrderHistoryDetailPageState extends State<OrderHistoryDetailPage> {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     _buildHeadingText("Status"),
-                    Padding(
-                      padding: EdgeInsets.all(8.0.dw),
-                      child: Text(
-                        "Dispatched",
-                        style: TextStyle(
-                            fontSize: 20.dw,
-                            color: AppColors.green,
-                            fontWeight: FontWeight.bold),
+                    Text(
+                      model.orderStatus.toUpperCase() == "PR"
+                          ? "PARTIALLY"
+                          : model.orderStatus.toUpperCase() == "D"
+                          ? "DISPATCHED"
+                          : model.orderStatus.toUpperCase() == "P"
+                          ? "PENDING"
+                          : "", // Return an empty string if none of the conditions match
+                      style: TextStyle(
+                        fontSize: 20.dw,
+                        color: model.orderStatus.toUpperCase() == "PR"
+                            ? const Color(0xFFFDD835) // Yellow for PARTIALLY
+                            : model.orderStatus.toUpperCase() == "D"
+                            ? const Color(0xFF7CB342) // Green for DISPATCH
+                            : model.orderStatus.toUpperCase() == "P"
+                            ? const Color(0xFFE65100) // Orange for PENDING
+                            : Colors.transparent, // Make text invisible if no condition matches
+                        fontWeight: FontWeight.bold,
                       ),
-                    )
+                    ),
+
                   ],
                 ),
               ],

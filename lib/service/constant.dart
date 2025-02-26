@@ -7,7 +7,12 @@ import '../prefbox.dart';
 
 
 /// local IP
-const root = 'http://192.168.1.204:8000/api/';
+//const root = 'http://192.168.1.104:8000/api/';
+
+ //const root = 'http://192.168.1.198:8000/api/';
+const root = 'http://117.55.242.59:91/api/';
+
+
 
 const headers = <String, String>{
   'Accept': 'Application/json',
@@ -23,3 +28,12 @@ Map<String, String> getHeaders() {
     "Authorization": "Bearer $token"
   };
 }
+
+///Live login details
+
+//customer -
+// Id -  T001, A247 -  Pass - same id
+
+//Emp
+//Id - E0-0039
+//pass - same id

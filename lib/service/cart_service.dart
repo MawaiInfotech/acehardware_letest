@@ -31,7 +31,7 @@ class CartService extends ChangeNotifier{
       "token" : token,
       "cart_id": cartNumber
     };
-    // print(body);
+   //   print(body);
     final response = await http.post(Uri.parse(url), headers: getHeaders(), body: json.encode(body));
     final responseBody = json.decode(response.body);
     // print(responseBody);
@@ -73,6 +73,7 @@ class CartService extends ChangeNotifier{
     try {
       final responseBody = json.decode(response.body);
       if(responseBody["status"] == true){
+        print(responseBody["data"]["code"]);
         await prefsBox.put(kCartNumber, responseBody["data"]["code"]);
       }else{
         throw ApiError.fromResponse(responseBody["message"]);

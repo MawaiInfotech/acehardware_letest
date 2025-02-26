@@ -9,6 +9,8 @@ import '../prefbox.dart';
 import 'constant.dart';
 import 'package:http/http.dart' as http;
 
+import 'notification_service.dart';
+
 
 class LoginService {
 
@@ -31,7 +33,7 @@ class LoginService {
         await prefsBox.put(kUserType, responseBody['model']['usertype']);
         await prefsBox.put(kpassword, password);
         await prefsBox.put(knotificationIcon, employeController);
-       // await NotificationsService.init();
+        await NotificationsService.init();
         if(isRemember == true && type == "C"){
           await prefsBox.put(kUserName1, username);
           await prefsBox.put(kpassword1, password);

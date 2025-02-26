@@ -169,6 +169,8 @@ class _HomePageState extends State<HomePage> {
   Center(child: CircularProgressIndicator());}
 
   Widget _buildBannerContent(List<BannerModel> model){
+    print(userCode);
+    print(notificationIcon);
     return Column(
       mainAxisAlignment: MainAxisAlignment.start,
       crossAxisAlignment: CrossAxisAlignment.end,

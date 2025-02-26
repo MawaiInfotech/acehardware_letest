@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:tools="http://schemas.android.com/tools"
     xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.acehardware_mawai_letest">
+    package="com.acehardmawai.acehardware_mawai">
 
     <uses-feature
         android:name="android.hardware.camera"
@@ -13,7 +13,7 @@
     <uses-permission android:name="android.permission.INTERNET" />
 
     <application
-        android:label="acehardware_mawai_letest"
+        android:label="Ace Hardware"
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher">
 

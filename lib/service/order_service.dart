@@ -16,6 +16,7 @@ class OrderService{
     const url = '${root}getOrderHistory';
     final body = {
       "token" : token,
+      "cust_code" : userCode
     };
     try {
       final response = await http.post(Uri.parse(url),body: json.encode(body), headers: headers);
@@ -54,12 +55,14 @@ class OrderService{
       "token" : token,
       "cust_code" : userCode,
     };
+    print(body);
     try {
       final response = await http.post(Uri.parse(url),body: json.encode(body), headers: headers);
       final responseBody = json.decode(response.body);
       final itemList = responseBody['data'] as List;
       return itemList.map((e) => DispatchdetailsModel.fromJson(e)).toList();
     } catch (e) {
+      print(e);
       _handleError(e);
     }
     return [];
@@ -89,6 +92,7 @@ class OrderService{
   Future<String?> getOrderDelete(Map<String, dynamic>data) async {
     const url = '${root}deleteOrder';
     final body = data;
+    print(body);
     try {
       final response = await http.post(Uri.parse(url), body: json.encode(body), headers: getHeaders());
       return "Order Deleted Successfully";
