@@ -33,7 +33,7 @@ class LoginService {
         await prefsBox.put(kUserType, responseBody['model']['usertype']);
         await prefsBox.put(kpassword, password);
         await prefsBox.put(knotificationIcon, employeController);
-        await NotificationsService.init();
+       // await NotificationsService.init();
         if(isRemember == true && type == "C"){
           await prefsBox.put(kUserName1, username);
           await prefsBox.put(kpassword1, password);

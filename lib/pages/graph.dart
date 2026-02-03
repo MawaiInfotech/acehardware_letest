@@ -93,8 +93,8 @@ class _GraphPageState extends State<GraphPage>
         controller: _tabController,
         children: [
           SalesTrendGraph(),
-          CreditLimitPage(),
-          PaymentStatusChartPage(),
+          const CreditLimitPage(),
+          const PaymentStatusChartPage(),
         ],
       ),
     );
