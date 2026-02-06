@@ -19,7 +19,7 @@ class GraphService{
     };
 
     const url = '${root}graphSaleTrend';
-
+    print(body);
     final response = await http.post(Uri.parse(url),
         body: json.encode(body), headers: getHeaders());
     try {

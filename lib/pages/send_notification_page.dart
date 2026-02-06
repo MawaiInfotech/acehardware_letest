@@ -150,7 +150,7 @@ class _SendNotificationPageState extends State<SendNotificationPage> {
                     child: const Text("Capture Image From Camera"),
                     onTap: () async {
                       final XFile? camera = await _picker.pickImage(
-                          source: ImageSource.camera, imageQuality: 100);
+                          source: ImageSource.camera, imageQuality: 10);
                       setState(() {
                         file = camera;
                         if (file!.path != null) ;
@@ -165,7 +165,7 @@ class _SendNotificationPageState extends State<SendNotificationPage> {
                       child: const Text("Take Image From Gallery"),
                       onTap: () async {
                         final XFile? gallery = await _picker.pickImage(
-                            source: ImageSource.gallery, imageQuality: 100);
+                            source: ImageSource.gallery, imageQuality: 10);
                         setState(() {
                           file = gallery;
                           if (file!.path != null) ;
@@ -207,16 +207,11 @@ class _SendNotificationPageState extends State<SendNotificationPage> {
                 padding: EdgeInsets.all(10.0.dw),
                 child: ElevatedButton(
                     onPressed: () {
-                      // sendNotificationBloc.SendNotification(file!.path,
-                      //     titleController.text, contentController.text);
-                      ScaffoldMessenger.of(context)
-                          .showSnackBar(const SnackBar(content: Text("Notification Send Successfully")));
-                      titleController.text= "";
-                      contentController.text= "";
-                      file = null;
-                      setState(() {
+                      sendNotificationBloc.SendNotification(file!.path,
+                          titleController.text, contentController.text);
+                      // ScaffoldMessenger.of(context)
+                      //     .showSnackBar(const SnackBar(content: Text("Notification Send Successfully")));
 
-                      });
                     },
                     style: ElevatedButton.styleFrom(),
                     child: const Text("Send Notification")),
