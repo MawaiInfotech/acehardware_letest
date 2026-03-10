@@ -212,7 +212,8 @@ class _CartPageState extends State<CartPage> {
               SizedBox(
                 height: 12.dh,
               ),
-              _buildContainer(" Quantity - ", "${model.quantity}  PC"),
+             // _buildContainer(" Quantity - ", "${model.quantity}  PC"),
+              _buildContainer(" Quantity - ", "${model.quantity}  ${model.uom}"),
               SizedBox(
                 height: 12.dh,
               ),
